@@ -1,0 +1,2 @@
+FAMILY,SIZE_1,SIZE_2,APPEARANCE,COLOR,Classifier,Chatbot
+Arial,14,17,light,green,DISABLED,NORMAL
