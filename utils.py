@@ -284,7 +284,7 @@ height = mss.mss().monitors[0]["height"]
 width = mss.mss().monitors[0]["width"]
 width_to_process = width // 229
 height_to_process = height // 144
-MAX_LENGTH = 23
+MAX_LENGTH = 35
 pro_height, pro_width = (224, 224)
 user_name = ""
 
@@ -310,12 +310,12 @@ with open("ConfigFiles/selection_list.pickle", "rb") as f:
 chat_model = load_model('Models/BERT_trained',
                         custom_objects={"TFBertModel": TFBertModel})
 
-# Load Classification model
-classification_model = load_model("Models/model_MobileNet",
-                                  compile=False)
-classification_model.compile("adam",
-                             loss=losses.CategoricalCrossentropy(),
-                             metrics=["accuracy"])
+# # Load Classification model
+# classification_model = load_model("Models/model_MobileNet",
+#                                   compile=False)
+# classification_model.compile("adam",
+#                              loss=losses.CategoricalCrossentropy(),
+#                              metrics=["accuracy"])
 
 # Models warmup
 
@@ -323,6 +323,6 @@ warmup()
 
 # Load and set configuration file
 FAMILY_FONT, FONT_SIZE, FONT_BOLD_SIZE, APPEARANCE, COLOR_THEME, CLASSIFIER_STATUS, CHATBOT_STATUS = read_config(
-    'config.txt')
+    'ConfigFiles/config.txt')
 set_appearance_mode(str(APPEARANCE))
 set_default_color_theme(str(COLOR_THEME))
