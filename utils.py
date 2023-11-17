@@ -2,6 +2,8 @@
 from customtkinter import *
 from tkinter import CENTER, DISABLED, NORMAL, messagebox
 import mss
+import socket
+import struct
 from pandas import (DataFrame,
                     Series,
                     concat,
@@ -25,16 +27,10 @@ from os import (path,
                 mkdir)
 from datetime import datetime
 from pathlib import Path
-from transformers import (BertTokenizer,
-                          TFBertModel)
 from pickle import load
-from tensorflow import argmax, image
-from keras.models import load_model
-from keras import losses
 from pynput import keyboard, mouse
 from shutil import move
 from threading import Thread
-from tensorflow import nn, reduce_max
 
 ###################################### Functions ######################################
 
@@ -167,64 +163,73 @@ def screenshot_mss(user: str = None, x: int = None, y: int = None) -> None:
     )
 
 
-def formatting(text: str = None, line_width: int = 58, left_pad: int = 4) -> str:
+def format_justified_text(text, line_width):
     """
-    Outputs the text formatted to fit the width selected.
+    Formats the given text into a justified format.
 
     Args:
-        text (string): String to be formatted
-        line_width (int): Text is fitted to this width
-        left_pad (int): In case space is required before the text
+        text (str): The text to be formatted.
+        line_width (int): The maximum width of each line in characters.
 
     Returns:
-        Formatted_text (string): Text formatted as required
+        str: The formatted text.
     """
-    texto_to_list = text.split()
-    formatted_text = ""
-    count = left_pad
+    words = text.split()
+    formatted_lines = []
+    current_line = []
 
-    for word in texto_to_list:
-        if count+len(word) <= line_width:
-            formatted_text += word+" "
-            count += len(word)+1
+    for word in words:
+        if len(" ".join(current_line + [word])) > line_width:
+            formatted_lines.append(" ".join(current_line))
+            current_line = [word]
         else:
-            formatted_text += "\n"
-            formatted_text += word+" "
-            count = len(word)+1
+            current_line.append(word)
 
-    return formatted_text
+    if current_line:
+        formatted_lines.append(" ".join(current_line))
+
+    return "\n".join(formatted_lines)
 
 
-def get_response(question: str = None) -> str:
+def send_to_server(text_to_send, server_address=('192.168.1.7', 10000)):
     """
-    Outputs the answer to a question from the question/answer dataset.
+    Sends the given text to the server for processing and returns the server's response.
 
     Args:
-        question (string): The input question to be answered
+        text_to_send (str): The text to send to the server.
+        server_address (tuple): A tuple containing the server's IP address and port number.
 
     Returns:
-        answer (string): The most probable output to the question, based on the dataset.
+        str: The response received from the server.
     """
-    question = str(question)
-    question_encoded = tokenizer(question,
-                                 truncation=True,
-                                 padding='max_length',
-                                 max_length=MAX_LENGTH,
-                                 return_tensors='tf')
-    predictions = chat_model.predict({'input_ids': question_encoded['input_ids'],
-                                      'attention_mask': question_encoded['attention_mask']},
-                                     verbose=0)
-    predictions = nn.softmax(predictions)
-    predicted_class = argmax(predictions, axis=-1).numpy()[0]
-    predicted_label = encoder.inverse_transform([predicted_class])[0]
-    predicted_probability = reduce_max(predictions, axis=-1)[0]
-    response = formatting(predicted_label)
+    # Connect to the server
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        sock.connect(server_address)
+        
+        # Encode and send the text
+        text_data = text_to_send.encode('utf-8')
+        text_length = len(text_data)
+        sock.sendall(struct.pack('!I', text_length))
+        sock.sendall(text_data)
 
-    return response
+        # Receive and decode the response
+        response = sock.recv(4096).decode('utf-8')
+        return response
 
+def get_response(question, line_width=40):
+    """
+    Modified to send the question to the server, receive the response, and format it.
 
-def to_classify():
-    pass
+    Args:
+        question (str): The question to be sent to the server.
+        line_width (int): The maximum width of each line in characters for text formatting.
+
+    Returns:
+        str: The formatted response from the server.
+    """
+    response = send_to_server(question)
+    formatted_response = format_justified_text(response, line_width)
+    return formatted_response
 
 
 def read_config(filename: str = None) -> list:
@@ -248,34 +253,6 @@ def read_config(filename: str = None) -> list:
 
     return data
 
-
-def warmup() -> None:
-    """
-    Function that serves as a warmup for the chatbot model
-
-    Args:
-        None
-
-    Returns:
-        None
-    """
-    tensor_warmup = "a"
-    tensor_encoded = tokenizer(
-        tensor_warmup,
-        truncation=True,
-        padding="max_length",
-        max_length=MAX_LENGTH,
-        return_tensors="tf",
-    )
-    chat_model.predict(
-        {
-            "input_ids": tensor_encoded["input_ids"],
-            "attention_mask": tensor_encoded["attention_mask"],
-        },
-        verbose=0,
-    )
-
-
 ###################################### Variables ######################################
 
 today = datetime.now().date()
@@ -284,7 +261,6 @@ height = mss.mss().monitors[0]["height"]
 width = mss.mss().monitors[0]["width"]
 width_to_process = width // 229
 height_to_process = height // 144
-MAX_LENGTH = 35
 pro_height, pro_width = (224, 224)
 user_name = ""
 
@@ -293,33 +269,6 @@ user_name = ""
 # Make main directory if does not exist
 if not path.exists(path_to_prog / "NNGUI"):
     mkdir(path_to_prog / "NNGUI")
-
-# Load tokenizer
-tokenizer_path = 'dccuchile/bert-base-spanish-wwm-cased'
-tokenizer = BertTokenizer.from_pretrained(tokenizer_path)
-
-# Load Chatbot label encoder/decoder
-with open('ConfigFiles/encoder.pkl', 'rb') as f:
-    encoder = load(f)
-
-# Load Classification label decoder
-with open("ConfigFiles/selection_list.pickle", "rb") as f:
-    selection_options = sorted(load(f))
-
-# Load Chatbot model
-chat_model = load_model('Models/BERT_trained',
-                        custom_objects={"TFBertModel": TFBertModel})
-
-# # Load Classification model
-# classification_model = load_model("Models/model_MobileNet",
-#                                   compile=False)
-# classification_model.compile("adam",
-#                              loss=losses.CategoricalCrossentropy(),
-#                              metrics=["accuracy"])
-
-# Models warmup
-
-warmup()
 
 # Load and set configuration file
 FAMILY_FONT, FONT_SIZE, FONT_BOLD_SIZE, APPEARANCE, COLOR_THEME, CLASSIFIER_STATUS, CHATBOT_STATUS = read_config(

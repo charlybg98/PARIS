@@ -199,12 +199,6 @@ class ChatApplication:
                        data_splitted[1],
                        data_splitted[2])
 
-    def classify(self):
-        """
-        Method that classifies all images in the user directory
-        """
-        to_classify()
-
     def start_rec(self):
         """
         Method that starts screen recording.
