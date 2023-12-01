@@ -1,7 +1,7 @@
 ####################################### Imports #######################################
 from customtkinter import *
 from tkinter import CENTER, DISABLED, NORMAL, messagebox
-from PIL import Image
+from PIL import ImageTk, Image
 import mss
 import socket
 import struct

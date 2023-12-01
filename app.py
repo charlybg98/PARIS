@@ -44,6 +44,8 @@ class ChatApplication:
         Window setup
         """
         self.window.title("NNGUI")
+        icon_image = ImageTk.PhotoImage(Image.open("Images/icon.ico"))
+        self.window.iconphoto(True, icon_image)
         self.window.resizable(width=False, height=False)
         self.window.configure(width=705, height=550)
 
