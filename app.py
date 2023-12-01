@@ -52,13 +52,24 @@ class ChatApplication:
         left_frame = CTkFrame(self.window)
         left_frame.place(relwidth=0.33, relheight=1)
 
+        self.appearance_mode_label = CTkLabel(
+            left_frame, text="Modo de apariencia:", font=self.FONT_BOLD
+        )
+        self.appearance_mode_label.place(relwidth=0.8, rely=0.05, relx=0.1)
+        self.appearance_mode_optionemenu = CTkOptionMenu(
+            left_frame,
+            values=APPEARANCE_VALUES,
+            command=self.change_appearance_mode_event,
+        )
+        self.appearance_mode_optionemenu.place(relwidth=0.4, rely=0.15, relx=0.3)
+
         left_label = CTkLabel(left_frame, text="Toma de datos", font=self.FONT_BOLD)
-        left_label.place(relwidth=1, rely=0.1)
+        left_label.place(relwidth=1, rely=0.25)
 
         self.entry_name = CTkEntry(
             left_frame, font=self.FONT, placeholder_text="Tu nombre"
         )
-        self.entry_name.place(relwidth=0.5, rely=0.25, relx=0.25)
+        self.entry_name.place(relwidth=0.5, rely=0.35, relx=0.25)
 
         start_button = CTkButton(left_frame, text="Iniciar", command=self.start_rec)
         start_button.place(relx=0.5, rely=0.45, anchor=CENTER)
@@ -139,7 +150,9 @@ class ChatApplication:
             self.msg_entry.delete(0, END)
             user_msg = f"{sender}: {msg}\n\n"
             self.text_widget.configure(state=NORMAL)
-            self.text_widget.insert(END, format_justified_text(user_msg, LINE_WIDTH)+'\n\n')
+            self.text_widget.insert(
+                END, format_justified_text(user_msg, LINE_WIDTH) + "\n\n"
+            )
 
         bot_response = (
             get_response(msg, LINE_WIDTH)
@@ -211,6 +224,29 @@ class ChatApplication:
             self.schedule_check(th_processing)
         else:
             messagebox.showerror("Error", "Introduce un usuario")
+
+    def change_appearance_mode_event(self, appearance_mode: str):
+        if appearance_mode == "Claro":
+            new_appearance_mode = "light"
+        elif appearance_mode == "Oscuro":
+            new_appearance_mode = "dark"
+        else:
+            new_appearance_mode = "system"
+        set_appearance_mode(new_appearance_mode)
+        self.save_config(new_appearance_mode)
+
+    def save_config(self, appearance_mode):
+        config_path = "ConfigFiles/config.txt"
+
+        with open(config_path, "r") as file:
+            config_data = file.readlines()
+
+        config_values = config_data[0].strip().split(",")
+        config_values[3] = appearance_mode
+        config_data = ",".join(config_values)
+
+        with open(config_path, "w") as file:
+            file.write(config_data)
 
 
 if __name__ == "__main__":

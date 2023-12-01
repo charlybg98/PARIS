@@ -246,14 +246,23 @@ def read_config(filename: str = None) -> list:
     Returns:
         data (list): The list with the parameters to be set.
     """
+    if not os.path.exists(filename):
+        messagebox.showerror("Error", "El archivo de configuración no existe.")
+        return [
+            "Arial",
+            "14",
+            "17",
+            "light",
+            "blue",
+            "40",
+            "localhost",
+            "10000",
+        ]
     with open(filename, "r") as file:
-        for line in file:
-            line = line.strip()
+        line = file.readline().strip()
     data = line.split(",")
-    if str(data[3]) not in ["light", "dark", "system"]:
-        data[3] = "system"
-    if str(data[4]) not in ["blue", "green", "dark-blue"]:
-        data[4] = "blue"
+    data[3] = data[3] if data[3] in ["light", "dark", "system"] else "system"
+    data[4] = data[4] if data[4] in ["blue", "green", "dark-blue"] else "blue"
     data[5] = int(data[5])
     data[-1] = int(data[-1])
     return data
@@ -289,3 +298,10 @@ if not path.exists(path_to_prog / "NNGUI"):
 ) = read_config("ConfigFiles/config.txt")
 set_appearance_mode(str(APPEARANCE))
 set_default_color_theme(str(COLOR_THEME))
+
+if APPEARANCE == "dark":
+    APPEARANCE_VALUES = ["Oscuro", "Claro", "Sistema"]
+elif APPEARANCE == "light":
+    APPEARANCE_VALUES = ["Claro", "Oscuro", "Sistema"]
+else:
+    APPEARANCE_VALUES = ["Sistema", "Claro", "Oscuro"]
