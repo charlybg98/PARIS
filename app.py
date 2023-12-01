@@ -53,7 +53,7 @@ class ChatApplication:
         left_frame.place(relwidth=0.33, relheight=1)
 
         self.appearance_mode_label = CTkLabel(
-            left_frame, text="Modo de apariencia:", font=self.FONT_BOLD
+            left_frame, text="Modo de apariencia", font=self.FONT_BOLD
         )
         self.appearance_mode_label.place(relwidth=0.8, rely=0.05, relx=0.1)
         self.appearance_mode_optionemenu = CTkOptionMenu(
@@ -64,21 +64,37 @@ class ChatApplication:
         self.appearance_mode_optionemenu.place(relwidth=0.4, rely=0.15, relx=0.3)
 
         left_label = CTkLabel(left_frame, text="Toma de datos", font=self.FONT_BOLD)
-        left_label.place(relwidth=1, rely=0.25)
+        left_label.place(relwidth=1, rely=0.35)
 
         self.entry_name = CTkEntry(
             left_frame, font=self.FONT, placeholder_text="Tu nombre"
         )
-        self.entry_name.place(relwidth=0.5, rely=0.35, relx=0.25)
+        self.entry_name.place(relwidth=0.5, rely=0.45, relx=0.25)
+
+        self.entry_id = CTkEntry(
+            left_frame, font=self.FONT, placeholder_text="Tu matrícula"
+        )
+        self.entry_id.place(relwidth=0.5, rely=0.52, relx=0.25)
 
         start_button = CTkButton(left_frame, text="Iniciar", command=self.start_rec)
-        start_button.place(relx=0.5, rely=0.45, anchor=CENTER)
+        start_button.place(relx=0.3, rely=0.65, relwidth=0.35, anchor=CENTER)
 
         stop_button = CTkButton(left_frame, text="Parar", command=self.stop_rec)
-        stop_button.place(relx=0.5, rely=0.55, anchor=CENTER)
+        stop_button.place(relx=0.7, rely=0.65, relwidth=0.35, anchor=CENTER)
 
         self.status_label = CTkLabel(left_frame, text="Estatus: en espera")
-        self.status_label.place(relwidth=0.5, relx=0.25, rely=0.75)
+        self.status_label.place(relwidth=0.5, relx=0.25, rely=0.85)
+
+        light_bulb_green = Image.open("Images/bulb_green.png")
+        light_bulb_red = Image.open("Images/bulb_red.png")
+
+        self.server_on_img = CTkImage(light_image=light_bulb_green)
+        self.server_off_img = CTkImage(light_image=light_bulb_red)
+
+        self.server_status_icon = CTkLabel(
+            left_frame, image=self.server_off_img, text=""
+        )
+        self.server_status_icon.place(relx=0.5, rely=0.95, anchor="center")
 
         right_frame = CTkFrame(self.window)
         right_frame.place(relwidth=0.67, relheight=1, relx=0.33)
@@ -116,17 +132,6 @@ class ChatApplication:
             command=lambda: self.on_enter_pressed(None),
         )
         send_button.place(relx=0.77, rely=0.2, relheight=0.8, relwidth=0.22)
-
-        light_bulb_green = Image.open("Images/bulb_green.png")
-        light_bulb_red = Image.open("Images/bulb_red.png")
-
-        self.server_on_img = CTkImage(light_image=light_bulb_green)
-        self.server_off_img = CTkImage(light_image=light_bulb_red)
-
-        self.server_status_icon = CTkLabel(
-            left_frame, image=self.server_off_img, text=""
-        )
-        self.server_status_icon.place(relx=0.5, rely=0.9, anchor="center")
 
         self.check_server_and_update_ui()
 

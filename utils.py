@@ -5,7 +5,6 @@ from PIL import ImageTk, Image
 import mss
 import socket
 import struct
-from pandas import DataFrame, Series, concat, to_datetime
 from cv2 import (
     imwrite,
     imread,
@@ -21,7 +20,7 @@ from os import path, mkdir
 from datetime import datetime
 from pathlib import Path
 from pickle import load
-from pynput import keyboard, mouse
+from pynput import mouse
 from shutil import move
 from threading import Thread
 
