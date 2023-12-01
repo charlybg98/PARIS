@@ -1,30 +1,23 @@
 ####################################### Imports #######################################
 from customtkinter import *
 from tkinter import CENTER, DISABLED, NORMAL, messagebox
+from PIL import Image
 import mss
 import socket
 import struct
-from pandas import (DataFrame,
-                    Series,
-                    concat,
-                    to_datetime)
-from cv2 import (imwrite,
-                 imread,
-                 bitwise_and,
-                 bitwise_not,
-                 cvtColor,
-                 boundingRect,
-                 rectangle,
-                 COLOR_BGR2GRAY)
-from numpy import (array,
-                   repeat,
-                   zeros,
-                   clip,
-                   newaxis,
-                   random,
-                   expand_dims)
-from os import (path,
-                mkdir)
+from pandas import DataFrame, Series, concat, to_datetime
+from cv2 import (
+    imwrite,
+    imread,
+    bitwise_and,
+    bitwise_not,
+    cvtColor,
+    boundingRect,
+    rectangle,
+    COLOR_BGR2GRAY,
+)
+from numpy import array, repeat, zeros, clip, newaxis, random, expand_dims
+from os import path, mkdir
 from datetime import datetime
 from pathlib import Path
 from pickle import load
@@ -35,7 +28,9 @@ from threading import Thread
 ###################################### Functions ######################################
 
 
-def processing(user: str = None, stamp=None, x=None, y=None, stamp_time: str = None) -> None:
+def processing(
+    user: str = None, stamp=None, x=None, y=None, stamp_time: str = None
+) -> None:
     """
     Function that processes an image for the current classifier method. Image is saved in the user
     directory, withing the 'Processed' folder.
@@ -53,19 +48,18 @@ def processing(user: str = None, stamp=None, x=None, y=None, stamp_time: str = N
     x = int(x)
     y = int(y)
     img_array = imread(
-        path.join(path_to_prog, "NNGUI",
-                  f"{user}", f"{today}", "Full", f"{stamp}")
+        path.join(path_to_prog, "NNGUI", f"{user}", f"{today}", "Full", f"{stamp}")
     )
     mask_1 = zeros(img_array.shape[:2], dtype="uint8")
     mask_2 = zeros(img_array.shape[:2], dtype="uint8")
     mask_1[
-        max(0, y - height_to_process // 2): min(height, y + height_to_process // 2),
-        max(0, x - width_to_process // 3): min(width, x + width_to_process // 3),
+        max(0, y - height_to_process // 2) : min(height, y + height_to_process // 2),
+        max(0, x - width_to_process // 3) : min(width, x + width_to_process // 3),
     ] = 255
 
     mask_2[
-        max(0, y - height_to_process): min(height, y + height_to_process),
-        max(0, x - width_to_process): min(width, x + width_to_process),
+        max(0, y - height_to_process) : min(height, y + height_to_process),
+        max(0, x - width_to_process) : min(width, x + width_to_process),
     ] = 255
 
     # Convert the rest of the image to grayscale
@@ -191,7 +185,7 @@ def format_justified_text(text, line_width):
     return "\n".join(formatted_lines)
 
 
-def send_to_server(text_to_send, server_address=('192.168.1.7', 10000)):
+def send_to_server(text_to_send, server_address=("192.168.1.7", 10000)):
     """
     Sends the given text to the server for processing and returns the server's response.
 
@@ -205,16 +199,26 @@ def send_to_server(text_to_send, server_address=('192.168.1.7', 10000)):
     # Connect to the server
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         sock.connect(server_address)
-        
+
         # Encode and send the text
-        text_data = text_to_send.encode('utf-8')
+        text_data = text_to_send.encode("utf-8")
         text_length = len(text_data)
-        sock.sendall(struct.pack('!I', text_length))
+        sock.sendall(struct.pack("!I", text_length))
         sock.sendall(text_data)
 
         # Receive and decode the response
-        response = sock.recv(4096).decode('utf-8')
+        response = sock.recv(4096).decode("utf-8")
         return response
+
+
+def check_server_availability(host, port):
+    """Check if the server is available."""
+    try:
+        with socket.create_connection((host, port), timeout=1):
+            return True
+    except OSError:
+        return False
+
 
 def get_response(question, line_width=40):
     """
@@ -227,7 +231,7 @@ def get_response(question, line_width=40):
     Returns:
         str: The formatted response from the server.
     """
-    response = send_to_server(question)
+    response = send_to_server(question, (HOST, PORT))
     formatted_response = format_justified_text(response, line_width)
     return formatted_response
 
@@ -242,16 +246,18 @@ def read_config(filename: str = None) -> list:
     Returns:
         data (list): The list with the parameters to be set.
     """
-    with open(filename, 'r') as file:
+    with open(filename, "r") as file:
         for line in file:
             line = line.strip()
-    data = line.split(',')
-    if str(data[3]) not in ['light', 'dark', 'system']:
-        data[3] = 'system'
-    if str(data[4]) not in ['blue', 'green', 'dark-blue']:
-        data[4] = 'blue'
-
+    data = line.split(",")
+    if str(data[3]) not in ["light", "dark", "system"]:
+        data[3] = "system"
+    if str(data[4]) not in ["blue", "green", "dark-blue"]:
+        data[4] = "blue"
+    data[5] = int(data[5])
+    data[-1] = int(data[-1])
     return data
+
 
 ###################################### Variables ######################################
 
@@ -271,7 +277,15 @@ if not path.exists(path_to_prog / "NNGUI"):
     mkdir(path_to_prog / "NNGUI")
 
 # Load and set configuration file
-FAMILY_FONT, FONT_SIZE, FONT_BOLD_SIZE, APPEARANCE, COLOR_THEME, CLASSIFIER_STATUS, CHATBOT_STATUS = read_config(
-    'ConfigFiles/config.txt')
+(
+    FAMILY_FONT,
+    FONT_SIZE,
+    FONT_BOLD_SIZE,
+    APPEARANCE,
+    COLOR_THEME,
+    LINE_WIDTH,
+    HOST,
+    PORT,
+) = read_config("ConfigFiles/config.txt")
 set_appearance_mode(str(APPEARANCE))
 set_default_color_theme(str(COLOR_THEME))
