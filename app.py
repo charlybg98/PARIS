@@ -64,7 +64,6 @@ class ChatApplication:
 
     def load_images(self):
         """Cargar todas las imágenes necesarias para la GUI."""
-        self.icon_image = ImageTk.PhotoImage(Image.open("resources/images/icon.ico"))
         self.assistant_icon_img = CTkImage(
             light_image=Image.open("resources/images/icon.png"), size=(50, 50)
         )
@@ -84,13 +83,14 @@ class ChatApplication:
         self.assistant_icon.place(relx=0.2, rely=0.11, relwidth=0.5, anchor="center")
 
         self.appearance_mode_label = CTkLabel(
-            left_frame, text="Modo de apariencia", font=self.FONT_BOLD
+            left_frame, text="Modo de apariencia", font=self.FONT
         )
-        self.appearance_mode_label.place(relwidth=0.5, rely=0.05, relx=0.4)
+        self.appearance_mode_label.place(relwidth=0.6, rely=0.05, relx=0.35)
         self.appearance_mode_optionemenu = CTkOptionMenu(
             left_frame,
             values=APPEARANCE_VALUES,
             command=self.change_appearance_mode_event,
+            font=self.FONT,
         )
         self.appearance_mode_optionemenu.place(relwidth=0.4, rely=0.1, relx=0.45)
 
@@ -107,13 +107,19 @@ class ChatApplication:
         )
         self.entry_id.place(relwidth=0.5, rely=0.42, relx=0.25)
 
-        start_button = CTkButton(left_frame, text="Iniciar", command=self.start_rec)
+        start_button = CTkButton(
+            left_frame, text="Iniciar", command=self.start_rec, font=self.FONT
+        )
         start_button.place(relx=0.3, rely=0.55, relwidth=0.35, anchor=CENTER)
 
-        stop_button = CTkButton(left_frame, text="Parar", command=self.stop_rec)
+        stop_button = CTkButton(
+            left_frame, text="Parar", command=self.stop_rec, font=self.FONT
+        )
         stop_button.place(relx=0.7, rely=0.55, relwidth=0.35, anchor=CENTER)
 
-        self.status_label = CTkLabel(left_frame, text="Estatus: en espera")
+        self.status_label = CTkLabel(
+            left_frame, text="Estatus: en espera", font=self.FONT
+        )
         self.status_label.place(relwidth=0.5, relx=0.25, rely=0.75)
 
         self.server_status_icon = CTkLabel(
@@ -163,8 +169,9 @@ class ChatApplication:
         Window setup
         """
         self.window.title("NNGUI")
-        icon_image = ImageTk.PhotoImage(Image.open("resources/images/icon.ico"))
-        self.window.iconphoto(True, icon_image)
+        self.icon_image = ImageTk.PhotoImage(Image.open("resources/images/icon.ico"))
+        self.window.iconbitmap()
+        self.window.iconphoto(True, self.icon_image)
         self.window.resizable(width=False, height=False)
         self.window.configure(width=705, height=550)
 
@@ -179,12 +186,15 @@ class ChatApplication:
             screenshot_mss(user_name, x, y)
 
     def on_enter_pressed(self, event):
+        global user_name
+        global user_id
         msg = self.msg_entry.get()
         user_name = self.entry_name.get()
-        if user_name == "":
-            messagebox.showerror("Error", "Introduce un usuario")
-        else:
+        user_id = self.entry_id.get()
+        if user_name != "" and user_id != "":
             self.insert_message(msg, user_name)
+        else:
+            messagebox.showerror("Error", "Introduce tu nombre y matrícula")
 
     def insert_message(self, msg, sender, is_user=True):
         if not msg:
@@ -247,11 +257,14 @@ class ChatApplication:
         Method that starts screen recording.
         """
         global user_name
+        global user_id
+        user_id = self.entry_id.get()
         user_name = self.entry_name.get()
-        if user_name != "":
+        if user_name != "" and user_id != "":
             self.listener = mouse.Listener(on_click=self.on_click)
             self.listener.start()
             self.entry_name.configure(state=DISABLED)
+            self.entry_id.configure(state=DISABLED)
             self.status_label.configure(text="Estatus: grabando")
         else:
             messagebox.showerror("Error", "Introduce un usuario")
@@ -260,7 +273,7 @@ class ChatApplication:
         """
         Method that stops screen recording.
         """
-        if user_name != "":
+        if user_name != "" and user_id != "":
             self.listener.stop()
             self.status_label.configure(text="Estatus: procesando")
             th_processing = Thread(target=self.process_im)

@@ -7,6 +7,7 @@ from tkinter import messagebox
 ###################################### Variables ######################################
 path_to_prog = Path.home() / "Documents"
 user_name = ""
+user_id = ""
 
 
 ###################################### Functions ######################################
