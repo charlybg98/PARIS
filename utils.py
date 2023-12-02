@@ -5,13 +5,11 @@ from pathlib import Path
 from tkinter import messagebox
 
 ###################################### Variables ######################################
-
 path_to_prog = Path.home() / "Documents"
 user_name = ""
 
+
 ###################################### Functions ######################################
-
-
 def format_justified_text(text, line_width):
     """
     Formats the given text into a justified format.

@@ -1,8 +1,10 @@
+####################################### Imports #######################################
 from utils import HOST, PORT, format_justified_text
 import socket
 import struct
 
 
+###################################### Functions ######################################
 def send_to_server(text_to_send, server_address=("192.168.1.7", 10000)):
     """
     Sends the given text to the server for processing and returns the server's response.
