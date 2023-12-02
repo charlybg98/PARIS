@@ -28,7 +28,7 @@ height_to_process = height // 144
 
 
 def processing(
-    user: str = None, stamp=None, x=None, y=None, stamp_time: str = None
+    user: str = None, img_array=None, x=None, y=None, stamp_time: str = None
 ) -> None:
     """
     Function that processes an image for the current classifier method. Image is saved in the user
@@ -42,13 +42,11 @@ def processing(
         stamp_time (string): The stamp time of the action
 
     Returns:
-        None
+        img_result: Image processed
     """
     x = int(x)
     y = int(y)
-    img_array = imread(
-        path.join(path_to_prog, "NNGUI", f"{user}", f"{today}", "Full", f"{stamp}")
-    )
+
     mask_1 = zeros(img_array.shape[:2], dtype="uint8")
     mask_2 = zeros(img_array.shape[:2], dtype="uint8")
     mask_1[
@@ -61,11 +59,9 @@ def processing(
         max(0, x - width_to_process) : min(width, x + width_to_process),
     ] = 255
 
-    # Convert the rest of the image to grayscale
     img_gray = cvtColor(img_array, COLOR_BGR2GRAY)
     img_gray = repeat(img_gray[..., newaxis], 3, axis=-1)
 
-    # Multiply the color region by a factor of 2
     color_region_1 = bitwise_and(img_array, img_array, mask=mask_1)
     color_region_1[..., 2] *= 2
     color_region_1 = clip(color_region_1, 0, 255).astype("uint8")
@@ -73,7 +69,6 @@ def processing(
     color_region_2 = bitwise_and(img_array, img_array, mask=mask_2) * 1
     color_region_2 = clip(color_region_2, 0, 255).astype("uint8")
 
-    # Merge the grayscale and color regions
     img_result = (
         color_region_1
         + color_region_2
@@ -113,7 +108,9 @@ def processing(
             / f"{user}"
             / f"{today}"
             / "Processed"
-            / f"{stamp_time}"
+            / f"{stamp_time}.png"
         ),
         img_result,
     )
+
+    return img_result

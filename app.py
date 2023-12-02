@@ -18,9 +18,9 @@ from customtkinter import (
     END,
 )
 from tkinter import CENTER, DISABLED, NORMAL
-from os import listdir
 from pynput import mouse
 from threading import Thread
+import matplotlib.pyplot as plt
 
 
 ###################################### Main class ######################################
@@ -182,8 +182,10 @@ class ChatApplication:
         self.check_server_and_update_ui()
 
     def on_click(self, x, y, button, pressed):
+        global user_id
         if pressed:
-            screenshot_mss(user_name, x, y)
+            stamp_time, img_array = screenshot_mss(user_id, x, y)
+            img_processed = processing(user_id, img_array, x, y, stamp_time)
 
     def on_enter_pressed(self, event):
         global user_name
@@ -220,38 +222,6 @@ class ChatApplication:
 
         self.text_widget.see(END)
 
-    def schedule_check(self, t):
-        """
-        Recursive method for the check_if_done method
-        """
-        self.window.after(500, self.check_if_done, t)
-
-    def check_if_done(self, t):
-        """
-        Method that checks every 500ms if processing is done.
-        """
-        if not t.is_alive():
-            self.status_label.configure(text="Estatus: en espera")
-            self.entry_name.configure(state=NORMAL)
-        else:
-            self.schedule_check(t)
-
-    def process_im(self):
-        """
-        Method that process all images in the user directory.
-        """
-        for image_stamp in listdir(
-            path_to_prog / "NNGUI" / f"{user_name}" / f"{today}" / "Full"
-        ):
-            data_splitted = image_stamp.split()
-            processing(
-                user_name,
-                image_stamp,
-                data_splitted[0],
-                data_splitted[1],
-                data_splitted[2],
-            )
-
     def start_rec(self):
         """
         Method that starts screen recording.
@@ -275,10 +245,7 @@ class ChatApplication:
         """
         if user_name != "" and user_id != "":
             self.listener.stop()
-            self.status_label.configure(text="Estatus: procesando")
-            th_processing = Thread(target=self.process_im)
-            th_processing.start()
-            self.schedule_check(th_processing)
+            self.status_label.configure(text="Estatus: en espera")
         else:
             messagebox.showerror("Error", "Introduce un usuario")
 
