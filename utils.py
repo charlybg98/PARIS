@@ -103,9 +103,5 @@ PORT = config_data["PORT"]
 set_appearance_mode(APPEARANCE)
 set_default_color_theme(COLOR_THEME)
 
-if APPEARANCE == "dark":
-    APPEARANCE_VALUES = ["Oscuro", "Claro", "Sistema"]
-elif APPEARANCE == "light":
-    APPEARANCE_VALUES = ["Claro", "Oscuro", "Sistema"]
-else:
-    APPEARANCE_VALUES = ["Sistema", "Claro", "Oscuro"]
+APPEARANCE_OPTIONS = {"Claro": "light", "Oscuro": "dark", "Sistema": "system"}
+COLOR_THEME_OPTIONS = {"Azul": "blue", "Azul oscuro": "dark-blue", "Verde": "green"}

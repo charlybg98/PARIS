@@ -15,12 +15,11 @@ from customtkinter import (
     CTkButton,
     CTkScrollbar,
     CTkTextbox,
+    CTkToplevel,
     END,
 )
 from tkinter import CENTER, DISABLED, NORMAL
 from pynput import mouse
-from threading import Thread
-import matplotlib.pyplot as plt
 
 
 ###################################### Main class ######################################
@@ -67,6 +66,9 @@ class ChatApplication:
         self.assistant_icon_img = CTkImage(
             light_image=Image.open("resources/images/icon.png"), size=(50, 50)
         )
+        self.settings_icon = CTkImage(
+            light_image=Image.open("resources/images/settings_icon.png"), size=(20, 20)
+        )
         self.server_on_img = CTkImage(
             light_image=Image.open("resources/images/bulb_green.png")
         )
@@ -82,17 +84,13 @@ class ChatApplication:
         )
         self.assistant_icon.place(relx=0.2, rely=0.11, relwidth=0.5, anchor="center")
 
-        self.appearance_mode_label = CTkLabel(
-            left_frame, text="Modo de apariencia", font=self.FONT
-        )
-        self.appearance_mode_label.place(relwidth=0.6, rely=0.05, relx=0.35)
-        self.appearance_mode_optionemenu = CTkOptionMenu(
+        settings_button = CTkButton(
             left_frame,
-            values=APPEARANCE_VALUES,
-            command=self.change_appearance_mode_event,
-            font=self.FONT,
+            image=self.settings_icon,
+            text="Configuración",
+            command=self.open_settings_window,
         )
-        self.appearance_mode_optionemenu.place(relwidth=0.4, rely=0.1, relx=0.45)
+        settings_button.place(relwidth=0.4, rely=0.1, relx=0.45)
 
         left_label = CTkLabel(left_frame, text="Toma de datos", font=self.FONT_BOLD)
         left_label.place(relwidth=1, rely=0.25)
@@ -259,28 +257,76 @@ class ChatApplication:
         set_appearance_mode(new_appearance_mode)
         self.save_config(new_appearance_mode)
 
-    def save_config(self, appearance_mode):
+    def open_settings_window(self):
+        self.settings_window = CTkToplevel(self.window)
+        self.settings_window.title("Configuración Avanzada")
+        self.settings_window.configure(width=350, height=450)
+        self.settings_window.resizable(width=False, height=False)
+
+        self.config_data = self.load_config()
+
+        self.config_entries = {}
+        row_index = 0
+        for key, value in self.config_data.items():
+            label = CTkLabel(self.settings_window, text=key)
+            label.grid(row=row_index, column=0, padx=10, pady=10)
+
+            if key == "APPEARANCE":
+                entry = CTkOptionMenu(
+                    self.settings_window,
+                    values=list(APPEARANCE_OPTIONS.keys()),
+                    font=self.FONT,
+                )
+                entry.set(next(k for k, v in APPEARANCE_OPTIONS.items() if v == value))
+            elif key == "COLOR_THEME":
+                entry = CTkOptionMenu(
+                    self.settings_window,
+                    values=list(COLOR_THEME_OPTIONS.keys()),
+                    font=self.FONT,
+                )
+                entry.set(next(k for k, v in COLOR_THEME_OPTIONS.items() if v == value))
+            else:
+                entry = CTkEntry(self.settings_window, width=200, font=self.FONT)
+                entry.insert(0, str(value))
+
+            entry.grid(row=row_index, column=1, padx=10, pady=10)
+            self.config_entries[key] = entry
+            row_index += 1
+
+        save_button = CTkButton(
+            self.settings_window, text="Guardar", command=self.save_config
+        )
+        save_button.grid(row=row_index, columnspan=2, padx=10, pady=10)
+
+    def save_config(self):
+        new_config_data = {}
+        for key, entry in self.config_entries.items():
+            value = entry.get()
+            if key == "APPEARANCE":
+                new_config_data[key] = APPEARANCE_OPTIONS[value]
+            elif key == "COLOR_THEME":
+                new_config_data[key] = COLOR_THEME_OPTIONS[value]
+            else:
+                new_config_data[key] = value
+
+        with open("config/config.json", "w") as file:
+            json.dump(new_config_data, file, indent=4)
+
+        self.settings_window.destroy()
+        self.apply_new_settings(new_config_data)
+
+    def apply_new_settings(self, new_config_data):
+        set_appearance_mode(new_config_data["APPEARANCE"])
+        set_default_color_theme(new_config_data["COLOR_THEME"])
+
+    def load_config(self):
         config_path = "config/config.json"
+        if not path.exists(config_path):
+            messagebox.showerror("Error", "El archivo de configuración no existe.")
+            return None
 
-        if path.exists(config_path):
-            with open(config_path, "r") as file:
-                config_data = json.load(file)
-        else:
-            config_data = {
-                "FAMILY_FONT": "Open Sans",
-                "FONT_SIZE": 12,
-                "FONT_BOLD_SIZE": 16,
-                "APPEARANCE": "light",
-                "COLOR_THEME": "green",
-                "LINE_WIDTH": 40,
-                "HOST": "localhost",
-                "PORT": 10000,
-            }
-
-        config_data["APPEARANCE"] = appearance_mode
-
-        with open(config_path, "w") as file:
-            json.dump(config_data, file, indent=4)
+        with open(config_path, "r") as file:
+            return json.load(file)
 
 
 if __name__ == "__main__":

@@ -1,10 +1,10 @@
 {
     "FAMILY_FONT": "Open Sans",
-    "FONT_SIZE": 12,
-    "FONT_BOLD_SIZE": 16,
-    "APPEARANCE": "dark",
-    "COLOR_THEME": "green",
-    "LINE_WIDTH": 40,
+    "FONT_SIZE": "12",
+    "FONT_BOLD_SIZE": "16",
+    "APPEARANCE": "light",
+    "COLOR_THEME": "blue",
+    "LINE_WIDTH": "40",
     "HOST": "192.168.1.7",
-    "PORT": 10000
+    "PORT": "10000"
 }
