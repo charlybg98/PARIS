@@ -1,6 +1,29 @@
+####################################### Imports #######################################
 from utils import *
+from network import *
+from processor import *
+from recorder import *
+from PIL import ImageTk, Image
+from customtkinter import (
+    CTk,
+    CTkImage,
+    CTkFrame,
+    CTkLabel,
+    CTkFont,
+    CTkEntry,
+    CTkOptionMenu,
+    CTkButton,
+    CTkScrollbar,
+    CTkTextbox,
+    END,
+)
+from tkinter import CENTER, DISABLED, NORMAL
+from os import listdir
+from pynput import mouse
+from threading import Thread
 
 
+###################################### Main class ######################################
 class ChatApplication:
     """
     Class that provides GUI for the project
@@ -39,66 +62,68 @@ class ChatApplication:
                 is_user=False,
             )
 
-    def setup_main_window(self):
-        """
-        Window setup
-        """
-        self.window.title("NNGUI")
-        icon_image = ImageTk.PhotoImage(Image.open("Images/icon.ico"))
-        self.window.iconphoto(True, icon_image)
-        self.window.resizable(width=False, height=False)
-        self.window.configure(width=705, height=550)
+    def load_images(self):
+        """Cargar todas las imágenes necesarias para la GUI."""
+        self.icon_image = ImageTk.PhotoImage(Image.open("resources/images/icon.ico"))
+        self.assistant_icon_img = CTkImage(
+            light_image=Image.open("resources/images/icon.png"), size=(50, 50)
+        )
+        self.server_on_img = CTkImage(
+            light_image=Image.open("resources/images/bulb_green.png")
+        )
+        self.server_off_img = CTkImage(
+            light_image=Image.open("resources/images/bulb_red.png")
+        )
 
-        left_frame = CTkFrame(self.window)
+    def setup_left_frame(self, parent):
+        left_frame = CTkFrame(parent)
         left_frame.place(relwidth=0.33, relheight=1)
+        self.assistant_icon = CTkLabel(
+            left_frame, image=self.assistant_icon_img, text=""
+        )
+        self.assistant_icon.place(relx=0.2, rely=0.11, relwidth=0.5, anchor="center")
 
         self.appearance_mode_label = CTkLabel(
             left_frame, text="Modo de apariencia", font=self.FONT_BOLD
         )
-        self.appearance_mode_label.place(relwidth=0.8, rely=0.05, relx=0.1)
+        self.appearance_mode_label.place(relwidth=0.5, rely=0.05, relx=0.4)
         self.appearance_mode_optionemenu = CTkOptionMenu(
             left_frame,
             values=APPEARANCE_VALUES,
             command=self.change_appearance_mode_event,
         )
-        self.appearance_mode_optionemenu.place(relwidth=0.4, rely=0.15, relx=0.3)
+        self.appearance_mode_optionemenu.place(relwidth=0.4, rely=0.1, relx=0.45)
 
         left_label = CTkLabel(left_frame, text="Toma de datos", font=self.FONT_BOLD)
-        left_label.place(relwidth=1, rely=0.35)
+        left_label.place(relwidth=1, rely=0.25)
 
         self.entry_name = CTkEntry(
             left_frame, font=self.FONT, placeholder_text="Tu nombre"
         )
-        self.entry_name.place(relwidth=0.5, rely=0.45, relx=0.25)
+        self.entry_name.place(relwidth=0.5, rely=0.35, relx=0.25)
 
         self.entry_id = CTkEntry(
             left_frame, font=self.FONT, placeholder_text="Tu matrícula"
         )
-        self.entry_id.place(relwidth=0.5, rely=0.52, relx=0.25)
+        self.entry_id.place(relwidth=0.5, rely=0.42, relx=0.25)
 
         start_button = CTkButton(left_frame, text="Iniciar", command=self.start_rec)
-        start_button.place(relx=0.3, rely=0.65, relwidth=0.35, anchor=CENTER)
+        start_button.place(relx=0.3, rely=0.55, relwidth=0.35, anchor=CENTER)
 
         stop_button = CTkButton(left_frame, text="Parar", command=self.stop_rec)
-        stop_button.place(relx=0.7, rely=0.65, relwidth=0.35, anchor=CENTER)
+        stop_button.place(relx=0.7, rely=0.55, relwidth=0.35, anchor=CENTER)
 
         self.status_label = CTkLabel(left_frame, text="Estatus: en espera")
-        self.status_label.place(relwidth=0.5, relx=0.25, rely=0.85)
-
-        light_bulb_green = Image.open("Images/bulb_green.png")
-        light_bulb_red = Image.open("Images/bulb_red.png")
-
-        self.server_on_img = CTkImage(light_image=light_bulb_green)
-        self.server_off_img = CTkImage(light_image=light_bulb_red)
+        self.status_label.place(relwidth=0.5, relx=0.25, rely=0.75)
 
         self.server_status_icon = CTkLabel(
             left_frame, image=self.server_off_img, text=""
         )
-        self.server_status_icon.place(relx=0.5, rely=0.95, anchor="center")
+        self.server_status_icon.place(relx=0.5, rely=0.85, anchor="center")
 
-        right_frame = CTkFrame(self.window)
+    def setup_right_frame(self, parent):
+        right_frame = CTkFrame(parent)
         right_frame.place(relwidth=0.67, relheight=1, relx=0.33)
-
         head_label = CTkLabel(right_frame, text="Chat", font=self.FONT_BOLD, pady=10)
         head_label.place(relwidth=1)
         line = CTkLabel(right_frame, width=450, text="")
@@ -132,6 +157,20 @@ class ChatApplication:
             command=lambda: self.on_enter_pressed(None),
         )
         send_button.place(relx=0.77, rely=0.2, relheight=0.8, relwidth=0.22)
+
+    def setup_main_window(self):
+        """
+        Window setup
+        """
+        self.window.title("NNGUI")
+        icon_image = ImageTk.PhotoImage(Image.open("resources/images/icon.ico"))
+        self.window.iconphoto(True, icon_image)
+        self.window.resizable(width=False, height=False)
+        self.window.configure(width=705, height=550)
+
+        self.load_images()
+        self.setup_left_frame(self.window)
+        self.setup_right_frame(self.window)
 
         self.check_server_and_update_ui()
 
@@ -191,7 +230,7 @@ class ChatApplication:
         """
         Method that process all images in the user directory.
         """
-        for image_stamp in os.listdir(
+        for image_stamp in listdir(
             path_to_prog / "NNGUI" / f"{user_name}" / f"{today}" / "Full"
         ):
             data_splitted = image_stamp.split()
@@ -241,7 +280,7 @@ class ChatApplication:
         self.save_config(new_appearance_mode)
 
     def save_config(self, appearance_mode):
-        config_path = "ConfigFiles/config.txt"
+        config_path = "config/config.txt"
 
         with open(config_path, "r") as file:
             config_data = file.readlines()
