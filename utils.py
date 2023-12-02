@@ -3,6 +3,7 @@ from customtkinter import set_appearance_mode, set_default_color_theme
 from os import path, mkdir
 from pathlib import Path
 from tkinter import messagebox
+import json
 
 ###################################### Variables ######################################
 path_to_prog = Path.home() / "Documents"
@@ -39,57 +40,68 @@ def format_justified_text(text, line_width):
     return "\n".join(formatted_lines)
 
 
-def read_config(filename: str = None) -> list:
+def read_config(filename: str = None) -> dict:
     """
     Function that reads the configuration file to setup the main program.
 
-    Args
+    Args:
         filename (string): The file to be read for the configuration.
 
     Returns:
-        data (list): The list with the parameters to be set.
+        data (dict): The dictionary with the parameters to be set.
     """
     if not path.exists(filename):
         messagebox.showerror("Error", "El archivo de configuración no existe.")
-        return [
-            "Arial",
-            "14",
-            "17",
-            "light",
-            "blue",
-            "40",
-            "localhost",
-            "10000",
-        ]
+        return {
+            "FAMILY_FONT": "Arial",
+            "FONT_SIZE": 14,
+            "FONT_BOLD_SIZE": 17,
+            "APPEARANCE": "light",
+            "COLOR_THEME": "blue",
+            "LINE_WIDTH": 40,
+            "HOST": "localhost",
+            "PORT": 10000,
+        }
+
     with open(filename, "r") as file:
-        line = file.readline().strip()
-    data = line.split(",")
-    data[3] = data[3] if data[3] in ["light", "dark", "system"] else "system"
-    data[4] = data[4] if data[4] in ["blue", "green", "dark-blue"] else "blue"
-    data[5] = int(data[5])
-    data[-1] = int(data[-1])
+        data = json.load(file)
+
+    data["APPEARANCE"] = (
+        data.get("APPEARANCE", "system")
+        if data.get("APPEARANCE") in ["light", "dark", "system"]
+        else "system"
+    )
+    data["COLOR_THEME"] = (
+        data.get("COLOR_THEME", "blue")
+        if data.get("COLOR_THEME") in ["blue", "green", "dark-blue"]
+        else "blue"
+    )
+    data["FONT_SIZE"] = int(data.get("FONT_SIZE", 14))
+    data["FONT_BOLD_SIZE"] = int(data.get("FONT_BOLD_SIZE", 17))
+    data["LINE_WIDTH"] = int(data.get("LINE_WIDTH", 40))
+    data["PORT"] = int(data.get("PORT", 10000))
+
     return data
 
 
 ##################################### Initialization #####################################
 
-# Make main directory if does not exist
 if not path.exists(path_to_prog / "NNGUI"):
     mkdir(path_to_prog / "NNGUI")
 
-# Load and set configuration file
-(
-    FAMILY_FONT,
-    FONT_SIZE,
-    FONT_BOLD_SIZE,
-    APPEARANCE,
-    COLOR_THEME,
-    LINE_WIDTH,
-    HOST,
-    PORT,
-) = read_config("config/config.txt")
-set_appearance_mode(str(APPEARANCE))
-set_default_color_theme(str(COLOR_THEME))
+config_data = read_config("config/config.json")
+
+FAMILY_FONT = config_data["FAMILY_FONT"]
+FONT_SIZE = config_data["FONT_SIZE"]
+FONT_BOLD_SIZE = config_data["FONT_BOLD_SIZE"]
+APPEARANCE = config_data["APPEARANCE"]
+COLOR_THEME = config_data["COLOR_THEME"]
+LINE_WIDTH = config_data["LINE_WIDTH"]
+HOST = config_data["HOST"]
+PORT = config_data["PORT"]
+
+set_appearance_mode(APPEARANCE)
+set_default_color_theme(COLOR_THEME)
 
 if APPEARANCE == "dark":
     APPEARANCE_VALUES = ["Oscuro", "Claro", "Sistema"]

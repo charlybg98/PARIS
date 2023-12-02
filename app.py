@@ -293,17 +293,27 @@ class ChatApplication:
         self.save_config(new_appearance_mode)
 
     def save_config(self, appearance_mode):
-        config_path = "config/config.txt"
+        config_path = "config/config.json"
 
-        with open(config_path, "r") as file:
-            config_data = file.readlines()
+        if path.exists(config_path):
+            with open(config_path, "r") as file:
+                config_data = json.load(file)
+        else:
+            config_data = {
+                "FAMILY_FONT": "Open Sans",
+                "FONT_SIZE": 12,
+                "FONT_BOLD_SIZE": 16,
+                "APPEARANCE": "light",
+                "COLOR_THEME": "green",
+                "LINE_WIDTH": 40,
+                "HOST": "localhost",
+                "PORT": 10000,
+            }
 
-        config_values = config_data[0].strip().split(",")
-        config_values[3] = appearance_mode
-        config_data = ",".join(config_values)
+        config_data["APPEARANCE"] = appearance_mode
 
         with open(config_path, "w") as file:
-            file.write(config_data)
+            json.dump(config_data, file, indent=4)
 
 
 if __name__ == "__main__":
