@@ -105,3 +105,14 @@ set_default_color_theme(COLOR_THEME)
 
 APPEARANCE_OPTIONS = {"Claro": "light", "Oscuro": "dark", "Sistema": "system"}
 COLOR_THEME_OPTIONS = {"Azul": "blue", "Azul oscuro": "dark-blue", "Verde": "green"}
+FONT_OPTIONS = ["Open Sans", "Arial", "Verdana", "Courier"]
+LABEL_TRANSLATIONS = {
+    "FAMILY_FONT": "Fuente",
+    "FONT_SIZE": "Tamaño de fuente",
+    "FONT_BOLD_SIZE": "Tamaño de Fuente en Negrita",
+    "APPEARANCE": "Modo de apariencia",
+    "COLOR_THEME": "Tema de Color",
+    "LINE_WIDTH": "Ancho de línea",
+    "HOST": "Dirección del Servidor",
+    "PORT": "Puerto",
+}

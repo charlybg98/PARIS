@@ -64,7 +64,7 @@ class ChatApplication:
     def load_images(self):
         """Cargar todas las imágenes necesarias para la GUI."""
         self.assistant_icon_img = CTkImage(
-            light_image=Image.open("resources/images/icon.png"), size=(50, 50)
+            light_image=Image.open("resources/images/icon.png"), size=(80, 80)
         )
         self.settings_icon = CTkImage(
             light_image=Image.open("resources/images/settings_icon.png"), size=(20, 20)
@@ -79,10 +79,6 @@ class ChatApplication:
     def setup_left_frame(self, parent):
         left_frame = CTkFrame(parent)
         left_frame.place(relwidth=0.33, relheight=1)
-        self.assistant_icon = CTkLabel(
-            left_frame, image=self.assistant_icon_img, text=""
-        )
-        self.assistant_icon.place(relx=0.2, rely=0.11, relwidth=0.5, anchor="center")
 
         settings_button = CTkButton(
             left_frame,
@@ -90,40 +86,45 @@ class ChatApplication:
             text="Configuración",
             command=self.open_settings_window,
         )
-        settings_button.place(relwidth=0.4, rely=0.1, relx=0.45)
+        settings_button.place(relwidth=0.6, rely=0.02, relx=0.02)
+
+        self.assistant_icon = CTkLabel(
+            left_frame, image=self.assistant_icon_img, text=""
+        )
+        self.assistant_icon.place(relx=0.25, rely=0.1, relwidth=0.5)
 
         left_label = CTkLabel(left_frame, text="Toma de datos", font=self.FONT_BOLD)
-        left_label.place(relwidth=1, rely=0.25)
+        left_label.place(relwidth=1, rely=0.3)
 
         self.entry_name = CTkEntry(
             left_frame, font=self.FONT, placeholder_text="Tu nombre"
         )
-        self.entry_name.place(relwidth=0.5, rely=0.35, relx=0.25)
+        self.entry_name.place(relwidth=0.5, rely=0.4, relx=0.25)
 
         self.entry_id = CTkEntry(
             left_frame, font=self.FONT, placeholder_text="Tu matrícula"
         )
-        self.entry_id.place(relwidth=0.5, rely=0.42, relx=0.25)
+        self.entry_id.place(relwidth=0.5, rely=0.47, relx=0.25)
 
         start_button = CTkButton(
             left_frame, text="Iniciar", command=self.start_rec, font=self.FONT
         )
-        start_button.place(relx=0.3, rely=0.55, relwidth=0.35, anchor=CENTER)
+        start_button.place(relx=0.3, rely=0.6, relwidth=0.35, anchor=CENTER)
 
         stop_button = CTkButton(
             left_frame, text="Parar", command=self.stop_rec, font=self.FONT
         )
-        stop_button.place(relx=0.7, rely=0.55, relwidth=0.35, anchor=CENTER)
+        stop_button.place(relx=0.7, rely=0.6, relwidth=0.35, anchor=CENTER)
 
         self.status_label = CTkLabel(
             left_frame, text="Estatus: en espera", font=self.FONT
         )
-        self.status_label.place(relwidth=0.5, relx=0.25, rely=0.75)
+        self.status_label.place(relwidth=0.5, relx=0.25, rely=0.8)
 
         self.server_status_icon = CTkLabel(
             left_frame, image=self.server_off_img, text=""
         )
-        self.server_status_icon.place(relx=0.5, rely=0.85, anchor="center")
+        self.server_status_icon.place(relx=0.5, rely=0.9, anchor="center")
 
     def setup_right_frame(self, parent):
         right_frame = CTkFrame(parent)
@@ -268,7 +269,11 @@ class ChatApplication:
         self.config_entries = {}
         row_index = 0
         for key, value in self.config_data.items():
-            label = CTkLabel(self.settings_window, text=key)
+            label = CTkLabel(
+                self.settings_window,
+                text=LABEL_TRANSLATIONS.get(key, key),
+                font=self.FONT,
+            )
             label.grid(row=row_index, column=0, padx=10, pady=10)
 
             if key == "APPEARANCE":
@@ -276,6 +281,7 @@ class ChatApplication:
                     self.settings_window,
                     values=list(APPEARANCE_OPTIONS.keys()),
                     font=self.FONT,
+                    width=150,
                 )
                 entry.set(next(k for k, v in APPEARANCE_OPTIONS.items() if v == value))
             elif key == "COLOR_THEME":
@@ -283,10 +289,19 @@ class ChatApplication:
                     self.settings_window,
                     values=list(COLOR_THEME_OPTIONS.keys()),
                     font=self.FONT,
+                    width=150,
                 )
                 entry.set(next(k for k, v in COLOR_THEME_OPTIONS.items() if v == value))
+            elif key == "FAMILY_FONT":
+                entry = CTkOptionMenu(
+                    self.settings_window,
+                    values=FONT_OPTIONS,
+                    font=self.FONT,
+                    width=150,
+                )
+                entry.set(value)
             else:
-                entry = CTkEntry(self.settings_window, width=200, font=self.FONT)
+                entry = CTkEntry(self.settings_window, width=150, font=self.FONT)
                 entry.insert(0, str(value))
 
             entry.grid(row=row_index, column=1, padx=10, pady=10)
@@ -294,7 +309,10 @@ class ChatApplication:
             row_index += 1
 
         save_button = CTkButton(
-            self.settings_window, text="Guardar", command=self.save_config
+            self.settings_window,
+            text="Guardar",
+            command=self.save_config,
+            font=self.FONT,
         )
         save_button.grid(row=row_index, columnspan=2, padx=10, pady=10)
 
