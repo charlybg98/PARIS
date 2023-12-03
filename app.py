@@ -51,12 +51,15 @@ class ChatApplication:
         self.server_status_icon.configure(
             image=self.server_on_img if server_available else self.server_off_img
         )
+        self.msg_entry.configure(placeholder_text="Deshabilitado")
 
         self.msg_entry.configure(state=NORMAL if server_available else DISABLED)
 
         if not server_available:
             self.insert_message(
-                "Actualmente no es posible establecer conexión con el Jetson Nano. Por favor, contacta al profesor o al responsable técnico para informar sobre esta situación y recibir asistencia adicional.",
+                "Actualmente no es posible establecer conexión con el Jetson \
+                Nano. Por favor, contacta al profesor o al responsable técnico \
+                para informar sobre esta situación y recibir asistencia adicional.",
                 "Bot",
                 is_user=False,
             )
@@ -83,10 +86,11 @@ class ChatApplication:
         settings_button = CTkButton(
             left_frame,
             image=self.settings_icon,
-            text="Configuración",
+            text="Ajustes",
             command=self.open_settings_window,
+            font=self.FONT,
         )
-        settings_button.place(relwidth=0.6, rely=0.02, relx=0.02)
+        settings_button.place(relwidth=0.4, rely=0.02, relx=0.02)
 
         self.assistant_icon = CTkLabel(
             left_frame, image=self.assistant_icon_img, text=""
@@ -177,8 +181,17 @@ class ChatApplication:
         self.load_images()
         self.setup_left_frame(self.window)
         self.setup_right_frame(self.window)
-
         self.check_server_and_update_ui()
+        self.insert_message(
+            msg="¡Bienvenido! Soy tu asistente de aprendizaje, aquí para ayudarte con \
+                retroalimentación útil, responder tus preguntas y guiarte en tu camino educativo. \
+                Ya sea que necesites aclarar dudas, buscar consejos o simplemente explorar nuevos \
+                conceptos, estoy aquí para apoyarte. Mi objetivo es hacer tu experiencia de aprendizaje \
+                lo más enriquecedora y amena posible. No dudes en preguntar lo que necesites, ¡estoy \
+                aquí para ayudarte en cada paso de tu viaje educativo!",
+            sender="Bot",
+            is_user=False,
+        )
 
     def on_click(self, x, y, button, pressed):
         global user_id
