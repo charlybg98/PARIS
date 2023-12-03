@@ -51,9 +51,6 @@ class ChatApplication:
         self.server_status_icon.configure(
             image=self.server_on_img if server_available else self.server_off_img
         )
-        self.msg_entry.configure(
-            placeholder_text="Escribe aquí" if server_available else "Deshabilitado"
-        )
         self.msg_entry.configure(state=NORMAL if server_available else DISABLED)
 
         self.retry_button.configure(state=DISABLED if server_available else NORMAL)
@@ -79,10 +76,10 @@ class ChatApplication:
             light_image=Image.open("resources/images/help_icon.png"), size=(20, 20)
         )
         self.server_on_img = CTkImage(
-            light_image=Image.open("resources/images/bulb_green.png")
+            light_image=Image.open("resources/images/bulb_green.png"), size=(30, 30)
         )
         self.server_off_img = CTkImage(
-            light_image=Image.open("resources/images/bulb_red.png")
+            light_image=Image.open("resources/images/bulb_red.png"), size=(30, 30)
         )
 
     def setup_left_frame(self, parent):
@@ -96,7 +93,7 @@ class ChatApplication:
             command=self.open_settings_window,
             font=self.FONT,
         )
-        settings_button.place(relwidth=0.4, rely=0.02, relx=0.05)
+        settings_button.place(relwidth=0.4, rely=0.05, relx=0.05)
 
         help_button = CTkButton(
             left_frame,
@@ -105,35 +102,35 @@ class ChatApplication:
             command=self.open_help_window,
             font=self.FONT,
         )
-        help_button.place(relwidth=0.4, rely=0.02, relx=0.55)
+        help_button.place(relwidth=0.4, rely=0.05, relx=0.55)
 
         self.assistant_icon = CTkLabel(
             left_frame, image=self.assistant_icon_img, text=""
         )
-        self.assistant_icon.place(relx=0.25, rely=0.1, relwidth=0.5)
+        self.assistant_icon.place(relx=0.25, rely=0.15, relwidth=0.5)
 
         left_label = CTkLabel(left_frame, text="Toma de datos", font=self.FONT_BOLD)
-        left_label.place(relwidth=1, rely=0.3)
+        left_label.place(relwidth=1, rely=0.35)
 
         self.entry_name = CTkEntry(
             left_frame, font=self.FONT, placeholder_text="Tu nombre"
         )
-        self.entry_name.place(relwidth=0.5, rely=0.4, relx=0.25)
+        self.entry_name.place(relwidth=0.5, rely=0.45, relx=0.25)
 
         self.entry_id = CTkEntry(
             left_frame, font=self.FONT, placeholder_text="Tu matrícula"
         )
-        self.entry_id.place(relwidth=0.5, rely=0.47, relx=0.25)
+        self.entry_id.place(relwidth=0.5, rely=0.52, relx=0.25)
 
         start_button = CTkButton(
             left_frame, text="Iniciar", command=self.start_rec, font=self.FONT
         )
-        start_button.place(relx=0.3, rely=0.6, relwidth=0.35, anchor=CENTER)
+        start_button.place(relx=0.3, rely=0.65, relwidth=0.35, anchor=CENTER)
 
         stop_button = CTkButton(
             left_frame, text="Parar", command=self.stop_rec, font=self.FONT
         )
-        stop_button.place(relx=0.7, rely=0.6, relwidth=0.35, anchor=CENTER)
+        stop_button.place(relx=0.7, rely=0.65, relwidth=0.35, anchor=CENTER)
 
         self.status_label = CTkLabel(
             left_frame, text="Estatus: en espera", font=self.FONT
@@ -143,7 +140,7 @@ class ChatApplication:
         self.server_status_icon = CTkLabel(
             left_frame, image=self.server_off_img, text=""
         )
-        self.server_status_icon.place(relx=0.5, rely=0.9, anchor="center")
+        self.server_status_icon.place(relx=0.8, rely=0.9)
 
         self.retry_button = CTkButton(
             left_frame,
@@ -151,7 +148,7 @@ class ChatApplication:
             command=self.check_server_and_update_ui,
             font=self.FONT,
         )
-        self.retry_button.place(relx=0.5, rely=0.95, anchor="center")
+        self.retry_button.place(relx=0.1, rely=0.9)
 
     def setup_right_frame(self, parent):
         right_frame = CTkFrame(parent)
