@@ -219,7 +219,9 @@ class ChatApplication:
             user_msg = f"{sender}: {msg}\n\n"
             self.text_widget.configure(state=NORMAL)
             self.text_widget.insert(
-                END, format_justified_text(user_msg, LINE_WIDTH) + "\n\n"
+                END,
+                format_justified_text(user_msg, LINE_WIDTH, len(user_name) + 2)
+                + "\n\n",
             )
 
         bot_response = (

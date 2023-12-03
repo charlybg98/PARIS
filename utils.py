@@ -12,13 +12,14 @@ user_id = ""
 
 
 ###################################### Functions ######################################
-def format_justified_text(text, line_width):
+def format_justified_text(text, line_width, user_len=5):
     """
-    Formats the given text into a justified format.
+    Formats the given text into a justified format, considering the length of the user's name.
 
     Args:
         text (str): The text to be formatted.
         line_width (int): The maximum width of each line in characters.
+        user_len (int): The length to subtract from the line width for the first line.
 
     Returns:
         str: The formatted text.
@@ -26,15 +27,39 @@ def format_justified_text(text, line_width):
     words = text.split()
     formatted_lines = []
     current_line = []
+    is_first_line = True
+
+    def justify_line(line, width):
+        if len(line) == 1:
+            return line[0]
+        spaces_needed = width - sum(len(word) for word in line)
+        spaces_between_words = spaces_needed // (len(line) - 1)
+        extra_spaces = spaces_needed % (len(line) - 1)
+
+        justified_line = ""
+        for i, word in enumerate(line[:-1]):
+            justified_line += word + " " * (
+                spaces_between_words + (1 if i < extra_spaces else 0)
+            )
+        justified_line += line[-1]
+
+        return justified_line
 
     for word in words:
-        if len(" ".join(current_line + [word])) > line_width:
-            formatted_lines.append(" ".join(current_line))
+        if (
+            is_first_line
+            and len(" ".join(current_line + [word])) > line_width - user_len
+        ):
+            formatted_lines.append(justify_line(current_line, line_width - user_len))
+            current_line = [word]
+            is_first_line = False
+        elif not is_first_line and len(" ".join(current_line + [word])) > line_width:
+            formatted_lines.append(justify_line(current_line, line_width))
             current_line = [word]
         else:
             current_line.append(word)
 
-    if current_line:
+    if current_line:  # Add the last line without justification
         formatted_lines.append(" ".join(current_line))
 
     return "\n".join(formatted_lines)
