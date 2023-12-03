@@ -59,7 +59,7 @@ def format_justified_text(text, line_width, user_len=5):
         else:
             current_line.append(word)
 
-    if current_line:  # Add the last line without justification
+    if current_line:
         formatted_lines.append(" ".join(current_line))
 
     return "\n".join(formatted_lines)

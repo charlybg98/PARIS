@@ -51,9 +51,12 @@ class ChatApplication:
         self.server_status_icon.configure(
             image=self.server_on_img if server_available else self.server_off_img
         )
-        self.msg_entry.configure(placeholder_text="Deshabilitado")
-
+        self.msg_entry.configure(
+            placeholder_text="Escribe aquí" if server_available else "Deshabilitado"
+        )
         self.msg_entry.configure(state=NORMAL if server_available else DISABLED)
+
+        self.retry_button.configure(state=DISABLED if server_available else NORMAL)
 
         if not server_available:
             self.insert_message(
@@ -71,6 +74,9 @@ class ChatApplication:
         )
         self.settings_icon = CTkImage(
             light_image=Image.open("resources/images/settings_icon.png"), size=(20, 20)
+        )
+        self.help_icon = CTkImage(
+            light_image=Image.open("resources/images/help_icon.png"), size=(20, 20)
         )
         self.server_on_img = CTkImage(
             light_image=Image.open("resources/images/bulb_green.png")
@@ -90,7 +96,16 @@ class ChatApplication:
             command=self.open_settings_window,
             font=self.FONT,
         )
-        settings_button.place(relwidth=0.4, rely=0.02, relx=0.02)
+        settings_button.place(relwidth=0.4, rely=0.02, relx=0.05)
+
+        help_button = CTkButton(
+            left_frame,
+            image=self.help_icon,
+            text="Ayuda",
+            command=self.open_help_window,
+            font=self.FONT,
+        )
+        help_button.place(relwidth=0.4, rely=0.02, relx=0.55)
 
         self.assistant_icon = CTkLabel(
             left_frame, image=self.assistant_icon_img, text=""
@@ -123,12 +138,20 @@ class ChatApplication:
         self.status_label = CTkLabel(
             left_frame, text="Estatus: en espera", font=self.FONT
         )
-        self.status_label.place(relwidth=0.5, relx=0.25, rely=0.8)
+        self.status_label.place(relwidth=1, rely=0.8)
 
         self.server_status_icon = CTkLabel(
             left_frame, image=self.server_off_img, text=""
         )
         self.server_status_icon.place(relx=0.5, rely=0.9, anchor="center")
+
+        self.retry_button = CTkButton(
+            left_frame,
+            text="Reintentar Conexión",
+            command=self.check_server_and_update_ui,
+            font=self.FONT,
+        )
+        self.retry_button.place(relx=0.5, rely=0.95, anchor="center")
 
     def setup_right_frame(self, parent):
         right_frame = CTkFrame(parent)
@@ -330,6 +353,49 @@ class ChatApplication:
             font=self.FONT,
         )
         save_button.grid(row=row_index, columnspan=2, padx=10, pady=10)
+
+    def open_help_window(self):
+        help_window = CTkToplevel(self.window)
+        help_window.title("Ayuda y Soporte")
+        help_window.configure(width=400, height=300)
+        help_window.resizable(width=False, height=False)
+
+        CTkLabel(help_window, text="Consejos", font=self.FONT_BOLD).pack()
+        tips_text = (
+            "Aquí algunos consejos para mejorar tu experiencia con la aplicación:\n\n"
+            "- Revisa bien las preguntas antes de enviarlas para obtener respuestas más precisas.\n"
+            "- Utiliza palabras clave relevantes para tu duda o tema de interés.\n"
+            "- Experimenta con distintas funcionalidades para descubrir todo lo que la aplicación puede ofrecerte.\n"
+        )
+        CTkLabel(help_window, text=tips_text, font=self.FONT, justify="left").pack()
+
+        CTkLabel(
+            help_window, text="Acerca de la Aplicación", font=self.FONT_BOLD
+        ).pack()
+        about_text = (
+            "Versión: 1.0\n"
+            "Desarrollado por Carlos Alberto Bustamante Gaytán.\n"
+            "Este asistente está diseñado para facilitar tu aprendizaje y mejorar tu productividad.\n"
+        )
+        CTkLabel(help_window, text=about_text, font=self.FONT, justify="left").pack()
+
+        CTkLabel(help_window, text="Contacto", font=self.FONT_BOLD).pack()
+        contact_text = "Si tienes alguna duda o comentario, puedes escribirme a: contact@charlyfive.com\n"
+        CTkLabel(help_window, text=contact_text, font=self.FONT, justify="left").pack()
+
+        CTkLabel(help_window, text="Inicio Rápido", font=self.FONT_BOLD).pack()
+        quick_start_text = (
+            "Para comenzar a usar la aplicación, simplemente introduce tu nombre y matrícula, y pulsa 'Iniciar'.\n"
+            "Si necesitas asistencia o tienes alguna pregunta, utiliza la función de chat.\n"
+        )
+        CTkLabel(
+            help_window, text=quick_start_text, font=self.FONT, justify="left"
+        ).pack()
+
+        close_button = CTkButton(
+            help_window, text="Cerrar", command=help_window.destroy
+        )
+        close_button.pack()
 
     def save_config(self):
         new_config_data = {}
