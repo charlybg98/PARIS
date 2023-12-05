@@ -20,6 +20,7 @@ from customtkinter import (
 )
 from tkinter import CENTER, DISABLED, NORMAL
 from pynput import mouse
+from plyer import notification
 
 
 ###################################### Main class ######################################
@@ -61,6 +62,17 @@ class ChatApplication:
                 Nano. Por favor, contacta al profesor o al responsable técnico \
                 para informar sobre esta situación y recibir asistencia adicional.",
                 "Bot",
+                is_user=False,
+            )
+        else:
+            self.insert_message(
+                msg="¡Bienvenido! Soy tu asistente de aprendizaje, aquí para ayudarte con \
+                retroalimentación útil, responder tus preguntas y guiarte en tu camino educativo. \
+                Ya sea que necesites aclarar dudas, buscar consejos o simplemente explorar nuevos \
+                conceptos, estoy aquí para apoyarte. Mi objetivo es hacer tu experiencia de aprendizaje \
+                lo más enriquecedora y amena posible. No dudes en preguntar lo que necesites, ¡estoy \
+                aquí para ayudarte en cada paso de tu viaje educativo!",
+                sender="Bot",
                 is_user=False,
             )
 
@@ -202,16 +214,6 @@ class ChatApplication:
         self.setup_left_frame(self.window)
         self.setup_right_frame(self.window)
         self.check_server_and_update_ui()
-        self.insert_message(
-            msg="¡Bienvenido! Soy tu asistente de aprendizaje, aquí para ayudarte con \
-                retroalimentación útil, responder tus preguntas y guiarte en tu camino educativo. \
-                Ya sea que necesites aclarar dudas, buscar consejos o simplemente explorar nuevos \
-                conceptos, estoy aquí para apoyarte. Mi objetivo es hacer tu experiencia de aprendizaje \
-                lo más enriquecedora y amena posible. No dudes en preguntar lo que necesites, ¡estoy \
-                aquí para ayudarte en cada paso de tu viaje educativo!",
-            sender="Bot",
-            is_user=False,
-        )
 
     def on_click(self, x, y, button, pressed):
         global user_id
@@ -226,7 +228,7 @@ class ChatApplication:
         user_name = self.entry_name.get()
         user_id = self.entry_id.get()
         if user_name != "" and user_id != "":
-            self.insert_message(msg, user_name)
+            self.insert_message(msg=msg, sender=user_name)
         else:
             messagebox.showerror("Error", "Introduce tu nombre y matrícula")
 
@@ -255,6 +257,8 @@ class ChatApplication:
         self.text_widget.configure(state=DISABLED)
 
         self.text_widget.see(END)
+
+        self.send_notification("NNGUI")
 
     def start_rec(self):
         """
@@ -423,6 +427,14 @@ class ChatApplication:
 
         with open(config_path, "r") as file:
             return json.load(file)
+
+    def send_notification(self, title):
+        notification.notify(
+            title=title,
+            message="Tienes un nuevo mensaje del asistente.",
+            app_name="NNGUI",
+            app_icon="resources/images/icon.ico",
+        )
 
 
 if __name__ == "__main__":
