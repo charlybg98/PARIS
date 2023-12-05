@@ -1,56 +1,58 @@
-####################################### Imports #######################################
-from utils import HOST, PORT, format_justified_text
+from utils import format_justified_text
 import socket
 import struct
 
 
-###################################### Functions ######################################
-def send_to_server(text_to_send, server_address=("192.168.1.7", 10000)):
+def send_to_server(text_to_send, server_address=('localhost', '10000')):
     """
     Sends the given text to the server for processing and returns the server's response.
 
     Args:
-        text_to_send (str): The text to send to the server.
-        server_address (tuple): A tuple containing the server's IP address and port number.
+        text_to_send (str): The text message to send to the server.
+        server_address (tuple): The server's IP address and port number as a tuple.
 
     Returns:
-        str: The response received from the server.
+        str: The text response received from the server.
     """
-    # Connect to the server
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         sock.connect(server_address)
 
-        # Encode and send the text
-        text_data = text_to_send.encode("utf-8")
+        text_data = text_to_send.encode('utf-8')
         text_length = len(text_data)
-        sock.sendall(struct.pack("!I", text_length))
+        sock.sendall(struct.pack('!I', text_length))
         sock.sendall(text_data)
 
-        # Receive and decode the response
-        response = sock.recv(4096).decode("utf-8")
+        response = sock.recv(4096).decode('utf-8')
         return response
 
+def check_server_availability(host='localhost', port=10000):
+    """
+    Checks the availability of a server at the given host address and port.
 
-def check_server_availability(host, port):
-    """Check if the server is available."""
+    Args:
+        host (str): The IP address of the server to check.
+        port (int): The port number of the server to check.
+
+    Returns:
+        bool: True if the server is available, False otherwise.
+    """
     try:
         with socket.create_connection((host, port), timeout=1):
             return True
     except OSError:
         return False
 
-
 def get_response(question, line_width=40):
     """
-    Modified to send the question to the server, receive the response, and format it.
+    Sends a question to the server, receives the response, and formats it to a specified line width.
 
     Args:
-        question (str): The question to be sent to the server.
-        line_width (int): The maximum width of each line in characters for text formatting.
+        question (str): The question to send to the server.
+        line_width (int): The desired maximum width of each line in characters.
 
     Returns:
         str: The formatted response from the server.
     """
-    response = send_to_server(question, (HOST, PORT))
+    response = send_to_server(question)
     formatted_response = format_justified_text(response, line_width)
     return formatted_response

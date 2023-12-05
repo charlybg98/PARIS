@@ -1,42 +1,19 @@
-####################################### Imports #######################################
 from mss import mss
-from datetime import datetime
-from os import mkdir, path
-from cv2 import imwrite
 from numpy import array
-from pathlib import Path
+from datetime import datetime
 
-###################################### Variables ######################################
-today = datetime.now().date()
-path_to_prog = Path.home() / "Documents"
-
-
-###################################### Functions ######################################
-def screenshot_mss(user: str = None, x: int = None, y: int = None) -> None:
+def screenshot_mss():
     """
-    Function that takes screenshots of the screen and saves the image in the user directory,
-    within the 'Full' folder. The filename includes the x and y coordinates and a timestamp.
-
-    Args:
-        user (string): The name of the user
-        x (int): The x coordinate of the action
-        y (int): The y coordinate of the action
+    Takes a screenshot of the entire screen using the mss library and returns the timestamp
+    at which the screenshot was taken along with the image array.
 
     Returns:
-        stamp time
-        image taken
+        tuple: A tuple containing the timestamp of the screenshot and the image array.
     """
-    if not path.exists(path_to_prog / "NNGUI" / f"{user}"):
-        mkdir(path_to_prog / "NNGUI" / f"{user}")
-    if not path.exists(path_to_prog / "NNGUI" / f"{user}" / f"{today}/"):
-        mkdir(path_to_prog / "NNGUI" / f"{user}" / f"{today}")
-        mkdir(path_to_prog / "NNGUI" / f"{user}" / f"{today}" / "Processed")
+    with mss() as sct:
+        sct_img = sct.grab(sct.monitors[0])
+        img = array(sct_img)[:, :, :3]
 
-    sct = mss()
-    current_time = datetime.now().time()
-    sct_img = sct.grab(sct.monitors[0])
-    img = array(sct_img)[:, :, :3]
-    return (
-        f"{current_time.hour}_{current_time.minute}_{current_time.second}_{current_time.microsecond // 1000}",
-        img,
-    )
+    timestamp = datetime.now().strftime("%H_%M_%S_%f")[:-3]
+
+    return timestamp, img

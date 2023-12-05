@@ -1,7 +1,5 @@
-####################################### Imports #######################################
 from cv2 import (
     imwrite,
-    imread,
     bitwise_and,
     bitwise_not,
     cvtColor,
@@ -13,37 +11,32 @@ from numpy import repeat, zeros, clip, newaxis
 from mss import mss
 from datetime import datetime
 from pathlib import Path
-from os import path
-
-###################################### Variables ######################################
-
-today = datetime.now().date()
-path_to_prog = Path.home() / "Documents"
-height = mss().monitors[0]["height"]
-width = mss().monitors[0]["width"]
-width_to_process = width // 229
-height_to_process = height // 144
-
-###################################### Functions ######################################
 
 
 def processing(
     user: str = None, img_array=None, x=None, y=None, stamp_time: str = None
 ) -> None:
     """
-    Function that processes an image for the current classifier method. Image is saved in the user
-    directory, withing the 'Processed' folder.
+    Processes an image using a specified method and saves the processed image in the user's directory
+    within a 'Processed' folder.
 
     Args:
-        user (string): The name of the user
-        stamp (any): The filename
-        x (any): The x coordinate of the action
-        y (any): The y coordinate of the action
-        stamp_time (string): The stamp time of the action
+        user (str): The name of the user, used for creating a user-specific directory.
+        img_array (numpy.ndarray): The image to process.
+        x (int): The x-coordinate of the action, used for processing.
+        y (int): The y-coordinate of the action, used for processing.
+        stamp_time (str): The timestamp of the action, used in the filename.
 
     Returns:
-        img_result: Image processed
+        numpy.ndarray: The processed image result.
     """
+    today = datetime.now().date()
+    path_to_prog = Path.home() / "Documents"/ "NNGUI"/ f"{user}"/ f"{today}"
+    height = mss().monitors[0]["height"]
+    width = mss().monitors[0]["width"]
+    width_to_process = width // 229
+    height_to_process = height // 144
+
     x = int(x)
     y = int(y)
 
@@ -101,16 +94,7 @@ def processing(
 
     img_result = img_result[top:bottom, left:right]
 
-    imwrite(
-        str(
-            path_to_prog
-            / "NNGUI"
-            / f"{user}"
-            / f"{today}"
-            / "Processed"
-            / f"{stamp_time}.png"
-        ),
-        img_result,
-    )
+    filename = path_to_prog / "Processed" / f"{stamp_time}.png"
+    imwrite(str(filename), img_result)
 
     return img_result

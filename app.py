@@ -1,4 +1,3 @@
-####################################### Imports #######################################
 from utils import *
 from network import *
 from processor import *
@@ -17,13 +16,43 @@ from customtkinter import (
     CTkTextbox,
     CTkToplevel,
     END,
+    set_appearance_mode,
+    set_default_color_theme,
 )
 from tkinter import CENTER, DISABLED, NORMAL
 from pynput import mouse
 from plyer import notification
 
+user_name = ""
+user_id = ""
+config_data = read_config("config/config.json")
 
-###################################### Main class ######################################
+FAMILY_FONT = config_data["FAMILY_FONT"]
+FONT_SIZE = config_data["FONT_SIZE"]
+FONT_BOLD_SIZE = config_data["FONT_BOLD_SIZE"]
+APPEARANCE = config_data["APPEARANCE"]
+COLOR_THEME = config_data["COLOR_THEME"]
+LINE_WIDTH = config_data["LINE_WIDTH"]
+HOST = config_data["HOST"]
+PORT = config_data["PORT"]
+
+set_appearance_mode(APPEARANCE)
+set_default_color_theme(COLOR_THEME)
+
+APPEARANCE_OPTIONS = {"Claro": "light", "Oscuro": "dark", "Sistema": "system"}
+COLOR_THEME_OPTIONS = {"Azul": "blue", "Azul oscuro": "dark-blue", "Verde": "green"}
+FONT_OPTIONS = ["Open Sans", "Arial", "Verdana", "Courier"]
+LABEL_TRANSLATIONS = {
+    "FAMILY_FONT": "Fuente",
+    "FONT_SIZE": "Tamaño de fuente",
+    "FONT_BOLD_SIZE": "Tamaño de Fuente en Negrita",
+    "APPEARANCE": "Modo de apariencia",
+    "COLOR_THEME": "Tema de Color",
+    "LINE_WIDTH": "Ancho de línea",
+    "HOST": "Dirección del Servidor",
+    "PORT": "Puerto",
+}
+
 class ChatApplication:
     """
     Class that provides GUI for the project
@@ -218,7 +247,7 @@ class ChatApplication:
     def on_click(self, x, y, button, pressed):
         global user_id
         if pressed:
-            stamp_time, img_array = screenshot_mss(user_id, x, y)
+            stamp_time, img_array = screenshot_mss()
             img_processed = processing(user_id, img_array, x, y, stamp_time)
 
     def on_enter_pressed(self, event):
@@ -228,6 +257,7 @@ class ChatApplication:
         user_name = self.entry_name.get()
         user_id = self.entry_id.get()
         if user_name != "" and user_id != "":
+            path_initialization(user_id)
             self.insert_message(msg=msg, sender=user_name)
         else:
             messagebox.showerror("Error", "Introduce tu nombre y matrícula")
@@ -269,6 +299,7 @@ class ChatApplication:
         user_id = self.entry_id.get()
         user_name = self.entry_name.get()
         if user_name != "" and user_id != "":
+            path_initialization(user_id)
             self.listener = mouse.Listener(on_click=self.on_click)
             self.listener.start()
             self.entry_name.configure(state=DISABLED)

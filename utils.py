@@ -1,17 +1,24 @@
-####################################### Imports #######################################
-from customtkinter import set_appearance_mode, set_default_color_theme
 from os import path, mkdir
 from pathlib import Path
 from tkinter import messagebox
+from datetime import datetime
+from pathlib import Path
 import json
 
-###################################### Variables ######################################
-path_to_prog = Path.home() / "Documents"
-user_name = ""
-user_id = ""
+def path_initialization(user: str=None):
 
+    path_to_prog = Path.home() / "Documents"
+    today = datetime.now().date()
 
-###################################### Functions ######################################
+    if not path.exists(path_to_prog / "NNGUI"):
+        mkdir(path_to_prog / "NNGUI")
+    if not path.exists(path_to_prog / "NNGUI" / f"{user}"):
+        mkdir(path_to_prog / "NNGUI" / f"{user}")
+    if not path.exists(path_to_prog / "NNGUI" / f"{user}" / f"{today}/"):
+        mkdir(path_to_prog / "NNGUI" / f"{user}" / f"{today}")
+        mkdir(path_to_prog / "NNGUI" / f"{user}" / f"{today}" / "Processed")
+    
+
 def format_justified_text(text, line_width, user_len=5):
     """
     Formats the given text into a justified format, considering the length of the user's name.
@@ -107,37 +114,3 @@ def read_config(filename: str = None) -> dict:
     data["PORT"] = int(data.get("PORT", 10000))
 
     return data
-
-
-##################################### Initialization #####################################
-
-if not path.exists(path_to_prog / "NNGUI"):
-    mkdir(path_to_prog / "NNGUI")
-
-config_data = read_config("config/config.json")
-
-FAMILY_FONT = config_data["FAMILY_FONT"]
-FONT_SIZE = config_data["FONT_SIZE"]
-FONT_BOLD_SIZE = config_data["FONT_BOLD_SIZE"]
-APPEARANCE = config_data["APPEARANCE"]
-COLOR_THEME = config_data["COLOR_THEME"]
-LINE_WIDTH = config_data["LINE_WIDTH"]
-HOST = config_data["HOST"]
-PORT = config_data["PORT"]
-
-set_appearance_mode(APPEARANCE)
-set_default_color_theme(COLOR_THEME)
-
-APPEARANCE_OPTIONS = {"Claro": "light", "Oscuro": "dark", "Sistema": "system"}
-COLOR_THEME_OPTIONS = {"Azul": "blue", "Azul oscuro": "dark-blue", "Verde": "green"}
-FONT_OPTIONS = ["Open Sans", "Arial", "Verdana", "Courier"]
-LABEL_TRANSLATIONS = {
-    "FAMILY_FONT": "Fuente",
-    "FONT_SIZE": "Tamaño de fuente",
-    "FONT_BOLD_SIZE": "Tamaño de Fuente en Negrita",
-    "APPEARANCE": "Modo de apariencia",
-    "COLOR_THEME": "Tema de Color",
-    "LINE_WIDTH": "Ancho de línea",
-    "HOST": "Dirección del Servidor",
-    "PORT": "Puerto",
-}
