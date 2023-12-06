@@ -53,6 +53,7 @@ LABEL_TRANSLATIONS = {
     "PORT": "Puerto",
 }
 
+
 class ChatApplication:
     """
     Class that provides GUI for the project

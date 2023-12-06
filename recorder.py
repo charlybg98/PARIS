@@ -2,6 +2,7 @@ from mss import mss
 from numpy import array
 from datetime import datetime
 
+
 def screenshot_mss():
     """
     Takes a screenshot of the entire screen using the mss library and returns the timestamp

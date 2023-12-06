@@ -3,7 +3,7 @@ import socket
 import struct
 
 
-def send_to_server(text_to_send, server_address=('localhost', '10000')):
+def send_to_server(text_to_send, server_address=("localhost", "10000")):
     """
     Sends the given text to the server for processing and returns the server's response.
 
@@ -17,15 +17,16 @@ def send_to_server(text_to_send, server_address=('localhost', '10000')):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         sock.connect(server_address)
 
-        text_data = text_to_send.encode('utf-8')
+        text_data = text_to_send.encode("utf-8")
         text_length = len(text_data)
-        sock.sendall(struct.pack('!I', text_length))
+        sock.sendall(struct.pack("!I", text_length))
         sock.sendall(text_data)
 
-        response = sock.recv(4096).decode('utf-8')
+        response = sock.recv(4096).decode("utf-8")
         return response
 
-def check_server_availability(host='localhost', port=10000):
+
+def check_server_availability(host="localhost", port=10000):
     """
     Checks the availability of a server at the given host address and port.
 
@@ -41,6 +42,7 @@ def check_server_availability(host='localhost', port=10000):
             return True
     except OSError:
         return False
+
 
 def get_response(question, line_width=40):
     """

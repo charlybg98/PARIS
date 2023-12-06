@@ -31,7 +31,7 @@ def processing(
         numpy.ndarray: The processed image result.
     """
     today = datetime.now().date()
-    path_to_prog = Path.home() / "Documents"/ "NNGUI"/ f"{user}"/ f"{today}"
+    path_to_prog = Path.home() / "Documents" / "NNGUI" / f"{user}" / f"{today}"
     height = mss().monitors[0]["height"]
     width = mss().monitors[0]["width"]
     width_to_process = width // 229

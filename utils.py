@@ -5,8 +5,8 @@ from datetime import datetime
 from pathlib import Path
 import json
 
-def path_initialization(user: str=None):
 
+def path_initialization(user: str = None):
     path_to_prog = Path.home() / "Documents"
     today = datetime.now().date()
 
@@ -17,7 +17,7 @@ def path_initialization(user: str=None):
     if not path.exists(path_to_prog / "NNGUI" / f"{user}" / f"{today}/"):
         mkdir(path_to_prog / "NNGUI" / f"{user}" / f"{today}")
         mkdir(path_to_prog / "NNGUI" / f"{user}" / f"{today}" / "Processed")
-    
+
 
 def format_justified_text(text, line_width, user_len=5):
     """
