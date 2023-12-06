@@ -65,6 +65,9 @@ class ChatApplication:
         """
         self.window = CTk()
         self.FONT = CTkFont(family=FAMILY_FONT, size=int(FONT_SIZE), weight="normal")
+        self.FONT_CHAT = CTkFont(
+            family=FAMILY_FONT, size=int(FONT_SIZE) + 2, weight="normal"
+        )
         self.FONT_BOLD = CTkFont(
             family=FAMILY_FONT, size=int(FONT_BOLD_SIZE), weight="bold"
         )
@@ -91,7 +94,7 @@ class ChatApplication:
                 "Actualmente no es posible establecer conexión con el Jetson \
                 Nano. Por favor, contacta al profesor o al responsable técnico \
                 para informar sobre esta situación y recibir asistencia adicional.",
-                "Bot",
+                "PARIS",
                 is_user=False,
             )
         else:
@@ -102,7 +105,7 @@ class ChatApplication:
                 conceptos, estoy aquí para apoyarte. Mi objetivo es hacer tu experiencia de aprendizaje \
                 lo más enriquecedora y amena posible. No dudes en preguntar lo que necesites, ¡estoy \
                 aquí para ayudarte en cada paso de tu viaje educativo!",
-                sender="Bot",
+                sender="PARIS",
                 is_user=False,
             )
 
@@ -201,7 +204,7 @@ class ChatApplication:
         line.place(relwidth=1, rely=0.07, relheight=0.012)
 
         self.text_widget = CTkTextbox(
-            right_frame, width=20, height=2, font=self.FONT, padx=5, pady=5
+            right_frame, width=20, height=2, font=self.FONT_CHAT, padx=5, pady=5
         )
         self.text_widget.place(relheight=0.745, relwidth=1, rely=0.08)
         self.text_widget.configure(cursor="arrow", state=DISABLED)
@@ -233,7 +236,7 @@ class ChatApplication:
         """
         Window setup
         """
-        self.window.title("NNGUI")
+        self.window.title("PARIS")
         self.icon_image = ImageTk.PhotoImage(Image.open("resources/images/icon.ico"))
         self.window.iconbitmap()
         self.window.iconphoto(True, self.icon_image)
@@ -269,7 +272,7 @@ class ChatApplication:
 
         if is_user:
             self.msg_entry.delete(0, END)
-            user_msg = f"{sender}: {msg}\n\n"
+            user_msg = f"{sender.upper()}: {msg}\n\n"
             self.text_widget.configure(state=NORMAL)
             self.text_widget.insert(
                 END,
@@ -282,14 +285,14 @@ class ChatApplication:
             if is_user
             else format_justified_text(msg, LINE_WIDTH)
         )
-        bot_msg = f"{'Bot'}: {bot_response}\n\n"
+        bot_msg = f"{'PARIS'}: {bot_response}\n\n"
         self.text_widget.configure(state=NORMAL)
         self.text_widget.insert(END, bot_msg)
         self.text_widget.configure(state=DISABLED)
 
         self.text_widget.see(END)
 
-        self.send_notification("NNGUI")
+        self.send_notification("PARIS")
 
     def start_rec(self):
         """
@@ -464,7 +467,7 @@ class ChatApplication:
         notification.notify(
             title=title,
             message="Tienes un nuevo mensaje del asistente.",
-            app_name="NNGUI",
+            app_name="PARIS",
             app_icon="resources/images/icon.ico",
         )
 

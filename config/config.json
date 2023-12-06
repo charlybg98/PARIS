@@ -2,9 +2,9 @@
     "FAMILY_FONT": "Courier",
     "FONT_SIZE": "12",
     "FONT_BOLD_SIZE": "16",
-    "APPEARANCE": "dark",
+    "APPEARANCE": "light",
     "COLOR_THEME": "green",
-    "LINE_WIDTH": "55",
+    "LINE_WIDTH": "50",
     "HOST": "192.168.1.7",
     "PORT": "10000"
 }

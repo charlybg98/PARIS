@@ -19,7 +19,7 @@ def path_initialization(user: str = None):
         mkdir(path_to_prog / "NNGUI" / f"{user}" / f"{today}" / "Processed")
 
 
-def format_justified_text(text, line_width, user_len=5):
+def format_justified_text(text, line_width, user_len=7):
     """
     Formats the given text into a justified format, considering the length of the user's name.
 
