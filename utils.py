@@ -10,13 +10,29 @@ def path_initialization(user: str = None):
     path_to_prog = Path.home() / "Documents"
     today = datetime.now().date()
 
-    if not path.exists(path_to_prog / "NNGUI"):
-        mkdir(path_to_prog / "NNGUI")
-    if not path.exists(path_to_prog / "NNGUI" / f"{user}"):
-        mkdir(path_to_prog / "NNGUI" / f"{user}")
-    if not path.exists(path_to_prog / "NNGUI" / f"{user}" / f"{today}/"):
-        mkdir(path_to_prog / "NNGUI" / f"{user}" / f"{today}")
-        mkdir(path_to_prog / "NNGUI" / f"{user}" / f"{today}" / "Processed")
+    if not path.exists(path_to_prog / "PARIS"):
+        mkdir(path_to_prog / "PARIS")
+        mkdir(path_to_prog / "PARIS" / "logs")
+    if not path.exists(path_to_prog / "PARIS" / f"{user}"):
+        mkdir(path_to_prog / "PARIS" / f"{user}")
+    if not path.exists(path_to_prog / "PARIS" / f"{user}" / f"{today}/"):
+        mkdir(path_to_prog / "PARIS" / f"{user}" / f"{today}")
+        mkdir(path_to_prog / "PARIS" / f"{user}" / f"{today}" / "Processed")
+
+
+def save_unanswered_question(question):
+    """
+    Saves the unanswered question in a log file.
+
+    Args:
+    question (str): The unanswered question.
+    """
+    path_to_save = Path.home() / "Documents" / "PARIS" / "logs" / "log.txt"
+    try:
+        with open(path_to_save, "a", encoding="utf-8") as file:
+            file.write(question + "\n")
+    except IOError as e:
+        print(f"Error al escribir en el archivo: {e}")
 
 
 def format_justified_text(text, line_width, user_len=7):

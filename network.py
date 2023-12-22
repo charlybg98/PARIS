@@ -1,4 +1,4 @@
-from utils import format_justified_text
+from utils import format_justified_text, save_unanswered_question
 import socket
 import struct
 
@@ -56,5 +56,11 @@ def get_response(question, line_width=40):
         str: The formatted response from the server.
     """
     response = send_to_server(question)
+    if (
+        response
+        == "En este momento, no dispongo de la información \
+        suficiente para proporcionar una respuesta precisa."
+    ):
+        save_unanswered_question(question)
     formatted_response = format_justified_text(response, line_width)
     return formatted_response
