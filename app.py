@@ -3,6 +3,7 @@ from network import *
 from processor import *
 from recorder import *
 from chatbot_engine import *
+from section_classifier import *
 from PIL import ImageTk, Image
 from customtkinter import (
     CTk,
@@ -26,6 +27,8 @@ from plyer import notification
 
 user_name = ""
 user_id = ""
+section_classifier = 0
+current_section = 0
 config_data = read_config("config/config.json")
 warmup_inferences()
 
@@ -253,13 +256,15 @@ class ChatApplication:
         self.check_server_and_update_ui()
 
     def on_click(self, x, y, button, pressed):
-        global user_id
+        global user_id, section_classifier, current_section
         if pressed:
             stamp_time, img_array = screenshot_mss()
             img_processed = processing(user_id, img_array, x, y, stamp_time)
             label_int = send_image_array_to_server(
                 img_processed, server_address=(HOST, PORT)
             )
+            section_classifier.update_label_int(label_int)
+            current_section = section_classifier.apply_heuristic_rules()
 
     def on_enter_pressed(self, event):
         global user_name
@@ -305,12 +310,12 @@ class ChatApplication:
         """
         Method that starts screen recording.
         """
-        global user_name
-        global user_id
+        global user_name, user_id, section_classifier
         user_id = self.entry_id.get()
         user_name = self.entry_name.get()
         if user_name != "" and user_id != "":
             path_initialization(user_id)
+            section_classifier = SectionClassifier(window_size=10)
             self.listener = mouse.Listener(on_click=self.on_click)
             self.listener.start()
             self.entry_name.configure(state=DISABLED)
