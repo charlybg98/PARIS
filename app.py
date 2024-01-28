@@ -24,11 +24,11 @@ from customtkinter import (
 from tkinter import CENTER, DISABLED, NORMAL
 from pynput import mouse
 from plyer import notification
+import time
 
 user_name = ""
 user_id = ""
 section_classifier = 0
-current_section = 0
 config_data = read_config("config/config.json")
 warmup_inferences()
 
@@ -68,6 +68,9 @@ class ChatApplication:
         """
         initialized values for the GUI
         """
+        self.last_click_time = None
+        self.section_start_time = None
+        self.current_section = 0
         self.window = CTk()
         self.FONT = CTkFont(family=FAMILY_FONT, size=int(FONT_SIZE), weight="normal")
         self.FONT_CHAT = CTkFont(
@@ -256,7 +259,7 @@ class ChatApplication:
         self.check_server_and_update_ui()
 
     def on_click(self, x, y, button, pressed):
-        global user_id, section_classifier, current_section
+        global user_id, section_classifier
         if pressed:
             stamp_time, img_array = screenshot_mss()
             img_processed = processing(user_id, img_array, x, y, stamp_time)
@@ -264,8 +267,29 @@ class ChatApplication:
                 img_processed, server_address=(HOST, PORT)
             )
             section_classifier.update_label_int(label_int)
-            current_section = section_classifier.apply_heuristic_rules()
+            new_section = section_classifier.apply_heuristic_rules()
 
+            if new_section != self.current_section:
+                self.section_start_time = time.time()
+                self.current_section = new_section
+
+            time_in_current_section = time.time() - self.section_start_time
+
+            time_since_last_click = time.time() - self.last_click_time
+            self.last_click_time = time.time()
+
+            self.check_time_thresholds(time_in_current_section, time_since_last_click)
+
+    def check_time_thresholds(self, time_in_section, time_between_clicks):
+        section_time_threshold = 300
+        click_time_threshold = 60
+
+        if time_in_section > section_time_threshold:
+           self.insert_message("Has pasado mucho tiempo en esta sección.", sender="PARIS", is_user=False)
+
+        if time_between_clicks > click_time_threshold:
+            self.insert_message("Ha pasado mucho tiempo desde tu último click.", sender="PARIS", is_user=False)
+    
     def on_enter_pressed(self, event):
         global user_name
         global user_id
@@ -315,6 +339,8 @@ class ChatApplication:
         user_name = self.entry_name.get()
         if user_name != "" and user_id != "":
             path_initialization(user_id)
+            self.section_start_time = time.time()
+            self.last_click_time = self.section_start_time
             section_classifier = SectionClassifier(window_size=10)
             self.listener = mouse.Listener(on_click=self.on_click)
             self.listener.start()
