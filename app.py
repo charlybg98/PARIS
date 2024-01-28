@@ -87,9 +87,11 @@ class ChatApplication:
         self.server_status_icon.configure(
             image=self.server_on_img if server_available else self.server_off_img
         )
-        self.msg_entry.configure(state=NORMAL if server_available else DISABLED)
-
         self.retry_button.configure(state=DISABLED if server_available else NORMAL)
+
+        self.start_button.configure(state=NORMAL if server_available else DISABLED)
+        self.stop_button.configure(state=NORMAL if server_available else DISABLED)
+        self.send_button.configure(state=NORMAL if server_available else DISABLED)
 
         if not server_available:
             self.insert_message(
@@ -169,15 +171,15 @@ class ChatApplication:
         )
         self.entry_id.place(relwidth=0.5, rely=0.52, relx=0.25)
 
-        start_button = CTkButton(
+        self.start_button = CTkButton(
             left_frame, text="Iniciar", command=self.start_rec, font=self.FONT
         )
-        start_button.place(relx=0.3, rely=0.65, relwidth=0.35, anchor=CENTER)
+        self.start_button.place(relx=0.3, rely=0.65, relwidth=0.35, anchor=CENTER)
 
-        stop_button = CTkButton(
+        self.stop_button = CTkButton(
             left_frame, text="Parar", command=self.stop_rec, font=self.FONT
         )
-        stop_button.place(relx=0.7, rely=0.65, relwidth=0.35, anchor=CENTER)
+        self.stop_button.place(relx=0.7, rely=0.65, relwidth=0.35, anchor=CENTER)
 
         self.status_label = CTkLabel(
             left_frame, text="Estatus: en espera", font=self.FONT
@@ -225,14 +227,14 @@ class ChatApplication:
         self.msg_entry.focus()
         self.msg_entry.bind("<Return>", self.on_enter_pressed)
 
-        send_button = CTkButton(
+        self.send_button = CTkButton(
             bottom_label,
             text="Enviar",
             font=self.FONT_BOLD,
             width=20,
             command=lambda: self.on_enter_pressed(None),
         )
-        send_button.place(relx=0.77, rely=0.2, relheight=0.8, relwidth=0.22)
+        self.send_button.place(relx=0.77, rely=0.2, relheight=0.8, relwidth=0.22)
 
     def setup_main_window(self):
         """
