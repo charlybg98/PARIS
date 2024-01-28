@@ -2,6 +2,7 @@ from utils import *
 from network import *
 from processor import *
 from recorder import *
+from chatbot_engine import *
 from PIL import ImageTk, Image
 from customtkinter import (
     CTk,
@@ -26,6 +27,7 @@ from plyer import notification
 user_name = ""
 user_id = ""
 config_data = read_config("config/config.json")
+warmup_inferences()
 
 FAMILY_FONT = config_data["FAMILY_FONT"]
 FONT_SIZE = config_data["FONT_SIZE"]
@@ -253,6 +255,9 @@ class ChatApplication:
         if pressed:
             stamp_time, img_array = screenshot_mss()
             img_processed = processing(user_id, img_array, x, y, stamp_time)
+            label_int = send_image_array_to_server(
+                img_processed, server_address=(HOST, PORT)
+            )
 
     def on_enter_pressed(self, event):
         global user_name
