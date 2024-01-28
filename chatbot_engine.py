@@ -1,7 +1,6 @@
 import tensorflow as tf
 from transformers import AlbertTokenizer, TFAlbertForSequenceClassification
 import json
-from os.path import join
 from utils import format_justified_text, save_unanswered_question
 
 MAX_LENGTH = 35

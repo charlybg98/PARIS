@@ -1,0 +1,60 @@
+{
+  "added_tokens_decoder": {
+    "0": {
+      "content": "<pad>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": false
+    },
+    "1": {
+      "content": "<unk>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": false
+    },
+    "2": {
+      "content": "[CLS]",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": false
+    },
+    "3": {
+      "content": "[SEP]",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": false
+    },
+    "4": {
+      "content": "[MASK]",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": false
+    }
+  },
+  "additional_special_tokens": [],
+  "bos_token": "[CLS]",
+  "clean_up_tokenization_spaces": true,
+  "cls_token": "[CLS]",
+  "do_lower_case": true,
+  "eos_token": "[SEP]",
+  "keep_accents": true,
+  "mask_token": "[MASK]",
+  "model_max_length": 512,
+  "pad_token": "<pad>",
+  "remove_space": true,
+  "sep_token": "[SEP]",
+  "sp_model_kwargs": {},
+  "tokenizer_class": "AlbertTokenizer",
+  "tokenizer_file": "/home/charlyfive/.cache/huggingface/hub/models--dccuchile--albert-tiny-spanish/snapshots/6af62f921e5c06d542f24fc0353aa3a766395dbe/tokenizer.json",
+  "unk_token": "<unk>"
+}
