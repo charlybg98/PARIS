@@ -60,13 +60,13 @@ LABEL_TRANSLATIONS = {
     "PORT": "Puerto",
 }
 
-with open("config/soft_threshold.json", "r") as f:
+with open("config/soft_threshold.json", "r", encoding="utf-8") as f:
     soft_threshold_messages = json.load(f)
 
-with open("config/hard_threshold.json", "r") as f:
+with open("config/hard_threshold.json", "r", encoding="utf-8") as f:
     hard_threshold_messages = json.load(f)
 
-with open("config/sections.json", "r") as f:
+with open("config/sections.json", "r", encoding="utf-8") as f:
     section_messages = json.load(f)
 
 
