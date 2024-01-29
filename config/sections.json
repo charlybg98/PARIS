@@ -1,0 +1,62 @@
+{
+    "0": {
+        "soft_messages": {
+            "SM1": "Ha llegado el momento de comenzar: activa ASDA-Soft y abre el documento de la práctica.",
+            "SM2": "Inicia ahora: abre la interfaz de chat y el documento para empezar tu aprendizaje."
+        },
+        "hard_messages": {
+            "HM1": "Es hora de avanzar: activa rápidamente ASDA-Soft y revisa el documento de la práctica.",
+            "HM2": "Comienza sin más demora: inicia la interfaz de chat y el documento para sumergirte en la práctica."
+        }
+    },
+    "1": {
+        "soft_messages": {
+            "SM1": "Parece que te estás tomando un tiempo extra. Recordatorio: en esta sección debes conectar el controlador, activar el modo JOG y asegurar la conexión del motor.",
+            "SM2": "Tu progreso parece lento. Recordatorio: esta sección implica conectar el controlador, verificar la conexión USB y activar el modo JOG."
+        },
+        "hard_messages": {
+            "HM1": "Observo un retraso en tu avance. Recordatorio: en esta sección, conecta el controlador a la alimentación trifásica, asegura la conexión USB a la computadora, utiliza la función de auto-detect para confirmar que el motor está en línea, selecciona el modo JOG y activa el servo on. No olvides empezar a mover el motor.",
+            "HM2": "Tu progreso en esta sección es más lento de lo esperado. Recordatorio: es esencial conectar el controlador a la alimentación, verificar la conexión del motor en la interfaz, activar el modo JOG y el servo on, y finalmente, realizar pruebas de movimiento del motor."
+        }
+    },
+    "2": {
+        "soft_messages": {
+            "SM1": "Estás avanzando lentamente. Recordatorio: en esta sección, selecciona 'PR Mode Editor', elige 'constant speed control' y establece la velocidad.",
+            "SM2": "Parece que necesitas un empuje. Recordatorio: activa 'PR Mode Editor', configura el control de velocidad constante y actualiza los parámetros."
+        },
+        "hard_messages": {
+            "HM1": "Tu progreso es más lento de lo ideal. Recordatorio: en esta etapa, entra en 'PR Mode Editor', selecciona 'constant speed control', elige las unidades de velocidad, introduce la velocidad deseada y actualiza con 'Download'. Configura el número de path, activa 'Forced Srv On' y ejecuta 'RUN, PR path'. Detente con 'STOP, PR path' y analiza las gráficas de velocidad en el SCOPE. Reflexiona sobre las implicaciones de elegir revoluciones por minuto frente a pulsos por segundo y la relación entre corriente y par.",
+            "HM2": "Observo un retraso notable aquí. Recordatorio: Usa 'PR Mode Editor' para configurar el control de velocidad constante, selecciona las unidades adecuadas, establece la velocidad y actualiza los parámetros. No olvides configurar el número de path, activar 'Forced Srv On', y probar con 'RUN, PR path'. Utiliza 'STOP, PR path' para finalizar y examina las gráficas en el SCOPE. Considera cómo la selección de unidades afecta la práctica y analiza la relación entre corriente y par en las gráficas."
+        }
+    },
+    "3": {
+        "soft_messages": {
+            "SM1": "Tu avance parece lento. Recordatorio: selecciona PR Mode Editor, elige 'single position control', y configura la posición deseada.",
+            "SM2": "Parece que te estás demorando. Recordatorio: activa PR Mode Editor, elige el control de posición única y actualiza los parámetros."
+        },
+        "hard_messages": {
+            "HM1": "Observo un retraso significativo en esta sección. Recordatorio: abre PR Mode Editor, selecciona 'single position control', escoge 'relative position' y define la posición deseada. Actualiza los parámetros con 'Download', establece el número de path, activa 'Forced Srv On', y ejecuta 'RUN, PR path'. No olvides reportar las gráficas de posición usando el SCOPE y activar solo los canales relevantes. Reflexiona sobre el error en posición mostrado en el SCOPE, la forma de la señal y calcula los pulsos necesarios para movimientos específicos.",
+            "HM2": "Tu progreso en esta sección está más lento de lo esperado. Recordatorio: Entra en PR Mode Editor, selecciona 'single position control', opta por 'relative position', introduce la posición que deseas alcanzar. No olvides pulsar 'Download' para actualizar, escribe el número de path, activa 'Forced Srv On', y procede con 'RUN, PR path'. Detente usando 'STOP, PR path' y analiza las gráficas de posición en el SCOPE. Asegúrate de reflexionar sobre el error en posición, la forma triangular de la señal y determinar los pulsos necesarios para movimientos de 45° y 360°."
+        }
+    },
+    "4": {
+        "soft_messages": {
+            "SM1": "Parece que estás tomando más tiempo del necesario. Recordatorio: selecciona 'PR Mode Editor', elige 'Auto position control' y configura tus puntos de posición.",
+            "SM2": "Tu avance es más lento de lo esperado. Recordatorio: en esta sección, configura distintos puntos de posición y activa el modo de operación continua."
+        },
+        "hard_messages": {
+            "HM1": "Tu progreso aquí muestra un retraso considerable. Recordatorio: En 'PR Mode Editor', selecciona 'Auto position control', establece hasta 5 puntos diferentes en magnitud y dirección. Escoge 'relative position', define las posiciones deseadas y actualiza con 'Download'. Configura el número de path, activa 'Forced Srv On' y comienza desde el path 1. Recuerda reportar las gráficas de posición usando el SCOPE y activar los canales pertinentes. Analiza cómo la corriente del motor varía con los cambios de dirección y experimenta agregando diferentes retardos.",
+            "HM2": "Observo un retraso en esta sección. Recordatorio: Utiliza 'PR Mode Editor' para el 'Auto position control', selecciona hasta 5 puntos con diferentes magnitudes y direcciones. Elige 'relative position', especifica cada posición, actualiza los parámetros con 'Download', y anota el número de path. Activa 'Forced Srv On' y ejecuta desde el path 1. Monitorea las gráficas de posición en el SCOPE, enfocándote en la corriente del motor durante los cambios de dirección. No olvides incorporar retardos de distintas magnitudes como se muestra en la Ilustración 6 y analiza los efectos."
+        }
+    },
+    "5": {
+        "soft_messages": {
+            "SM1": "Parece que has finalizado. Recuerda cerrar ASDA-Soft y finalizar la grabación de la práctica.",
+            "SM2": "Al concluir, asegúrate de cerrar correctamente ASDA-Soft y terminar la grabación."
+        },
+        "hard_messages": {
+            "HM1": "Has llegado al final de la práctica. Es importante cerrar ASDA-Soft y finalizar la grabación sin demoras.",
+            "HM2": "Como último paso, cierra ASDA-Soft y completa la grabación de tu práctica de manera eficiente."
+        }
+    }
+}

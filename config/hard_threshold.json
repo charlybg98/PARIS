@@ -1,0 +1,702 @@
+{
+    "0": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "1": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "2": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "3": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "4": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "5": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "6": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "7": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "8": {
+        "messages": {
+            "FM1": "Has superado el tiempo normal para seleccionar 'Off-Line'. Si estás repasando los datos o tienes dudas sobre la desconexión, consulta el documento de la práctica o usa este chat para aclarar cualquier pregunta. Un último chequeo siempre es beneficioso.",
+            "FM2": "Observo que te has demorado en pasar a 'Off-Line'. Si hay algo que no esté claro sobre el cierre de tu sesión, te animo a revisar el documento de la práctica o hacer tus preguntas aquí. Asegurarte de completar todos los pasos correctamente es esencial para el aprendizaje."
+        },
+        "requires_section": false
+    },
+    "9": {
+        "messages": {
+            "FM1": "Estás tomando más tiempo de lo esperado para configurar la conexión On-Line. Es crucial que los ajustes de comunicación sean correctos. Si tienes dudas, te sugiero revisar el documento de la práctica o preguntar por aquí para una guía detallada, especialmente para las configuraciones manuales.",
+            "FM2": "Veo que has excedido el tiempo usual para la conexión On-Line. Si enfrentas dificultades, no dudes en revisar el documento de la práctica o preguntar a través de esta interfaz. A veces, una consulta rápida puede aclarar los pasos necesarios para una configuración exitosa."
+        },
+        "requires_section": false
+    },
+    "10": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "11": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "12": {
+        "messages": {
+            "FM1": "Has invertido bastante tiempo en una acción que parece no formar parte de la práctica. Si estás experimentando o explorando, es valioso, pero asegúrate de mantener el enfoque en los objetivos del laboratorio.",
+            "FM2": "Observo que has dedicado mucho tiempo a una acción inusual. Experimentar es parte del aprendizaje, pero es importante que cada paso te acerque a los objetivos de la práctica."
+        },
+        "requires_section": true
+    },
+    "13": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "14": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "15": {
+        "messages": {
+            "FM1": "Dedicar tiempo excesivo a funciones fuera del alcance habitual del 'Jog Control' puede indicar una desviación de los objetivos de aprendizaje. Es importante centrarse en las operaciones clave del motor. Si estás inseguro sobre qué funciones son pertinentes, revisa el documento de la práctica o pregunta aquí.",
+            "FM2": "Si estás excediendo el tiempo en tareas no esenciales dentro del 'Jog Control', es posible que necesites una mejor comprensión de las funciones críticas para esta práctica. Las operaciones esenciales incluyen la configuración de velocidad, dirección y activación de Servo ON. Consulta el manual para centrarte en estas áreas o pide ayuda aquí."
+        },
+        "requires_section": true
+    },
+    "16": {
+        "messages": {
+            "FM1": "Dedicar tiempo excesivo a funciones fuera del alcance habitual del 'Jog Control' puede indicar una desviación de los objetivos de aprendizaje. Es importante centrarse en las operaciones clave del motor. Si estás inseguro sobre qué funciones son pertinentes, revisa el documento de la práctica o pregunta aquí.",
+            "FM2": "Si estás excediendo el tiempo en tareas no esenciales dentro del 'Jog Control', es posible que necesites una mejor comprensión de las funciones críticas para esta práctica. Las operaciones esenciales incluyen la configuración de velocidad, dirección y activación de Servo ON. Consulta el manual para centrarte en estas áreas o pide ayuda aquí."
+        },
+        "requires_section": true
+    },
+    "17": {
+        "messages": {
+            "FM1": "Dedicar tiempo excesivo a funciones fuera del alcance habitual del 'Jog Control' puede indicar una desviación de los objetivos de aprendizaje. Es importante centrarse en las operaciones clave del motor. Si estás inseguro sobre qué funciones son pertinentes, revisa el documento de la práctica o pregunta aquí.",
+            "FM2": "Si estás excediendo el tiempo en tareas no esenciales dentro del 'Jog Control', es posible que necesites una mejor comprensión de las funciones críticas para esta práctica. Las operaciones esenciales incluyen la configuración de velocidad, dirección y activación de Servo ON. Consulta el manual para centrarte en estas áreas o pide ayuda aquí."
+        },
+        "requires_section": true
+    },
+    "18": {
+        "messages": {
+            "FM1": "Has superado el tiempo normal en 'Forced Servo On', lo que es crucial para la operación. Es importante entender que este paso activa el control del motor. Si te resulta complicado, te sugiero revisar específicamente la sección de Servo On en el manual o preguntar aquí para soporte detallado.",
+            "FM2": "El tiempo excedido en activar 'Forced Servo On' indica una posible confusión con su función esencial en la operación del motor. Consulta la parte del manual que explica cómo y por qué activar este control, o utiliza este chat para obtener una explicación detallada y asistencia."
+        },
+        "requires_section": false
+    },
+    "19": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "20": {
+        "messages": {
+            "FM1": "Veo que estás probando las funciones de rotación del motor. Si tienes alguna pregunta, no dudes en consultarme o puedes revisar el manual de la práctica para más detalles.",
+            "FM2": "Noté que estás explorando las capacidades de rotación del motor. Para cualquier consulta, estoy a tu disposición, o también puedes referirte al documento guía de la práctica para obtener más información."
+        },
+        "requires_section": false
+    },
+    "21": {
+        "messages": {
+            "FM1": "Veo que estás probando las funciones de rotación del motor. Si tienes alguna pregunta, no dudes en consultarme o puedes revisar el manual de la práctica para más detalles.",
+            "FM2": "Noté que estás explorando las capacidades de rotación del motor. Para cualquier consulta, estoy a tu disposición, o también puedes referirte al documento guía de la práctica para obtener más información."
+        },
+        "requires_section": false
+    },
+    "22": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "23": {
+        "messages": {
+            "FM1": "Parece que estás indeciso sobre si mantener activo o desactivar el motor. Al seleccionar 'Sí' en el mensaje, estarás apagando la función 'Servo On'. Si deseas que el motor siga funcionando, siempre elige 'No'.",
+            "FM2": "Al parecer, tienes dudas acerca de si apagar o dejar encendido el motor. Si respondes 'Sí' al aviso, estarás desactivando la opción de 'Servo On'. Para mantener el motor en funcionamiento, opta siempre por 'No'."
+        },
+        "requires_section": false
+    },
+    "24": {
+        "messages": {
+            "FM1": "Parece que estás indeciso sobre si mantener activo o desactivar el motor. Al seleccionar 'Sí' en el mensaje, estarás apagando la función 'Servo On'. Si deseas que el motor siga funcionando, siempre elige 'No'.",
+            "FM2": "Al parecer, tienes dudas acerca de si apagar o dejar encendido el motor. Si respondes 'Sí' al aviso, estarás desactivando la opción de 'Servo On'. Para mantener el motor en funcionamiento, opta siempre por 'No'."
+        },
+        "requires_section": false
+    },
+    "25": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "26": {
+        "messages": {
+            "FM1": "Puedo observar que quizá podrías tener problemas con la activación de 'Servo ON'. Esta señal es esencial para comenzar cualquier operación. Revisa cuidadosamente el manual para comprender su función o pregunta aquí para una orientación precisa.",
+            "FM2": "Si estás tardando en activar la señal de 'Servo ON', es vital revisar su importancia en el funcionamiento del motor. Este paso es el que permite que el motor responda a tus comandos. Por favor, consulta la sección relevante del manual o usa este chat para aclarar cualquier duda sobre este proceso crítico."
+        },
+        "requires_section": false
+    },
+    "27": {
+        "messages": {
+            "FM1": "Puedo observar que quizá podrías tener problemas con la activación de 'Servo ON'. Esta señal es esencial para comenzar cualquier operación. Revisa cuidadosamente el manual para comprender su función o pregunta aquí para una orientación precisa.",
+            "FM2": "Si estás tardando en activar la señal de 'Servo ON', es vital revisar su importancia en el funcionamiento del motor. Este paso es el que permite que el motor responda a tus comandos. Por favor, consulta la sección relevante del manual o usa este chat para aclarar cualquier duda sobre este proceso crítico."
+        },
+        "requires_section": false
+    },
+    "28": {
+        "messages": {
+            "FM1": "Si te has demorado en ajustar la velocidad del Jog, es posible que no estés seguro de cómo esta configuración afecta la operación del motor. La velocidad precisa es vital para el control efectivo. Te animo a revisar detalladamente la sección de configuración de velocidad en el manual o preguntar aquí para comprender su importancia.",
+            "FM2": "El tiempo excedido en la configuración de velocidad del Jog sugiere una necesidad de entender mejor su rol en el control del motor. Esta configuración es crucial para el rendimiento adecuado. Consulta el manual para una explicación detallada de cómo ajustar la velocidad adecuadamente o utiliza este chat para obtener ayuda directa."
+        },
+        "requires_section": false
+    },
+    "29": {
+        "messages": {
+            "FM1": "Dedicar tiempo excesivo a funciones fuera del alcance habitual del 'Jog Control' puede indicar una desviación de los objetivos de aprendizaje. Es importante centrarse en las operaciones clave del motor. Si estás inseguro sobre qué funciones son pertinentes, revisa el documento de la práctica o pregunta aquí.",
+            "FM2": "Si estás excediendo el tiempo en tareas no esenciales dentro del 'Jog Control', es posible que necesites una mejor comprensión de las funciones críticas para esta práctica. Las operaciones esenciales incluyen la configuración de velocidad, dirección y activación de Servo ON. Consulta el manual para centrarte en estas áreas o pide ayuda aquí."
+        },
+        "requires_section": true
+    },
+    "30": {
+        "messages": {
+            "FM1": "Dedicar tiempo excesivo a funciones fuera del alcance habitual del 'Jog Control' puede indicar una desviación de los objetivos de aprendizaje. Es importante centrarse en las operaciones clave del motor. Si estás inseguro sobre qué funciones son pertinentes, revisa el documento de la práctica o pregunta aquí.",
+            "FM2": "Si estás excediendo el tiempo en tareas no esenciales dentro del 'Jog Control', es posible que necesites una mejor comprensión de las funciones críticas para esta práctica. Las operaciones esenciales incluyen la configuración de velocidad, dirección y activación de Servo ON. Consulta el manual para centrarte en estas áreas o pide ayuda aquí."
+        },
+        "requires_section": true
+    },
+    "31": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "32": {
+        "messages": {
+            "FM1": "Superar el tiempo en 'Auto Positioning Control' indica que podrías necesitar una comprensión más profunda de cómo configurar y ejecutar los paths de PR. Cada paso, desde la selección de posiciones hasta el uso del SCOPE para reportar, es crucial. Consulta el documento de la práctica para instrucciones detalladas o utiliza este chat para obtener ayuda específica.",
+            "FM2": "Has excedido el tiempo normal configurando 'Auto Positioning Control'. Es fundamental entender cada paso, desde seleccionar el modo PR, definir las posiciones, hasta ejecutar y detener los paths. Si estás enfrentando desafíos, te sugiero revisar detenidamente el documento de la práctica o preguntar aquí para aclarar cada etapa del proceso."
+        },
+        "requires_section": false
+    },
+    "33": {
+        "messages": {
+            "FM1": "Has superado el tiempo habitual en la configuración de 'Constant Speed Control'. Es crucial entender cómo seleccionar correctamente las unidades, establecer la velocidad deseada y ejecutar el path. Si estás enfrentando dificultades, te sugiero revisar cada paso en el documento de la práctica o preguntar aquí para una guía detallada.",
+            "FM2": "Exceder el tiempo en 'Constant Speed Control' indica que podrías necesitar una comprensión más profunda del proceso, desde la selección de unidades hasta la activación de 'Forced Srv On'. Cada detalle es importante para un control efectivo. Consulta el manual de la práctica para instrucciones claras o pide asistencia específica aquí."
+        },
+        "requires_section": false
+    },
+    "34": {
+        "messages": {
+            "FM1": "Una posible confusión sobre el 'Delay Time Index' podría afectar la secuencia del motor. Este parámetro es clave para temporizar las operaciones. Para una comprensión detallada, te sugiero revisar las instrucciones específicas en el documento de la práctica o preguntar aquí.",
+            "FM2": "Si hay incertidumbre en ajustar el 'Delay Time Index', es importante entender su impacto en la secuencia de operaciones. Un ajuste preciso es fundamental. Consulta detalladamente el manual de la práctica o utiliza este chat para obtener una guía específica."
+        },
+        "requires_section": false
+    },
+    "35": {
+        "messages": {
+            "FM1": "Una posible confusión con el botón 'Download' puede impedir que tus ajustes se apliquen. Es esencial presionarlo después de cada cambio para actualizar los registros del motor. Si necesitas ayuda con este proceso, consulta el documento de la práctica.",
+            "FM2": "Si hay incertidumbre sobre el uso del botón 'Download', es crucial entender su rol. Este botón asegura que los ajustes realizados se guarden efectivamente en el motor. Para una guía detallada sobre su uso, revisa el manual de la práctica o pregunta aquí."
+        },
+        "requires_section": false
+    },
+    "36": {
+        "messages": {
+            "FM1": "La selección prolongada entre ABS, REL e INC sugiere una posible confusión. Cada uno tiene un propósito específico: ABS para posiciones fijas, REL para cambios basados en la posición actual, e INC para movimientos incrementales. Si necesitas una explicación detallada de cuándo usar cada uno, revisa el documento de la práctica o pregunta aquí.",
+            "FM2": "Una posible incertidumbre en elegir entre ABS, REL e INC podría impactar la operación deseada. ABS define una posición fija, REL ajusta la posición en relación con la actual, e INC agrega un valor incremental. Para una comprensión profunda de estas opciones y su aplicación adecuada, consulta el manual de la práctica o utiliza este chat para asesoramiento."
+        },
+        "requires_section": false
+    },
+    "37": {
+        "messages": {
+            "FM1": "Has superado el tiempo normal en 'Forced Servo On', lo que es crucial para la operación. Es importante entender que este paso activa el control del motor. Si te resulta complicado, te sugiero revisar específicamente la sección de Servo On en el manual o preguntar aquí para soporte detallado.",
+            "FM2": "El tiempo excedido en activar 'Forced Servo On' indica una posible confusión con su función esencial en la operación del motor. Consulta la parte del manual que explica cómo y por qué activar este control, o utiliza este chat para obtener una explicación detallada y asistencia."
+        },
+        "requires_section": false
+    },
+    "38": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "39": {
+        "messages": {
+            "FM1": "Has excedido el tiempo normal en 'Jump to the Specified Path'. Seleccionar el camino correcto es crucial para el control efectivo del motor. Si estás confundido sobre cómo establecer o repetir un path, te sugiero revisar en detalle el documento de la práctica o preguntar aquí para una guía específica.",
+            "FM2": "Superar el tiempo en esta función sugiere que podrías necesitar una comprensión más profunda de cómo seleccionar y posiblemente repetir paths. Es importante para la secuencia del motor. Consulta el manual de la práctica para instrucciones detalladas o utiliza este chat para obtener ayuda directa."
+        },
+        "requires_section": false
+    },
+    "40": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "41": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "42": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "43": {
+        "messages": {
+            "FM1": "Seleccionar el número correcto en el recuadro junto a 'Run PR. Path' es crucial. Una elección incorrecta puede llevar a operaciones no deseadas. Si tienes dudas sobre qué número elegir, revisa tus registros de PR o pide ayuda aquí.",
+            "FM2": "La precisión al introducir un número junto a 'Run PR. Path' es esencial para la operación adecuada. Cada número representa un conjunto de parámetros específicos. Si estás inseguro, consulta el documento de la práctica para clarificaciones detalladas."
+        },
+        "requires_section": false
+    },
+    "44": {
+        "messages": {
+            "FM1": "Configurar un nuevo registro PR requiere atención a detalles específicos como velocidad, posición, delay y unidades. Asegúrate de que cada parámetro esté alineado con los objetivos de la práctica. Tras ajustar, es crucial presionar 'Download' para implementar los cambios. Si necesitas claridad, consulta detalladamente el documento de la práctica o pregunta aquí.",
+            "FM2": "Al introducir un nuevo registro PR, cada ajuste, desde la velocidad hasta el tiempo de retraso, debe ser considerado cuidadosamente. Es importante revisar meticulosamente estos parámetros para cumplir con las expectativas de la práctica. No olvides confirmar tus configuraciones presionando 'Download'. Para una guía detallada sobre cómo configurar correctamente, revisa el manual de la práctica o utiliza este chat para obtener asistencia específica."
+        },
+        "requires_section": false
+    },
+    "45": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "46": {
+        "messages": {
+            "FM1": "Si hay incertidumbre después de presionar 'Run PR. Path', es importante revisar si el path seleccionado es el adecuado y si los parámetros están correctamente configurados. Una comprensión detallada de cómo cada path afecta al motor es crucial. Revisa el documento de la práctica para asegurarte de que estás en el camino correcto.",
+            "FM2": "Usar 'Run PR. Path' y observar el comportamiento del motor proporciona valiosa retroalimentación sobre tus configuraciones. Si estás esperando ver cómo responde el motor a tus ajustes, asegúrate de que cada configuración corresponda a tus expectativas de la práctica. Para aclaraciones detalladas, el manual de la práctica es una excelente referencia."
+        },
+        "requires_section": false
+    },
+    "47": {
+        "messages": {
+            "FM1": "Has excedido el tiempo normal en 'Single Position Control'. Es crucial comprender cómo definir y ejecutar una posición específica. Si estás enfrentando dificultades, te recomiendo revisar detalladamente el documento de la práctica o preguntar aquí para una guía paso a paso.",
+            "FM2": "Superar el tiempo en 'Single Position Control' sugiere que podrías necesitar ayuda para entender el proceso completo, desde seleccionar la posición hasta activar 'Forced Srv On'. Para una comprensión profunda de cada etapa, consulta el manual de la práctica o utiliza este chat para asesoramiento específico."
+        },
+        "requires_section": false
+    },
+    "48": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "49": {
+        "messages": {
+            "FM1": "Seleccionar el número de PR adecuado en 'Jump to the Specified PR Number' es crucial para la secuencia de tu práctica. Cada elección conduce a un conjunto diferente de acciones. Confirma tu elección y asegúrate de presionar 'Download' para aplicar los cambios.",
+            "FM2": "Una elección precisa en 'Jump to the Specified PR Number' es esencial. Considera cuidadosamente el registro que necesitas para tu actividad y, después de seleccionar, actualiza los parámetros con 'Download' para asegurarte de que los cambios se apliquen correctamente."
+        },
+        "requires_section": false
+    },
+    "50": {
+        "messages": {
+            "FM1": "Introducir los pulsos exactos en 'Position CMD Data (PUU)' es fundamental para lograr la posición precisa del motor. Calcula cuidadosamente la conversión a grados y, después de introducir los pulsos, no olvides actualizar los parámetros con 'Download' para aplicar los cambios.",
+            "FM2": "La selección precisa de los pulsos en 'Position CMD Data (PUU)' requiere un entendimiento claro de su relación con los grados de rotación. Asegúrate de hacer los cálculos correctamente y, una vez ingresados, presiona 'Download' para asegurar que el motor se mueva a la posición deseada."
+        },
+        "requires_section": false
+    },
+    "51": {
+        "messages": {
+            "FM1": "Seleccionar la velocidad correcta en 'Target Speed' requiere entender la diferencia entre rpm y PPS. Asegúrate de que tus cálculos sean precisos y, tras ingresar la velocidad, actualiza con 'Download' para confirmar los ajustes.",
+            "FM2": "Una configuración detallada en 'Target Speed' es crucial. Revisa que estés usando las unidades adecuadas y que la velocidad seleccionada sea la correcta para tus objetivos. Después de introducir los datos, presiona 'Download' para asegurar que la configuración se refleje en el motor."
+        },
+        "requires_section": false
+    },
+    "52": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "53": {
+        "messages": {
+            "FM1": "Has invertido bastante tiempo en una acción que parece no formar parte de la práctica. Si estás experimentando o explorando, es valioso, pero asegúrate de mantener el enfoque en los objetivos del laboratorio.",
+            "FM2": "Observo que has dedicado mucho tiempo a una acción inusual. Experimentar es parte del aprendizaje, pero es importante que cada paso te acerque a los objetivos de la práctica."
+        },
+        "requires_section": true
+    },
+    "54": {
+        "messages": {
+            "FM1": "Una configuración precisa en 'UNIT' es esencial. Asegúrate de que las unidades seleccionadas (rpm o PPS) se alineen perfectamente con los requisitos de la práctica. Si hay dudas, revisa el documento de la práctica detenidamente para confirmar.",
+            "FM2": "La selección de unidades en 'UNIT' debe ser considerada con atención para el 'Constant Speed Control'. Comprueba si las unidades concuerdan con las especificaciones de la práctica y, si estás inseguro, consulta el documento para una orientación clara."
+        },
+        "requires_section": false
+    },
+    "55": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "56": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "57": {
+        "messages": {
+            "FM1": "Una selección cuidadosa de canales en 'Data Scope' es crucial. Verifica que estás monitoreando los canales correctos para obtener datos precisos. Si hay dudas, considera revisar tus objetivos de práctica y seleccionar los canales acordes.",
+            "FM2": "Seleccionar canales adecuados en 'Data Scope' es esencial para un monitoreo efectivo. Asegúrate de que los canales activados reflejen las señales que necesitas observar. En caso de incertidumbre, revisa las especificaciones de tu práctica para tomar una decisión informada."
+        },
+        "requires_section": false
+    },
+    "58": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "59": {
+        "messages": {
+            "FM1": "Una selección cuidadosa de canales en 'Data Scope' es crucial. Verifica que estás monitoreando los canales correctos para obtener datos precisos. Si hay dudas, considera revisar tus objetivos de práctica y seleccionar los canales acordes.",
+            "FM2": "Seleccionar canales adecuados en 'Data Scope' es esencial para un monitoreo efectivo. Asegúrate de que los canales activados reflejen las señales que necesitas observar. En caso de incertidumbre, revisa las especificaciones de tu práctica para tomar una decisión informada."
+        },
+        "requires_section": false
+    },
+    "60": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "61": {
+        "messages": {
+            "FM1": "Una selección cuidadosa de canales en 'Data Scope' es crucial. Verifica que estás monitoreando los canales correctos para obtener datos precisos. Si hay dudas, considera revisar tus objetivos de práctica y seleccionar los canales acordes.",
+            "FM2": "Seleccionar canales adecuados en 'Data Scope' es esencial para un monitoreo efectivo. Asegúrate de que los canales activados reflejen las señales que necesitas observar. En caso de incertidumbre, revisa las especificaciones de tu práctica para tomar una decisión informada."
+        },
+        "requires_section": false
+    },
+    "62": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "63": {
+        "messages": {
+            "FM1": "Una selección cuidadosa de canales en 'Data Scope' es crucial. Verifica que estás monitoreando los canales correctos para obtener datos precisos. Si hay dudas, considera revisar tus objetivos de práctica y seleccionar los canales acordes.",
+            "FM2": "Seleccionar canales adecuados en 'Data Scope' es esencial para un monitoreo efectivo. Asegúrate de que los canales activados reflejen las señales que necesitas observar. En caso de incertidumbre, revisa las especificaciones de tu práctica para tomar una decisión informada."
+        },
+        "requires_section": false
+    },
+    "64": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "65": {
+        "messages": {
+            "FM1": "Una elección detallada de señales en cada canal es vital. Las señales como posición, velocidad, corriente y torque te permiten realizar análisis profundos, como la relación entre corriente y torque. Asegúrate de seleccionar aquellas que te proporcionen los datos más relevantes para tus preguntas de práctica.",
+            "FM2": "Seleccionar las señales adecuadas para cada canal es crucial para un análisis efectivo. Señales como posición y velocidad pueden revelar aspectos importantes del comportamiento del motor. Dedica tiempo a elegir las señales que te ayudarán a responder preguntas específicas y comprender mejor el desempeño del motor en distintas condiciones."
+        },
+        "requires_section": false
+    },
+    "66": {
+        "messages": {
+            "FM1": "Manejar con precisión 'tbAdjustYScale' y 'Show all data' es clave. Ajusta la escala cuidadosamente para detalles específicos y usa 'Show all data' para una comprensión integral de las relaciones entre señales.",
+            "FM2": "Una selección detallada con 'tbAdjustYScale' y el uso de 'Show all data' es fundamental para analizar con profundidad las señales. Estos botones te permiten explorar las señales de manera efectiva, crucial para responder a las preguntas de tu práctica."
+        },
+        "requires_section": false
+    },
+    "67": {
+        "messages": {
+            "FM1": "Una selección cuidadosa de colores puede ser crucial para diferenciar señales complejas en 'Data Scope'. Escoge colores que destaquen las diferencias clave entre las señales para un análisis más profundo.",
+            "FM2": "Usar colores distintivos para cada señal en 'Data Scope' es importante para un análisis detallado. Asegúrate de que los colores elegidos ayuden a distinguir claramente entre las diferentes señales y faciliten la interpretación de los datos."
+        },
+        "requires_section": false
+    },
+    "68": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "69": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "70": {
+        "messages": {
+            "FM1": "Utilizar 'Previous screen' de manera efectiva es esencial para analizar secuencias de datos y tendencias a lo largo del tiempo. Retrocede a pantallas anteriores para entender cómo las señales han evolucionado y para identificar patrones o anomalías.",
+            "FM2": "El botón 'Previous screen' te permite realizar un análisis más profundo al revisar datos históricos. Es importante para identificar y comprender los patrones y variaciones en las señales a lo largo de tu sesión de práctica."
+        },
+        "requires_section": false
+    },
+    "71": {
+        "messages": {
+            "FM1": "Utilizar 'Run' para iniciar un análisis detallado en 'Data Scope' es fundamental. Asegúrate de que todo esté configurado correctamente antes de presionar 'Run' para obtener datos precisos y relevantes para tu práctica.",
+            "FM2": "Presionar 'Run' comienza un seguimiento detallado en 'Data Scope'. Este paso es crucial para observar con precisión las señales y realizar análisis técnicos. Antes de activarlo, verifica que los parámetros y canales estén configurados adecuadamente."
+        },
+        "requires_section": false
+    },
+    "72": {
+        "messages": {
+            "FM1": "Manejar con precisión los botones de desplazamiento es clave para analizar áreas específicas en 'Data Scope'. Asegúrate de mover las ondas cuidadosamente para centrarte en los datos más relevantes para tu análisis.",
+            "FM2": "Utilizar los botones de desplazamiento de manera efectiva te permite examinar en detalle las variaciones y tendencias en las señales. Desplaza las ondas para enfocarte en áreas específicas que requieran un análisis más profundo."
+        },
+        "requires_section": false
+    },
+    "73": {
+        "messages": {
+            "FM1": "Manejar con precisión 'tbAdjustYScale' y 'Show all data' es clave. Ajusta la escala cuidadosamente para detalles específicos y usa 'Show all data' para una comprensión integral de las relaciones entre señales.",
+            "FM2": "Una selección detallada con 'tbAdjustYScale' y el uso de 'Show all data' es fundamental para analizar con profundidad las señales. Estos botones te permiten explorar las señales de manera efectiva, crucial para responder a las preguntas de tu práctica."
+        },
+        "requires_section": false
+    },
+    "74": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "75": {
+        "messages": {
+            "FM1": "Utilizar 'Stop' es crucial para interrumpir el monitoreo y evaluar los datos recogidos. Asegúrate de hacerlo conscientemente para analizar los resultados o hacer ajustes necesarios en tus pruebas.",
+            "FM2": "El uso de 'Stop' te da control sobre el flujo de datos en 'Data Scope'. Es importante para tomar un momento y analizar en profundidad los patrones y tendencias observadas antes de continuar."
+        },
+        "requires_section": false
+    },
+    "76": {
+        "messages": {
+            "FM1": "Has invertido bastante tiempo en una acción que parece no formar parte de la práctica. Si estás experimentando o explorando, es valioso, pero asegúrate de mantener el enfoque en los objetivos del laboratorio.",
+            "FM2": "Observo que has dedicado mucho tiempo a una acción inusual. Experimentar es parte del aprendizaje, pero es importante que cada paso te acerque a los objetivos de la práctica."
+        },
+        "requires_section": true
+    },
+    "77": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "78": {
+        "messages": {
+            "FM1": "Utilizar 'Zoom in' y 'Zoom out' con precisión es crucial para analizar detalles específicos o entender el contexto más amplio de las señales. Asegúrate de ajustar el zoom meticulosamente para capturar la información más relevante para tus análisis.",
+            "FM2": "El uso detallado del zoom te permite una comprensión profunda de las señales. Ajusta cuidadosamente para estudiar aspectos específicos o para ver el panorama general, especialmente cuando buscas responder preguntas técnicas o complejas de tu práctica."
+        },
+        "requires_section": false
+    },
+    "79": {
+        "messages": {
+            "FM1": "Utilizar 'Zoom in' y 'Zoom out' con precisión es crucial para analizar detalles específicos o entender el contexto más amplio de las señales. Asegúrate de ajustar el zoom meticulosamente para capturar la información más relevante para tus análisis.",
+            "FM2": "El uso detallado del zoom te permite una comprensión profunda de las señales. Ajusta cuidadosamente para estudiar aspectos específicos o para ver el panorama general, especialmente cuando buscas responder preguntas técnicas o complejas de tu práctica."
+        },
+        "requires_section": false
+    },
+    "80": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "81": {
+        "messages": {
+            "FM1": "Confirmar el puerto 'COM' exacto en 'Setting' es crucial. Verifica que el número de puerto coincida con el dispositivo conectado. Si el puerto no aparece como se espera, revisa las conexiones o la configuración del sistema.",
+            "FM2": "Es esencial asegurarse de que el puerto 'COM' indicado sea el correcto. Si no aparece como se espera, o si hay alguna discrepancia, es importante investigar y resolver cualquier problema de conexión o configuración para evitar errores en la comunicación."
+        },
+        "requires_section": false
+    },
+    "82": {
+        "messages": {
+            "FM1": "Confirmar que el motor se detecta correctamente como 'COM' y un número de puerto tras usar 'Start Auto Detect' es vital. Si no aparece como esperado, revisa las conexiones y la configuración del sistema.",
+            "FM2": "Es crucial que el motor aparezca en la lista como 'COM' y un puerto después de 'Start Auto Detect'. Si hay problemas, investiga las conexiones y ajustes para asegurar una correcta comunicación."
+        },
+        "requires_section": false
+    },
+    "83": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "84": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "85": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "86": {
+        "messages": {
+            "FM1": "Has invertido bastante tiempo en una acción que parece no formar parte de la práctica. Si estás experimentando o explorando, es valioso, pero asegúrate de mantener el enfoque en los objetivos del laboratorio.",
+            "FM2": "Observo que has dedicado mucho tiempo a una acción inusual. Experimentar es parte del aprendizaje, pero es importante que cada paso te acerque a los objetivos de la práctica."
+        },
+        "requires_section": true
+    },
+    "87": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "88": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "89": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "90": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "91": {
+        "messages": {
+            "FM1": "Has invertido bastante tiempo en una acción que parece no formar parte de la práctica. Si estás experimentando o explorando, es valioso, pero asegúrate de mantener el enfoque en los objetivos del laboratorio.",
+            "FM2": "Observo que has dedicado mucho tiempo a una acción inusual. Experimentar es parte del aprendizaje, pero es importante que cada paso te acerque a los objetivos de la práctica."
+        },
+        "requires_section": true
+    },
+    "92": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "93": {
+        "messages": {
+            "FM1": "Si estás revisando el manual en ASDA-Soft y surgen dudas, recuerda que este chat está aquí para ayudarte. No dudes en hacer preguntas para una comprensión más clara de los procedimientos y pasos a seguir.",
+            "FM2": "Consultar el manual dentro de ASDA-Soft es un buen paso para aclarar dudas. Si necesitas más información o tienes preguntas específicas, este chat puede ofrecerte respuestas y orientación adicional para tu práctica."
+        },
+        "requires_section": false
+    },
+    "94": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "95": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "96": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "97": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "98": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "99": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    }
+}

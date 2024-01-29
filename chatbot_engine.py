@@ -8,7 +8,7 @@ PRED_THRESHOLD = 0.8
 
 model_path = "resources/models/ALBERT"
 tokenizer_path = "resources/models/tokenizer"
-answers_path = "resources/answers.json"
+answers_path = "config/answers.json"
 
 model = TFAlbertForSequenceClassification.from_pretrained(model_path)
 tokenizer = AlbertTokenizer.from_pretrained(tokenizer_path)

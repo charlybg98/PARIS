@@ -25,6 +25,8 @@ from tkinter import CENTER, DISABLED, NORMAL
 from pynput import mouse
 from plyer import notification
 import time
+import json
+import random
 
 user_name = ""
 user_id = ""
@@ -57,6 +59,15 @@ LABEL_TRANSLATIONS = {
     "HOST": "Dirección del Servidor",
     "PORT": "Puerto",
 }
+
+with open("config/soft_threshold.json", "r") as f:
+    soft_threshold_messages = json.load(f)
+
+with open("config/hard_threshold.json", "r") as f:
+    hard_threshold_messages = json.load(f)
+
+with open("config/sections.json", "r") as f:
+    section_messages = json.load(f)
 
 
 class ChatApplication:
@@ -278,18 +289,62 @@ class ChatApplication:
             time_since_last_click = time.time() - self.last_click_time
             self.last_click_time = time.time()
 
-            self.check_time_thresholds(time_in_current_section, time_since_last_click)
+            self.check_time_thresholds(
+                time_in_current_section,
+                time_since_last_click,
+                label_int,
+                self.current_section,
+            )
 
-    def check_time_thresholds(self, time_in_section, time_between_clicks):
-        section_time_threshold = 300
-        click_time_threshold = 60
+    def check_time_thresholds(
+        self, time_in_section, time_between_clicks, label_int, current_section
+    ):
+        action_soft_threshold = 3
+        action_hard_threshold = 6
+        section_thresholds = {
+            0: [0.7, 0.9],
+            1: [203.6434, 248.5094],
+            2: [823.1206, 1144.3546],
+            3: [700.8668, 959.3938],
+            4: [1212.4617, 1657.3776],
+            5: [11.9538, 287.8172],
+        }
 
-        if time_in_section > section_time_threshold:
-           self.insert_message("Has pasado mucho tiempo en esta sección.", sender="PARIS", is_user=False)
+        if action_soft_threshold <= time_between_clicks < action_hard_threshold:
+            message = random.choice(
+                [
+                    soft_threshold_messages[str(label_int)]["FM1"],
+                    soft_threshold_messages[str(label_int)]["FM2"],
+                ]
+            )
+            self.insert_message(message, sender="PARIS", is_user=False)
+        elif time_between_clicks >= action_hard_threshold:
+            message = random.choice(
+                [
+                    hard_threshold_messages[str(label_int)]["FM1"],
+                    hard_threshold_messages[str(label_int)]["FM2"],
+                ]
+            )
+            self.insert_message(message, sender="PARIS", is_user=False)
 
-        if time_between_clicks > click_time_threshold:
-            self.insert_message("Ha pasado mucho tiempo desde tu último click.", sender="PARIS", is_user=False)
-    
+        soft, hard = section_thresholds[current_section]
+        if soft <= time_in_section < hard:
+            message = random.choice(
+                [
+                    section_messages[str(current_section)]["SM1"],
+                    section_messages[str(current_section)]["SM2"],
+                ]
+            )
+            self.insert_message(message, sender="PARIS", is_user=False)
+        elif time_in_section >= hard:
+            message = random.choice(
+                [
+                    section_messages[str(current_section)]["HM1"],
+                    section_messages[str(current_section)]["HM2"],
+                ]
+            )
+            self.insert_message(message, sender="PARIS", is_user=False)
+
     def on_enter_pressed(self, event):
         global user_name
         global user_id

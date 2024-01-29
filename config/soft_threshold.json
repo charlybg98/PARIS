@@ -1,0 +1,402 @@
+{
+    "0": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "1": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "2": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "3": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "4": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "5": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "6": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "7": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "8": {
+        "FM1": "Observo que has desconectado en ASDA-Soft y has dedicado tiempo extra en este paso. Es bueno asegurarse de que todo esté en orden antes de finalizar. Recuerda, aún en 'Off-Line' puedes revisar datos importantes.",
+        "FM2": "Tomarte tiempo extra para desconectar en ASDA-Soft indica un enfoque cuidadoso. Es excelente revisar y confirmar todo antes de concluir. Incluso en modo 'Off-Line', hay valiosa información disponible."
+    },
+    "9": {
+        "FM1": "Has tomado tiempo adicional para conectar al hardware en ASDA-Soft. Este cuidado inicial es clave para una práctica exitosa. Si necesitas ayuda con los pasos iniciales, recuerda revisar el documento de la práctica o realiza una pregunta por este medio.",
+        "FM2": "Veo que te has tomado tiempo extra para activar el modo 'On-Line' en ASDA-Soft. Es crucial asegurarse de que la configuración de comunicación coincida con los parámetros del servo. Si necesitas, el botón 'Start Auto Detect' puede ayudarte a verificar estos ajustes."
+    },
+    "10": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "11": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "12": {
+        "FM1": "Veo que has realizado una acción inusual en la práctica. A veces explorar opciones diferentes es parte del aprendizaje. Si fue un error, no te preocupes, siempre puedes revisar la práctica de laboratorio o realizarme una pregunta.",
+        "FM2": "Has elegido una acción que no es típica para la práctica. Si estás experimentando o probando algo nuevo, genial. Pero si estás inseguro, considera revisar el documento de la práctica o realiza una pregunta."
+    },
+    "13": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "14": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "15": {
+        "FM1": "Estás invirtiendo tiempo en funciones fuera del objetivo principal. Mantén el enfoque en las tareas clave. Si estás inseguro, revisa el documento.",
+        "FM2": "Has dedicado tiempo a acciones no previstas. Asegúrate de centrarte en los objetivos de la práctica. Consulta el manual o pregunta aquí si necesitas."
+    },
+    "16": {
+        "FM1": "Estás invirtiendo tiempo en funciones fuera del objetivo principal. Mantén el enfoque en las tareas clave. Si estás inseguro, revisa el documento.",
+        "FM2": "Has dedicado tiempo a acciones no previstas. Asegúrate de centrarte en los objetivos de la práctica. Consulta el manual o pregunta aquí si necesitas."
+    },
+    "17": {
+        "FM1": "Estás invirtiendo tiempo en funciones fuera del objetivo principal. Mantén el enfoque en las tareas clave. Si estás inseguro, revisa el documento.",
+        "FM2": "Has dedicado tiempo a acciones no previstas. Asegúrate de centrarte en los objetivos de la práctica. Consulta el manual o pregunta aquí si necesitas."
+    },
+    "18": {
+        "FM1": "Te has tomado un tiempo adicional en 'Forced Servo On'. Es un paso clave para el control. Si tienes dudas, revisa el documento de la práctica o realiza una pregunta por aquí.",
+        "FM2": "Parece que estás siendo cauteloso con 'Forced Servo On'. Recuerda, esta función te permite mantener el motor activado para su movimiento. Consulta el manual o realiza una pregunta si necesitas orientación."
+    },
+    "19": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "20": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "21": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "22": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "23": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "24": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "25": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "26": {
+        "FM1": "Activar 'Servo ON' es esencial. Si te estás tomando tiempo extra, asegúrate de hacerlo correctamente. Revisa el manual para más detalles.",
+        "FM2": "Has tardado en activar 'Servo ON'. Es un paso crucial. Si tienes dudas, el documento de la práctica puede guiarte."
+    },
+    "27": {
+        "FM1": "Activar 'Servo ON' es esencial. Si te estás tomando tiempo extra, asegúrate de hacerlo correctamente. Revisa el manual para más detalles.",
+        "FM2": "Has tardado en activar 'Servo ON'. Es un paso crucial. Si tienes dudas, el documento de la práctica puede guiarte."
+    },
+    "28": {
+        "FM1": "Estás tomando tiempo para ajustar la velocidad. Recuerda, la configuración adecuada es crucial. Consulta el documento de la práctica si necesitas ayuda.",
+        "FM2": "Parece que estás evaluando cuidadosamente la velocidad del motor. Asegúrate de que los ajustes sean precisos. El documento de la práctica puede ser útil."
+    },
+    "29": {
+        "FM1": "Estás invirtiendo tiempo en funciones fuera del objetivo principal. Mantén el enfoque en las tareas clave. Si estás inseguro, revisa el documento.",
+        "FM2": "Has dedicado tiempo a acciones no previstas. Asegúrate de centrarte en los objetivos de la práctica. Consulta el manual o pregunta aquí si necesitas."
+    },
+    "30": {
+        "FM1": "Estás invirtiendo tiempo en funciones fuera del objetivo principal. Mantén el enfoque en las tareas clave. Si estás inseguro, revisa el documento.",
+        "FM2": "Has dedicado tiempo a acciones no previstas. Asegúrate de centrarte en los objetivos de la práctica. Consulta el manual o pregunta aquí si necesitas."
+    },
+    "31": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "32": {
+        "FM1": "Estás explorando la configuración de 'Auto Positioning Control'. Recuerda seleccionar cuidadosamente los puntos y configurar la posición relativa adecuadamente. Si necesitas orientación sobre los pasos, consulta el documento de la práctica.",
+        "FM2": "Observo que te tomas tiempo en 'Auto Positioning Control'. Asegúrate de actualizar correctamente los parámetros y seleccionar los paths. Si tienes dudas, el documento de la práctica puede guiar tus pasos."
+    },
+    "33": {
+        "FM1": "Estás dedicando tiempo extra configurando el 'Constant Speed Control'. Asegúrate de seleccionar las unidades correctas y definir la velocidad adecuadamente. Si tienes preguntas, el documento de la práctica puede ofrecer orientación.",
+        "FM2": "Observo que te tomas tiempo en ajustar la velocidad en 'Constant Speed Control'. Recuerda actualizar los parámetros y confirmar el path. Si necesitas ayuda con estos ajustes, consulta el documento de la práctica."
+    },
+    "34": {
+        "FM1": "Puede haber cierta confusión con el ajuste del 'Delay Time Index'. Este controla el retraso entre paths. Si necesitas orientación, el documento de la práctica es un buen lugar para empezar.",
+        "FM2": "Si hay dudas sobre el 'Delay Time Index', recuerda que este parámetro ajusta el tiempo de espera entre acciones. Revisar el documento de la práctica puede ayudarte a entender mejor cómo configurarlo."
+    },
+    "35": {
+        "FM1": "Si estás ajustando parámetros y hay dudas, recuerda que después de modificar, debes presionar 'Download' para actualizar los registros. Esto garantiza que tus cambios se apliquen correctamente",
+        "FM2": "Parece que podrías estar revisando los ajustes. No olvides usar el botón 'Download' después de cambiar parámetros para guardar tus configuraciones en el motor."
+    },
+    "36": {
+        "FM1": "Si estás explorando entre ABS, REL e INC en 'End of Position Command', es bueno entender sus diferencias. ABS se refiere a una posición fija, REL a una posición relativa al punto actual, e INC a un movimiento incremental desde la posición actual.",
+        "FM2": "Parece que podrías estar evaluando las opciones de posición en 'End of Position Command'. Recuerda, ABS es para posiciones fijas, mientras que REL y INC ajustan la posición de manera relativa o incremental. Explorar estas opciones está bien, pero asegúrate de comprender sus efectos."
+    },
+    "37": {
+        "FM1": "Te has tomado un tiempo adicional en 'Forced Servo On'. Es un paso clave para el control. Si tienes dudas, revisa el documento de la práctica o realiza una pregunta por aquí.",
+        "FM2": "Parece que estás siendo cauteloso con 'Forced Servo On'. Recuerda, esta función te permite mantener el motor activado para su movimiento. Consulta el manual o realiza una pregunta si necesitas orientación."
+    },
+    "38": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "39": {
+        "FM1": "Estás tomando tiempo extra en 'Jump to the Specified Path'. Asegúrate de seleccionar correctamente el path deseado. Si necesitas orientación sobre cómo crear un bucle efectivo, el documento de la práctica puede ser útil.",
+        "FM2": "Observo que estás evaluando cuidadosamente qué path elegir en 'Jump to the Specified Path'. Es bueno considerar tus opciones. Si tienes dudas sobre la selección o el bucle, consulta el documento de la práctica."
+    },
+    "40": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "41": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "42": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "43": {
+        "FM1": "Si estás considerando qué número introducir junto a 'Run PR. Path', cada uno representa un registro PR distinto. Elige el número que corresponda a la configuración que deseas ejecutar.",
+        "FM2": "Al seleccionar un número en el recuadro junto a 'Run PR. Path', asegúrate de que coincida con el registro PR que quieres activar. Una elección correcta es clave para el resultado esperado."
+    },
+    "44": {
+        "FM1": "Al añadir un nuevo registro PR, es importante explorar y seleccionar con cuidado los parámetros como velocidad, posición y unidades. No olvides presionar 'Download' para guardar tus cambios. Revisa las instrucciones de la práctica para asegurarte de que tus ajustes sean correctos.",
+        "FM2": "Si estás configurando un nuevo registro PR, tómate tu tiempo para entender y elegir los parámetros adecuados. Recuerda, después de hacer cambios, presiona 'Download' para actualizar el motor. Es bueno revisar las especificaciones de la práctica para alinearse con sus requisitos."
+    },
+    "45": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "46": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "47": {
+        "FM1": "Estás tomando tiempo adicional en 'Single Position Control'. Asegúrate de haber seleccionado la posición relativa correcta y de haber actualizado los parámetros. Si necesitas claridad sobre estos pasos, el documento de la práctica es una buena fuente de información.",
+        "FM2": "Observo que te has demorado configurando 'Single Position Control'. Recuerda verificar la posición deseada y confirmar el path. Si hay dudas sobre cómo proceder, consulta el documento de la práctica para orientación."
+    },
+    "48": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "49": {
+        "FM1": "Al seleccionar un PR en 'Jump to the Specified PR Number', asegúrate de elegir el registro correcto que corresponda a tu objetivo. Una vez seleccionado, no olvides actualizar los parámetros con 'Download'.",
+        "FM2": "Si estás decidiendo qué PR elegir en la lista desplegable, recuerda que cada número representa un conjunto de acciones distintas. Tras elegir, actualiza tus cambios presionando 'Download'."
+    },
+    "50": {
+        "FM1": "Al introducir valores en 'Position CMD Data (PUU)', considera la equivalencia en grados para la rotación deseada. Una vez establecido el número de pulsos, recuerda actualizar con 'Download'.",
+        "FM2": "Si estás calculando los pulsos en 'Position CMD Data (PUU)', es un buen ejercicio entender cuántos pulsos equivalen a una revolución completa. Tras ingresar los datos, asegúrate de presionar 'Download' para guardar la configuración."
+    },
+    "51": {
+        "FM1": "Al ajustar 'Target Speed', es importante verificar las unidades (rpm o PPS). Calcula la velocidad deseada y, tras introducir el valor, recuerda actualizar con 'Download'.",
+        "FM2": "Si estás configurando la velocidad en 'Target Speed', considera cuidadosamente las unidades que estás utilizando. Una vez seleccionada la velocidad, no olvides presionar 'Download' para aplicar los cambios."
+    },
+    "52": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "53": {
+        "FM1": "Veo que has realizado una acción inusual en la práctica. A veces explorar opciones diferentes es parte del aprendizaje. Si fue un error, no te preocupes, siempre puedes revisar la práctica de laboratorio o realizarme una pregunta.",
+        "FM2": "Has elegido una acción que no es típica para la práctica. Si estás experimentando o probando algo nuevo, genial. Pero si estás inseguro, considera revisar el documento de la práctica o realiza una pregunta."
+    },
+    "54": {
+        "FM1": "Al seleccionar unidades en 'UNIT', verifica si están en línea con lo que la práctica especifica, ya sea en rpm o PPS. Es fundamental para garantizar la precisión en el control de velocidad.",
+        "FM2": "Si estás ajustando las unidades en 'UNIT', recuerda que la elección correcta es clave para los resultados esperados en la práctica. Compara con las indicaciones del documento para asegurarte de que estás utilizando las unidades adecuadas."
+    },
+    "55": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "56": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "57": {
+        "FM1": "Al activar o desactivar un canal en 'Data Scope', asegúrate de seleccionar los canales correctos para monitorear. Esta selección te ayuda a enfocarte en la información relevante para tu práctica.",
+        "FM2": "Si estás explorando diferentes canales en 'Data Scope', es bueno revisar cuáles son más relevantes para tus objetivos. Activar o desactivar canales te permite monitorear específicamente las señales que necesitas."
+    },
+    "58": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "59": {
+        "FM1": "Al activar o desactivar un canal en 'Data Scope', asegúrate de seleccionar los canales correctos para monitorear. Esta selección te ayuda a enfocarte en la información relevante para tu práctica.",
+        "FM2": "Si estás explorando diferentes canales en 'Data Scope', es bueno revisar cuáles son más relevantes para tus objetivos. Activar o desactivar canales te permite monitorear específicamente las señales que necesitas."
+    },
+    "60": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "61": {
+        "FM1": "Al activar o desactivar un canal en 'Data Scope', asegúrate de seleccionar los canales correctos para monitorear. Esta selección te ayuda a enfocarte en la información relevante para tu práctica.",
+        "FM2": "Si estás explorando diferentes canales en 'Data Scope', es bueno revisar cuáles son más relevantes para tus objetivos. Activar o desactivar canales te permite monitorear específicamente las señales que necesitas."
+    },
+    "62": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "63": {
+        "FM1": "Al activar o desactivar un canal en 'Data Scope', asegúrate de seleccionar los canales correctos para monitorear. Esta selección te ayuda a enfocarte en la información relevante para tu práctica.",
+        "FM2": "Si estás explorando diferentes canales en 'Data Scope', es bueno revisar cuáles son más relevantes para tus objetivos. Activar o desactivar canales te permite monitorear específicamente las señales que necesitas."
+    },
+    "64": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "65": {
+        "FM1": "Al seleccionar señales en cada canal, como posición, velocidad, corriente y torque, piensa en cómo cada una contribuye a tus análisis. Escoger las señales correctas te ayudará a responder preguntas específicas de tu práctica.",
+        "FM2": "Si estás decidiendo qué señales monitorear, recuerda que señales como posición, velocidad, corriente y torque son claves para entender el comportamiento del motor. Estas te ayudarán a analizar aspectos críticos de tu práctica."
+    },
+    "66": {
+        "FM1": "Usar 'tbAdjustYScale' te ayuda a enfocar la escala para una mejor interpretación de las señales. 'Show all data' ofrece una vista completa, útil para entender la relación general entre las señales.",
+        "FM2": "Al ajustar la escala con 'tbAdjustYScale' y visualizar todos los datos, puedes obtener una perspectiva más clara de las señales y su comportamiento, facilitando el análisis requerido en tu práctica."
+    },
+    "67": {
+        "FM1": "Experimentar con la selección de color puede hacer más fácil identificar y diferenciar señales en 'Data Scope'. Elige colores que te ayuden a visualizar claramente los datos para una mejor comprensión.",
+        "FM2": "La selección de color te permite personalizar la visualización de las señales, facilitando el seguimiento y análisis. No dudes en ajustar los colores según tus preferencias para mejorar la claridad."
+    },
+    "68": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "69": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "70": {
+        "FM1": "El botón 'Previous screen' te permite revisar datos anteriores en 'Data Scope'. Úsalo para comparar las señales actuales con las previas y obtener una mayor comprensión de los cambios a lo largo del tiempo.",
+        "FM2": "Retroceder a pantallas anteriores con 'Previous screen' puede ayudarte a hacer un seguimiento del progreso o cambios en las señales. Es útil para una revisión general de las tendencias a lo largo de tu práctica."
+    },
+    "71": {
+        "FM1": "Presionar 'Run' activa el monitoreo en tiempo real en 'Data Scope'. Úsalo para empezar a observar las señales y patrones de tus operaciones. Es una herramienta útil para una visión general de cómo se comportan los sistemas.",
+        "FM2": "Al usar 'Run', inicias la visualización de las señales en 'Data Scope'. Es ideal para empezar a explorar y entender el comportamiento en tiempo real de los componentes del motor."
+    },
+    "72": {
+        "FM1": "Usar los botones de desplazamiento te ayuda a ajustar la vista de las ondas en 'Data Scope' para una mejor visualización. Son útiles para centrarte en áreas específicas de los datos.",
+        "FM2": "Desplazar las ondas con estos botones puede facilitar la comparación de diferentes secciones de datos. Úsalos para navegar y explorar las señales con mayor detalle."
+    },
+    "73": {
+        "FM1": "Usar 'tbAdjustYScale' te ayuda a enfocar la escala para una mejor interpretación de las señales. 'Show all data' ofrece una vista completa, útil para entender la relación general entre las señales.",
+        "FM2": "Al ajustar la escala con 'tbAdjustYScale' y visualizar todos los datos, puedes obtener una perspectiva más clara de las señales y su comportamiento, facilitando el análisis requerido en tu práctica."
+    },
+    "74": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "75": {
+        "FM1": "El botón 'Stop' es útil para pausar el monitoreo en 'Data Scope'. Úsalo cuando necesites detener la observación de las señales para realizar ajustes o análisis.",
+        "FM2": "Presionar 'Stop' te permite detener temporalmente la visualización en 'Data Scope', dándote la oportunidad de reflexionar sobre los datos recopilados hasta ese momento."
+    },
+    "76": {
+        "FM1": "Veo que has realizado una acción inusual en la práctica. A veces explorar opciones diferentes es parte del aprendizaje. Si fue un error, no te preocupes, siempre puedes revisar la práctica de laboratorio o realizarme una pregunta.",
+        "FM2": "Has elegido una acción que no es típica para la práctica. Si estás experimentando o probando algo nuevo, genial. Pero si estás inseguro, considera revisar el documento de la práctica o realiza una pregunta."
+    },
+    "77": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "78": {
+        "FM1": "Explorar con 'Zoom in' y 'Zoom out' puede ayudarte a obtener una mejor comprensión general de las señales. Úsalos para ajustar tu vista a un nivel de detalle que te sea cómodo y te permita observar las relaciones clave.",
+        "FM2": "Jugar con el zoom es una forma efectiva de familiarizarte con las señales. No dudes en acercarte para detalles o alejarte para una perspectiva más amplia, según lo que necesites observar en ese momento."
+    },
+    "79": {
+        "FM1": "Explorar con 'Zoom in' y 'Zoom out' puede ayudarte a obtener una mejor comprensión general de las señales. Úsalos para ajustar tu vista a un nivel de detalle que te sea cómodo y te permita observar las relaciones clave.",
+        "FM2": "Jugar con el zoom es una forma efectiva de familiarizarte con las señales. No dudes en acercarte para detalles o alejarte para una perspectiva más amplia, según lo que necesites observar en ese momento."
+    },
+    "80": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "81": {
+        "FM1": "Al confirmar el dispositivo en 'Setting', asegúrate de que aparezca correctamente como 'COM' seguido del número de puerto. Esta verificación garantiza que el dispositivo esté conectado y listo para la comunicación.",
+        "FM2": "Si estás revisando el listado de dispositivos, busca la etiqueta 'COM' con su respectivo número de puerto. Confirmar que aparece correctamente es un paso importante para asegurar una conexión exitosa."
+    },
+    "82": {
+        "FM1": "Usar 'Start Auto Detect' es un paso crucial para conectar el motor. Verifica que el dispositivo aparezca como 'COM' y un número de puerto en la lista. Esta confirmación asegura una correcta conexión.",
+        "FM2": "Al presionar 'Start Auto Detect', espera a que el motor se liste como 'COM' seguido de un puerto. Asegúrate de que esto ocurra para confirmar una conexión exitosa."
+    },
+    "83": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "84": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "85": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "86": {
+        "FM1": "Veo que has realizado una acción inusual en la práctica. A veces explorar opciones diferentes es parte del aprendizaje. Si fue un error, no te preocupes, siempre puedes revisar la práctica de laboratorio o realizarme una pregunta.",
+        "FM2": "Has elegido una acción que no es típica para la práctica. Si estás experimentando o probando algo nuevo, genial. Pero si estás inseguro, considera revisar el documento de la práctica o realiza una pregunta."
+    },
+    "87": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "88": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "89": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "90": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "91": {
+        "FM1": "Veo que has realizado una acción inusual en la práctica. A veces explorar opciones diferentes es parte del aprendizaje. Si fue un error, no te preocupes, siempre puedes revisar la práctica de laboratorio o realizarme una pregunta.",
+        "FM2": "Has elegido una acción que no es típica para la práctica. Si estás experimentando o probando algo nuevo, genial. Pero si estás inseguro, considera revisar el documento de la práctica o realiza una pregunta."
+    },
+    "92": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "93": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "94": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "95": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "96": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "97": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "98": {
+        "FM1": "NC",
+        "FM2": "NC"
+    },
+    "99": {
+        "FM1": "NC",
+        "FM2": "NC"
+    }
+}
