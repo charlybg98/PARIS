@@ -37,7 +37,8 @@ def warmup_inferences(count=5):
             {
                 "input_ids": encodings["input_ids"],
                 "attention_mask": encodings["attention_mask"],
-            }
+            },
+            verbose=0,
         )
 
 

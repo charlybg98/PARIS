@@ -81,6 +81,7 @@ class ChatApplication:
         """
         self.last_click_time = None
         self.section_start_time = None
+        self.current_section_label = None
         self.current_section = 0
         self.window = CTk()
         self.FONT = CTkFont(family=FAMILY_FONT, size=int(FONT_SIZE), weight="normal")
@@ -198,6 +199,11 @@ class ChatApplication:
         )
         self.stop_button.place(relx=0.7, rely=0.65, relwidth=0.35, anchor=CENTER)
 
+        self.current_section_label = CTkLabel(
+            left_frame, text="Sección: ", font=self.FONT
+        )
+        self.current_section_label.place(relx=0.05, rely=0.725, relwidth=0.9)
+
         self.status_label = CTkLabel(
             left_frame, text="Estatus: en espera", font=self.FONT
         )
@@ -283,6 +289,9 @@ class ChatApplication:
             if new_section != self.current_section:
                 self.section_start_time = time.time()
                 self.current_section = new_section
+                self.current_section_label.configure(
+                    text=f"Sección: {self.current_section}"
+                )
 
             time_in_current_section = time.time() - self.section_start_time
 
@@ -302,13 +311,17 @@ class ChatApplication:
         action_soft_threshold = 3
         action_hard_threshold = 6
         section_thresholds = {
-            0: [0.7, 0.9],
+            0: [130.0662, 162.8272],
             1: [203.6434, 248.5094],
             2: [823.1206, 1144.3546],
             3: [700.8668, 959.3938],
             4: [1212.4617, 1657.3776],
             5: [11.9538, 287.8172],
         }
+
+        def send_message_if_not_nc(message):
+            if message != "NC":
+                self.insert_message(message, sender="PARIS", is_user=False)
 
         if action_soft_threshold <= time_between_clicks < action_hard_threshold:
             message = random.choice(
@@ -317,7 +330,7 @@ class ChatApplication:
                     soft_threshold_messages[str(label_int)]["FM2"],
                 ]
             )
-            self.insert_message(message, sender="PARIS", is_user=False)
+            send_message_if_not_nc(message)
         elif time_between_clicks >= action_hard_threshold:
             message = random.choice(
                 [
@@ -325,7 +338,7 @@ class ChatApplication:
                     hard_threshold_messages[str(label_int)]["FM2"],
                 ]
             )
-            self.insert_message(message, sender="PARIS", is_user=False)
+            send_message_if_not_nc(message)
 
         soft, hard = section_thresholds[current_section]
         if soft <= time_in_section < hard:
@@ -335,7 +348,7 @@ class ChatApplication:
                     section_messages[str(current_section)]["SM2"],
                 ]
             )
-            self.insert_message(message, sender="PARIS", is_user=False)
+            send_message_if_not_nc(message)
         elif time_in_section >= hard:
             message = random.choice(
                 [
@@ -343,7 +356,7 @@ class ChatApplication:
                     section_messages[str(current_section)]["HM2"],
                 ]
             )
-            self.insert_message(message, sender="PARIS", is_user=False)
+            send_message_if_not_nc(message)
 
     def on_enter_pressed(self, event):
         global user_name
