@@ -334,8 +334,8 @@ class ChatApplication:
         elif time_between_clicks >= action_hard_threshold:
             message = random.choice(
                 [
-                    hard_threshold_messages[str(label_int)]["FM1"],
-                    hard_threshold_messages[str(label_int)]["FM2"],
+                    hard_threshold_messages[str(label_int)]["messages"]["FM1"],
+                    hard_threshold_messages[str(label_int)]["messages"]["FM2"],
                 ]
             )
             send_message_if_not_nc(message)
@@ -344,16 +344,16 @@ class ChatApplication:
         if soft <= time_in_section < hard:
             message = random.choice(
                 [
-                    section_messages[str(current_section)]["SM1"],
-                    section_messages[str(current_section)]["SM2"],
+                    section_messages[str(current_section)]["soft_messages"]["SM1"],
+                    section_messages[str(current_section)]["soft_messages"]["SM2"],
                 ]
             )
             send_message_if_not_nc(message)
         elif time_in_section >= hard:
             message = random.choice(
                 [
-                    section_messages[str(current_section)]["HM1"],
-                    section_messages[str(current_section)]["HM2"],
+                    section_messages[str(current_section)]["hard_messages"]["HM1"],
+                    section_messages[str(current_section)]["hard_messages"]["HM2"],
                 ]
             )
             send_message_if_not_nc(message)
