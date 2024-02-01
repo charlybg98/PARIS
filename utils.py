@@ -30,7 +30,7 @@ def save_unanswered_question(question):
     path_to_save = Path.home() / "Documents" / "PARIS" / "logs" / "log.txt"
     try:
         with open(path_to_save, "a", encoding="utf-8") as file:
-            file.write(question + "\n")
+            file.write("Q: "+ question + "\n")
     except IOError as e:
         print(f"Error al escribir en el archivo: {e}")
 

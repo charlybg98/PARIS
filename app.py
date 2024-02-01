@@ -121,7 +121,7 @@ class ChatApplication:
             )
         else:
             self.insert_message(
-                msg="¡Bienvenido! Soy tu asistente de aprendizaje, aquí para ayudarte con \
+                msg="¡Bienvenido! Soy PARIS, tu asistente de aprendizaje, aquí para ayudarte con \
                 retroalimentación útil, responder tus preguntas y guiarte en tu camino educativo. \
                 Ya sea que necesites aclarar dudas, buscar consejos o simplemente explorar nuevos \
                 conceptos, estoy aquí para apoyarte. Mi objetivo es hacer tu experiencia de aprendizaje \
@@ -200,7 +200,7 @@ class ChatApplication:
         self.stop_button.place(relx=0.7, rely=0.65, relwidth=0.35, anchor=CENTER)
 
         self.current_section_label = CTkLabel(
-            left_frame, text="Sección: ", font=self.FONT
+            left_frame, text="Sección: 0", font=self.FONT
         )
         self.current_section_label.place(relx=0.05, rely=0.725, relwidth=0.9)
 
@@ -308,8 +308,8 @@ class ChatApplication:
     def check_time_thresholds(
         self, time_in_section, time_between_clicks, label_int, current_section
     ):
-        action_soft_threshold = 3
-        action_hard_threshold = 6
+        action_soft_threshold = 5
+        action_hard_threshold = 9
         section_thresholds = {
             0: [130.0662, 162.8272],
             1: [203.6434, 248.5094],
@@ -369,8 +369,8 @@ class ChatApplication:
             self.insert_message(msg=msg, sender=user_name)
         else:
             messagebox.showerror("Error", "Introduce tu nombre y matrícula")
-
-    def insert_message(self, msg, sender, is_user=True):
+    
+    def insert_message(self, msg, sender, is_user=True):        
         if not msg:
             return
 
