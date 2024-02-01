@@ -109,7 +109,6 @@ class ChatApplication:
 
         self.start_button.configure(state=NORMAL if server_available else DISABLED)
         self.stop_button.configure(state=NORMAL if server_available else DISABLED)
-        self.send_button.configure(state=NORMAL if server_available else DISABLED)
 
         if not server_available:
             self.insert_message(
