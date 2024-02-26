@@ -70,7 +70,7 @@ with open("config/sections.json", "r", encoding="utf-8") as f:
     section_messages = json.load(f)
 
 
-class ChatApplication:
+class PARISApplication:
     """
     Class that provides GUI for the project
     """
@@ -578,5 +578,5 @@ class ChatApplication:
 
 
 if __name__ == "__main__":
-    app = ChatApplication()
+    app = PARISApplication()
     app.run()
