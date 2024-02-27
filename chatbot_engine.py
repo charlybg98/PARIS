@@ -4,8 +4,8 @@ import json
 from utils import format_justified_text, save_unanswered_question
 import re
 
-MAX_LENGTH = 35
-PRED_THRESHOLD = 0.8
+MAX_LENGTH = 36
+PRED_THRESHOLD = 0.7
 
 model_path = "resources/models/ALBERT"
 tokenizer_path = "resources/models/tokenizer"
