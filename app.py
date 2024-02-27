@@ -83,6 +83,8 @@ class PARISApplication:
         self.section_start_time = None
         self.current_section_label = None
         self.current_section = 0
+        self.soft_threshold_message_shown = False
+        self.hard_threshold_message_shown = False
         self.window = CTk()
         self.FONT = CTkFont(family=FAMILY_FONT, size=int(FONT_SIZE), weight="normal")
         self.FONT_CHAT = CTkFont(
@@ -120,7 +122,7 @@ class PARISApplication:
             )
         else:
             self.insert_message(
-                msg="¡Bienvenido! Soy PARIS, tu asistente de aprendizaje, aquí para ayudarte con \
+                msg="¡Bienvenid@! Soy PARIS, tu asistente de aprendizaje, aquí para ayudarte con \
                 retroalimentación útil, responder tus preguntas y guiarte en tu camino educativo. \
                 Ya sea que necesites aclarar dudas, buscar consejos o simplemente explorar nuevos \
                 conceptos, estoy aquí para apoyarte. Mi objetivo es hacer tu experiencia de aprendizaje \
@@ -292,6 +294,9 @@ class PARISApplication:
                     text=f"Sección: {self.current_section}"
                 )
 
+                self.soft_threshold_message_shown = False
+                self.hard_threshold_message_shown = False
+
             time_in_current_section = time.time() - self.section_start_time
 
             time_since_last_click = time.time() - self.last_click_time
@@ -340,7 +345,7 @@ class PARISApplication:
             send_message_if_not_nc(message)
 
         soft, hard = section_thresholds[current_section]
-        if soft <= time_in_section < hard:
+        if soft <= time_in_section < hard and not self.soft_threshold_message_shown:
             message = random.choice(
                 [
                     section_messages[str(current_section)]["soft_messages"]["SM1"],
@@ -348,7 +353,8 @@ class PARISApplication:
                 ]
             )
             send_message_if_not_nc(message)
-        elif time_in_section >= hard:
+            self.soft_threshold_message_shown = True
+        elif time_in_section >= hard and not self.hard_threshold_message_shown:
             message = random.choice(
                 [
                     section_messages[str(current_section)]["hard_messages"]["HM1"],
@@ -356,6 +362,7 @@ class PARISApplication:
                 ]
             )
             send_message_if_not_nc(message)
+            self.hard_threshold_message_shown = True
 
     def on_enter_pressed(self, event):
         global user_name
@@ -368,8 +375,8 @@ class PARISApplication:
             self.insert_message(msg=msg, sender=user_name)
         else:
             messagebox.showerror("Error", "Introduce tu nombre y matrícula")
-    
-    def insert_message(self, msg, sender, is_user=True):        
+
+    def insert_message(self, msg, sender, is_user=True):
         if not msg:
             return
 

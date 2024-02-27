@@ -2,6 +2,7 @@ import tensorflow as tf
 from transformers import AlbertTokenizer, TFAlbertForSequenceClassification
 import json
 from utils import format_justified_text, save_unanswered_question
+import re
 
 MAX_LENGTH = 35
 PRED_THRESHOLD = 0.8
@@ -15,6 +16,21 @@ tokenizer = AlbertTokenizer.from_pretrained(tokenizer_path)
 
 with open(answers_path, "r", encoding="utf-8") as json_file:
     answers_dict = json.load(json_file)
+
+
+def preprocess_text(text):
+    """
+    Preprocesa el texto para:
+    - Reemplazar símbolos o cualquier carácter no alfanumérico por un espacio
+    - Convertir el texto a minúsculas
+    - Asegurar que solo haya un espacio entre palabras
+    - Eliminar espacios al inicio y al final
+    """
+    text = re.sub(r"[^\w\s]", " ", text)
+    text = re.sub(r"\s+", " ", text)
+    text = text.strip()
+    text = text.lower()
+    return text
 
 
 def warmup_inferences(count=5):
@@ -43,8 +59,9 @@ def warmup_inferences(count=5):
 
 
 def make_inference(question):
+    mod_question = preprocess_text(question)
     encodings = tokenizer(
-        question,
+        mod_question,
         truncation=True,
         padding="max_length",
         max_length=MAX_LENGTH,
