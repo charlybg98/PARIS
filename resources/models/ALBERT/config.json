@@ -1,5 +1,5 @@
 {
-  "_name_or_path": "models/Final/ALBERT",
+  "_name_or_path": "models/Final/ALBERT_2",
   "architectures": [
     "AlbertForSequenceClassification"
   ],

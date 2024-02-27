@@ -316,78 +316,78 @@
     },
     "45": {
         "messages": {
+            "FM1": "Al parecer, agregaste un nuevo registro y cambiaste algunos ajustes (como la velocidad, la posición, los retrasos o las unidades) sin darle a 'Download'. Cuando eso pasa, el registro se señala con un asterisco. Si tienes dudas, revisa el documento de la práctica o pregunta por acá.",
+            "FM2": "Parece ser que metiste un registro nuevo (PR#) y ajustaste ciertos parámetros (velocidad, posición, tiempos de espera o unidades) sin actualizarlos con 'Download'. En esas situaciones, el registro queda marcado con un asterisco. Si necesitas más información, revisa bien el documento de la práctica o deja tu pregunta aquí."
+        },
+        "requires_section": false
+    },
+    "46": {
+        "messages": {
             "FM1": "NC",
             "FM2": "NC"
         },
         "requires_section": false
     },
-    "46": {
+    "47": {
         "messages": {
             "FM1": "Si hay incertidumbre después de presionar 'Run PR. Path', es importante revisar si el path seleccionado es el adecuado y si los parámetros están correctamente configurados. Una comprensión detallada de cómo cada path afecta al motor es crucial. Revisa el documento de la práctica para asegurarte de que estás en el camino correcto.",
             "FM2": "Usar 'Run PR. Path' y observar el comportamiento del motor proporciona valiosa retroalimentación sobre tus configuraciones. Si estás esperando ver cómo responde el motor a tus ajustes, asegúrate de que cada configuración corresponda a tus expectativas de la práctica. Para aclaraciones detalladas, el manual de la práctica es una excelente referencia."
         },
         "requires_section": false
     },
-    "47": {
+    "48": {
         "messages": {
             "FM1": "Has excedido el tiempo normal en 'Single Position Control'. Es crucial comprender cómo definir y ejecutar una posición específica. Si estás enfrentando dificultades, te recomiendo revisar detalladamente el documento de la práctica o preguntar aquí para una guía paso a paso.",
             "FM2": "Superar el tiempo en 'Single Position Control' sugiere que podrías necesitar ayuda para entender el proceso completo, desde seleccionar la posición hasta activar 'Forced Srv On'. Para una comprensión profunda de cada etapa, consulta el manual de la práctica o utiliza este chat para asesoramiento específico."
         },
         "requires_section": false
     },
-    "48": {
+    "49": {
         "messages": {
             "FM1": "NC",
             "FM2": "NC"
         },
         "requires_section": false
     },
-    "49": {
+    "50": {
         "messages": {
             "FM1": "Seleccionar el número de PR adecuado en 'Jump to the Specified PR Number' es crucial para la secuencia de tu práctica. Cada elección conduce a un conjunto diferente de acciones. Confirma tu elección y asegúrate de presionar 'Download' para aplicar los cambios.",
             "FM2": "Una elección precisa en 'Jump to the Specified PR Number' es esencial. Considera cuidadosamente el registro que necesitas para tu actividad y, después de seleccionar, actualiza los parámetros con 'Download' para asegurarte de que los cambios se apliquen correctamente."
         },
         "requires_section": false
     },
-    "50": {
+    "51": {
         "messages": {
             "FM1": "Introducir los pulsos exactos en 'Position CMD Data (PUU)' es fundamental para lograr la posición precisa del motor. Calcula cuidadosamente la conversión a grados y, después de introducir los pulsos, no olvides actualizar los parámetros con 'Download' para aplicar los cambios.",
             "FM2": "La selección precisa de los pulsos en 'Position CMD Data (PUU)' requiere un entendimiento claro de su relación con los grados de rotación. Asegúrate de hacer los cálculos correctamente y, una vez ingresados, presiona 'Download' para asegurar que el motor se mueva a la posición deseada."
         },
         "requires_section": false
     },
-    "51": {
+    "52": {
         "messages": {
             "FM1": "Seleccionar la velocidad correcta en 'Target Speed' requiere entender la diferencia entre rpm y PPS. Asegúrate de que tus cálculos sean precisos y, tras ingresar la velocidad, actualiza con 'Download' para confirmar los ajustes.",
             "FM2": "Una configuración detallada en 'Target Speed' es crucial. Revisa que estés usando las unidades adecuadas y que la velocidad seleccionada sea la correcta para tus objetivos. Después de introducir los datos, presiona 'Download' para asegurar que la configuración se refleje en el motor."
         },
         "requires_section": false
     },
-    "52": {
+    "53": {
         "messages": {
             "FM1": "NC",
             "FM2": "NC"
         },
         "requires_section": false
     },
-    "53": {
+    "54": {
         "messages": {
             "FM1": "Has invertido bastante tiempo en una acción que parece no formar parte de la práctica. Si estás experimentando o explorando, es valioso, pero asegúrate de mantener el enfoque en los objetivos del laboratorio.",
             "FM2": "Observo que has dedicado mucho tiempo a una acción inusual. Experimentar es parte del aprendizaje, pero es importante que cada paso te acerque a los objetivos de la práctica."
         },
         "requires_section": true
     },
-    "54": {
+    "55": {
         "messages": {
             "FM1": "Una configuración precisa en 'UNIT' es esencial. Asegúrate de que las unidades seleccionadas (rpm o PPS) se alineen perfectamente con los requisitos de la práctica. Si hay dudas, revisa el documento de la práctica detenidamente para confirmar.",
             "FM2": "La selección de unidades en 'UNIT' debe ser considerada con atención para el 'Constant Speed Control'. Comprueba si las unidades concuerdan con las especificaciones de la práctica y, si estás inseguro, consulta el documento para una orientación clara."
-        },
-        "requires_section": false
-    },
-    "55": {
-        "messages": {
-            "FM1": "NC",
-            "FM2": "NC"
         },
         "requires_section": false
     },
@@ -400,85 +400,85 @@
     },
     "57": {
         "messages": {
-            "FM1": "Una selección cuidadosa de canales en 'Data Scope' es crucial. Verifica que estás monitoreando los canales correctos para obtener datos precisos. Si hay dudas, considera revisar tus objetivos de práctica y seleccionar los canales acordes.",
-            "FM2": "Seleccionar canales adecuados en 'Data Scope' es esencial para un monitoreo efectivo. Asegúrate de que los canales activados reflejen las señales que necesitas observar. En caso de incertidumbre, revisa las especificaciones de tu práctica para tomar una decisión informada."
+            "FM1": "NC",
+            "FM2": "NC"
         },
         "requires_section": false
     },
     "58": {
         "messages": {
-            "FM1": "NC",
-            "FM2": "NC"
+            "FM1": "Una selección cuidadosa de canales en 'Data Scope' es crucial. Verifica que estás monitoreando los canales correctos para obtener datos precisos. Si hay dudas, considera revisar tus objetivos de práctica y seleccionar los canales acordes.",
+            "FM2": "Seleccionar canales adecuados en 'Data Scope' es esencial para un monitoreo efectivo. Asegúrate de que los canales activados reflejen las señales que necesitas observar. En caso de incertidumbre, revisa las especificaciones de tu práctica para tomar una decisión informada."
         },
         "requires_section": false
     },
     "59": {
         "messages": {
-            "FM1": "Una selección cuidadosa de canales en 'Data Scope' es crucial. Verifica que estás monitoreando los canales correctos para obtener datos precisos. Si hay dudas, considera revisar tus objetivos de práctica y seleccionar los canales acordes.",
-            "FM2": "Seleccionar canales adecuados en 'Data Scope' es esencial para un monitoreo efectivo. Asegúrate de que los canales activados reflejen las señales que necesitas observar. En caso de incertidumbre, revisa las especificaciones de tu práctica para tomar una decisión informada."
+            "FM1": "NC",
+            "FM2": "NC"
         },
         "requires_section": false
     },
     "60": {
         "messages": {
-            "FM1": "NC",
-            "FM2": "NC"
+            "FM1": "Una selección cuidadosa de canales en 'Data Scope' es crucial. Verifica que estás monitoreando los canales correctos para obtener datos precisos. Si hay dudas, considera revisar tus objetivos de práctica y seleccionar los canales acordes.",
+            "FM2": "Seleccionar canales adecuados en 'Data Scope' es esencial para un monitoreo efectivo. Asegúrate de que los canales activados reflejen las señales que necesitas observar. En caso de incertidumbre, revisa las especificaciones de tu práctica para tomar una decisión informada."
         },
         "requires_section": false
     },
     "61": {
         "messages": {
-            "FM1": "Una selección cuidadosa de canales en 'Data Scope' es crucial. Verifica que estás monitoreando los canales correctos para obtener datos precisos. Si hay dudas, considera revisar tus objetivos de práctica y seleccionar los canales acordes.",
-            "FM2": "Seleccionar canales adecuados en 'Data Scope' es esencial para un monitoreo efectivo. Asegúrate de que los canales activados reflejen las señales que necesitas observar. En caso de incertidumbre, revisa las especificaciones de tu práctica para tomar una decisión informada."
+            "FM1": "NC",
+            "FM2": "NC"
         },
         "requires_section": false
     },
     "62": {
         "messages": {
+            "FM1": "Una selección cuidadosa de canales en 'Data Scope' es crucial. Verifica que estás monitoreando los canales correctos para obtener datos precisos. Si hay dudas, considera revisar tus objetivos de práctica y seleccionar los canales acordes.",
+            "FM2": "Seleccionar canales adecuados en 'Data Scope' es esencial para un monitoreo efectivo. Asegúrate de que los canales activados reflejen las señales que necesitas observar. En caso de incertidumbre, revisa las especificaciones de tu práctica para tomar una decisión informada."
+        },
+        "requires_section": false
+    },
+    "63": {
+        "messages": {
             "FM1": "NC",
             "FM2": "NC"
         },
         "requires_section": false
     },
-    "63": {
+    "64": {
         "messages": {
             "FM1": "Una selección cuidadosa de canales en 'Data Scope' es crucial. Verifica que estás monitoreando los canales correctos para obtener datos precisos. Si hay dudas, considera revisar tus objetivos de práctica y seleccionar los canales acordes.",
             "FM2": "Seleccionar canales adecuados en 'Data Scope' es esencial para un monitoreo efectivo. Asegúrate de que los canales activados reflejen las señales que necesitas observar. En caso de incertidumbre, revisa las especificaciones de tu práctica para tomar una decisión informada."
         },
         "requires_section": false
     },
-    "64": {
+    "65": {
         "messages": {
             "FM1": "NC",
             "FM2": "NC"
         },
         "requires_section": false
     },
-    "65": {
+    "66": {
         "messages": {
             "FM1": "Una elección detallada de señales en cada canal es vital. Las señales como posición, velocidad, corriente y torque te permiten realizar análisis profundos, como la relación entre corriente y torque. Asegúrate de seleccionar aquellas que te proporcionen los datos más relevantes para tus preguntas de práctica.",
             "FM2": "Seleccionar las señales adecuadas para cada canal es crucial para un análisis efectivo. Señales como posición y velocidad pueden revelar aspectos importantes del comportamiento del motor. Dedica tiempo a elegir las señales que te ayudarán a responder preguntas específicas y comprender mejor el desempeño del motor en distintas condiciones."
         },
         "requires_section": false
     },
-    "66": {
+    "67": {
         "messages": {
             "FM1": "Manejar con precisión 'tbAdjustYScale' y 'Show all data' es clave. Ajusta la escala cuidadosamente para detalles específicos y usa 'Show all data' para una comprensión integral de las relaciones entre señales.",
             "FM2": "Una selección detallada con 'tbAdjustYScale' y el uso de 'Show all data' es fundamental para analizar con profundidad las señales. Estos botones te permiten explorar las señales de manera efectiva, crucial para responder a las preguntas de tu práctica."
         },
         "requires_section": false
     },
-    "67": {
+    "68": {
         "messages": {
             "FM1": "Una selección cuidadosa de colores puede ser crucial para diferenciar señales complejas en 'Data Scope'. Escoge colores que destaquen las diferencias clave entre las señales para un análisis más profundo.",
             "FM2": "Usar colores distintivos para cada señal en 'Data Scope' es importante para un análisis detallado. Asegúrate de que los colores elegidos ayuden a distinguir claramente entre las diferentes señales y faciliten la interpretación de los datos."
-        },
-        "requires_section": false
-    },
-    "68": {
-        "messages": {
-            "FM1": "NC",
-            "FM2": "NC"
         },
         "requires_section": false
     },
@@ -491,64 +491,64 @@
     },
     "70": {
         "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "71": {
+        "messages": {
             "FM1": "Utilizar 'Previous screen' de manera efectiva es esencial para analizar secuencias de datos y tendencias a lo largo del tiempo. Retrocede a pantallas anteriores para entender cómo las señales han evolucionado y para identificar patrones o anomalías.",
             "FM2": "El botón 'Previous screen' te permite realizar un análisis más profundo al revisar datos históricos. Es importante para identificar y comprender los patrones y variaciones en las señales a lo largo de tu sesión de práctica."
         },
         "requires_section": false
     },
-    "71": {
+    "72": {
         "messages": {
             "FM1": "Utilizar 'Run' para iniciar un análisis detallado en 'Data Scope' es fundamental. Asegúrate de que todo esté configurado correctamente antes de presionar 'Run' para obtener datos precisos y relevantes para tu práctica.",
             "FM2": "Presionar 'Run' comienza un seguimiento detallado en 'Data Scope'. Este paso es crucial para observar con precisión las señales y realizar análisis técnicos. Antes de activarlo, verifica que los parámetros y canales estén configurados adecuadamente."
         },
         "requires_section": false
     },
-    "72": {
+    "73": {
         "messages": {
             "FM1": "Manejar con precisión los botones de desplazamiento es clave para analizar áreas específicas en 'Data Scope'. Asegúrate de mover las ondas cuidadosamente para centrarte en los datos más relevantes para tu análisis.",
             "FM2": "Utilizar los botones de desplazamiento de manera efectiva te permite examinar en detalle las variaciones y tendencias en las señales. Desplaza las ondas para enfocarte en áreas específicas que requieran un análisis más profundo."
         },
         "requires_section": false
     },
-    "73": {
+    "74": {
         "messages": {
             "FM1": "Manejar con precisión 'tbAdjustYScale' y 'Show all data' es clave. Ajusta la escala cuidadosamente para detalles específicos y usa 'Show all data' para una comprensión integral de las relaciones entre señales.",
             "FM2": "Una selección detallada con 'tbAdjustYScale' y el uso de 'Show all data' es fundamental para analizar con profundidad las señales. Estos botones te permiten explorar las señales de manera efectiva, crucial para responder a las preguntas de tu práctica."
         },
         "requires_section": false
     },
-    "74": {
+    "75": {
         "messages": {
             "FM1": "NC",
             "FM2": "NC"
         },
         "requires_section": false
     },
-    "75": {
+    "76": {
         "messages": {
             "FM1": "Utilizar 'Stop' es crucial para interrumpir el monitoreo y evaluar los datos recogidos. Asegúrate de hacerlo conscientemente para analizar los resultados o hacer ajustes necesarios en tus pruebas.",
             "FM2": "El uso de 'Stop' te da control sobre el flujo de datos en 'Data Scope'. Es importante para tomar un momento y analizar en profundidad los patrones y tendencias observadas antes de continuar."
         },
         "requires_section": false
     },
-    "76": {
+    "77": {
         "messages": {
             "FM1": "Has invertido bastante tiempo en una acción que parece no formar parte de la práctica. Si estás experimentando o explorando, es valioso, pero asegúrate de mantener el enfoque en los objetivos del laboratorio.",
             "FM2": "Observo que has dedicado mucho tiempo a una acción inusual. Experimentar es parte del aprendizaje, pero es importante que cada paso te acerque a los objetivos de la práctica."
         },
         "requires_section": true
     },
-    "77": {
+    "78": {
         "messages": {
             "FM1": "NC",
             "FM2": "NC"
-        },
-        "requires_section": false
-    },
-    "78": {
-        "messages": {
-            "FM1": "Utilizar 'Zoom in' y 'Zoom out' con precisión es crucial para analizar detalles específicos o entender el contexto más amplio de las señales. Asegúrate de ajustar el zoom meticulosamente para capturar la información más relevante para tus análisis.",
-            "FM2": "El uso detallado del zoom te permite una comprensión profunda de las señales. Ajusta cuidadosamente para estudiar aspectos específicos o para ver el panorama general, especialmente cuando buscas responder preguntas técnicas o complejas de tu práctica."
         },
         "requires_section": false
     },
@@ -561,29 +561,29 @@
     },
     "80": {
         "messages": {
+            "FM1": "Utilizar 'Zoom in' y 'Zoom out' con precisión es crucial para analizar detalles específicos o entender el contexto más amplio de las señales. Asegúrate de ajustar el zoom meticulosamente para capturar la información más relevante para tus análisis.",
+            "FM2": "El uso detallado del zoom te permite una comprensión profunda de las señales. Ajusta cuidadosamente para estudiar aspectos específicos o para ver el panorama general, especialmente cuando buscas responder preguntas técnicas o complejas de tu práctica."
+        },
+        "requires_section": false
+    },
+    "81": {
+        "messages": {
             "FM1": "NC",
             "FM2": "NC"
         },
         "requires_section": false
     },
-    "81": {
+    "82": {
         "messages": {
             "FM1": "Confirmar el puerto 'COM' exacto en 'Setting' es crucial. Verifica que el número de puerto coincida con el dispositivo conectado. Si el puerto no aparece como se espera, revisa las conexiones o la configuración del sistema.",
             "FM2": "Es esencial asegurarse de que el puerto 'COM' indicado sea el correcto. Si no aparece como se espera, o si hay alguna discrepancia, es importante investigar y resolver cualquier problema de conexión o configuración para evitar errores en la comunicación."
         },
         "requires_section": false
     },
-    "82": {
+    "83": {
         "messages": {
             "FM1": "Confirmar que el motor se detecta correctamente como 'COM' y un número de puerto tras usar 'Start Auto Detect' es vital. Si no aparece como esperado, revisa las conexiones y la configuración del sistema.",
             "FM2": "Es crucial que el motor aparezca en la lista como 'COM' y un puerto después de 'Start Auto Detect'. Si hay problemas, investiga las conexiones y ajustes para asegurar una correcta comunicación."
-        },
-        "requires_section": false
-    },
-    "83": {
-        "messages": {
-            "FM1": "NC",
-            "FM2": "NC"
         },
         "requires_section": false
     },
@@ -603,17 +603,17 @@
     },
     "86": {
         "messages": {
-            "FM1": "Has invertido bastante tiempo en una acción que parece no formar parte de la práctica. Si estás experimentando o explorando, es valioso, pero asegúrate de mantener el enfoque en los objetivos del laboratorio.",
-            "FM2": "Observo que has dedicado mucho tiempo a una acción inusual. Experimentar es parte del aprendizaje, pero es importante que cada paso te acerque a los objetivos de la práctica."
-        },
-        "requires_section": true
-    },
-    "87": {
-        "messages": {
             "FM1": "NC",
             "FM2": "NC"
         },
         "requires_section": false
+    },
+    "87": {
+        "messages": {
+            "FM1": "Has invertido bastante tiempo en una acción que parece no formar parte de la práctica. Si estás experimentando o explorando, es valioso, pero asegúrate de mantener el enfoque en los objetivos del laboratorio.",
+            "FM2": "Observo que has dedicado mucho tiempo a una acción inusual. Experimentar es parte del aprendizaje, pero es importante que cada paso te acerque a los objetivos de la práctica."
+        },
+        "requires_section": true
     },
     "88": {
         "messages": {
@@ -638,29 +638,29 @@
     },
     "91": {
         "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "92": {
+        "messages": {
             "FM1": "Has invertido bastante tiempo en una acción que parece no formar parte de la práctica. Si estás experimentando o explorando, es valioso, pero asegúrate de mantener el enfoque en los objetivos del laboratorio.",
             "FM2": "Observo que has dedicado mucho tiempo a una acción inusual. Experimentar es parte del aprendizaje, pero es importante que cada paso te acerque a los objetivos de la práctica."
         },
         "requires_section": true
     },
-    "92": {
+    "93": {
         "messages": {
             "FM1": "NC",
             "FM2": "NC"
-        },
-        "requires_section": false
-    },
-    "93": {
-        "messages": {
-            "FM1": "Si estás revisando el manual en ASDA-Soft y surgen dudas, recuerda que este chat está aquí para ayudarte. No dudes en hacer preguntas para una comprensión más clara de los procedimientos y pasos a seguir.",
-            "FM2": "Consultar el manual dentro de ASDA-Soft es un buen paso para aclarar dudas. Si necesitas más información o tienes preguntas específicas, este chat puede ofrecerte respuestas y orientación adicional para tu práctica."
         },
         "requires_section": false
     },
     "94": {
         "messages": {
-            "FM1": "NC",
-            "FM2": "NC"
+            "FM1": "Si estás revisando el manual en ASDA-Soft y surgen dudas, recuerda que este chat está aquí para ayudarte. No dudes en hacer preguntas para una comprensión más clara de los procedimientos y pasos a seguir.",
+            "FM2": "Consultar el manual dentro de ASDA-Soft es un buen paso para aclarar dudas. Si necesitas más información o tienes preguntas específicas, este chat puede ofrecerte respuestas y orientación adicional para tu práctica."
         },
         "requires_section": false
     },
@@ -693,6 +693,13 @@
         "requires_section": false
     },
     "99": {
+        "messages": {
+            "FM1": "NC",
+            "FM2": "NC"
+        },
+        "requires_section": false
+    },
+    "100": {
         "messages": {
             "FM1": "NC",
             "FM2": "NC"
