@@ -85,6 +85,7 @@ class PARISApplication:
         self.current_section = 0
         self.soft_threshold_message_shown = False
         self.hard_threshold_message_shown = False
+        self.is_recording = False
         self.window = CTk()
         self.FONT = CTkFont(family=FAMILY_FONT, size=int(FONT_SIZE), weight="normal")
         self.FONT_CHAT = CTkFont(
@@ -270,11 +271,17 @@ class PARISApplication:
         self.window.iconphoto(True, self.icon_image)
         self.window.resizable(width=False, height=False)
         self.window.configure(width=705, height=550)
+        self.window.protocol("WM_DELETE_WINDOW", self.on_close_window)
 
         self.load_images()
         self.setup_left_frame(self.window)
         self.setup_right_frame(self.window)
         self.check_server_and_update_ui()
+
+    def on_close_window(self):
+        """Custom close behavior."""
+        if not self.is_recording:
+            self.window.destroy()
 
     def on_click(self, x, y, button, pressed):
         global user_id, section_classifier
@@ -421,6 +428,7 @@ class PARISApplication:
             self.entry_name.configure(state=DISABLED)
             self.entry_id.configure(state=DISABLED)
             self.status_label.configure(text="Estatus: grabando")
+            self.is_recording = True
         else:
             messagebox.showerror("Error", "Introduce un usuario")
 
@@ -431,6 +439,7 @@ class PARISApplication:
         if user_name != "" and user_id != "":
             self.listener.stop()
             self.status_label.configure(text="Estatus: en espera")
+            self.is_recording = False
         else:
             messagebox.showerror("Error", "Introduce un usuario")
 
