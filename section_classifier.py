@@ -24,7 +24,7 @@ class SectionClassifier:
         """
         current_label_int = self.label_int_history[-1]
 
-        if current_label_int in [84, 82, 81, 25, 9]:
+        if current_label_int in [85, 83, 82, 25, 9]:
             new_section = (
                 1
                 if self.section_history.count(0) > len(self.section_history) / 2
@@ -36,7 +36,7 @@ class SectionClassifier:
                 if self.section_history.count(1) > len(self.section_history) / 2
                 else self.section_history[-1]
             )
-        elif current_label_int == 47:
+        elif current_label_int == 48:
             new_section = (
                 3
                 if self.section_history.count(2) > len(self.section_history) / 2
